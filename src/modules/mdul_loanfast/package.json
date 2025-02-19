@@ -1,0 +1,17 @@
+{
+  "name": "mdul-loanfast",
+  "version": "0.1.0",
+  "main": "nuxt.config.ts",
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "dependencies": {
+    "fin-ready": "workspace:^",
+    "nuxt": "catalog:"
+  }
+}
