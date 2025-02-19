@@ -1,0 +1,21 @@
+{
+  "name": "@finsoft/fin-app-core",
+  "version": "0.1.0",
+  "main": "nuxt.config.ts",
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "dependencies": {
+    "@vueuse/nuxt": "catalog:",
+    "date-fns": "^4.1.0",
+    "nuxt": "catalog:",
+    "nuxt-auth-utils": "^0.5.7",
+    "vue": "catalog:",
+    "vue-router": "catalog:"
+  }
+}

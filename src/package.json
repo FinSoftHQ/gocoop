@@ -1,0 +1,41 @@
+{
+  "name": "rootws",
+  "version": "0.1.0",
+  "description": "The root workspace",
+  "private": true,
+  "scripts": {
+    "dev": "pnpm --filter facingweb run dev",
+    "build": "pnpm prep1st && cd apps/facingweb && pnpm build",
+    "wow": "plop --plopfile xgen/wow.mjs",
+    "prep1st": "pnpm --filter @finsoft/blueprint install && pnpm --filter @finsoft/blueprint run build && pnpm install --ignore-scripts=false",
+    "projs": "pnpm m ls --depth -1 -r",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Teerachai Laothong",
+  "license": "ISC",
+  "devDependencies": {
+    "@faker-js/faker": "^9.4.0",
+    "@iconify-json/heroicons": "^1.2.2",
+    "@iconify-json/mdi": "^1.2.2",
+    "@iconify-json/simple-icons": "^1.2.22",
+    "@nuxt/eslint": "catalog:",
+    "@nuxthq/studio": "catalog:",
+    "@vueuse/core": "catalog:",
+    "@vueuse/nuxt": "catalog:",
+    "app-blueprint": "workspace:^",
+    "eslint": "catalog:",
+    "plop": "^4.0.1",
+    "prettier": "catalog:",
+    "typescript": "catalog:",
+    "valibot": "catalog:",
+    "vue-tsc": "catalog:"
+  },
+  "resolutions": {
+    "@pinia/nuxt": "catalog:resolutions",
+    "pinia": "catalog:resolutions",
+    "nuxt": "catalog:resolutions",
+    "nuxt-og-image": "catalog:resolutions",
+    "vue-tsc": "catalog:resolutions"
+  }
+}

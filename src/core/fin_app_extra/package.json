@@ -1,0 +1,31 @@
+{
+  "name": "fin-app-extra",
+  "version": "0.1.0",
+  "main": "nuxt.config.ts",
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "dependencies": {
+    "@finsoft/blueprint": "workspace:^",
+    "@nuxt/ui-pro": "catalog:",
+    "@pdfme/common": "^5.3.1",
+    "@pdfme/converter": "^5.3.1",
+    "@pdfme/generator": "^5.3.1",
+    "@pdfme/schemas": "^5.3.1",
+    "@pinia/nuxt": "catalog:",
+    "@tato30/vue-pdf": "^1.11.3",
+    "@unovis/ts": "^1.5.0",
+    "@unovis/vue": "^1.5.0",
+    "ably": "^2.6.3",
+    "app-blueprint": "workspace:^",
+    "nuxt": "catalog:",
+    "pinia": "catalog:",
+    "vue": "catalog:",
+    "vue-router": "catalog:"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "eslint.validate": ["json"],
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+  "editor.detectIndentation": false,
+  "html.format.wrapAttributes": "force-expand-multiline",
+  "vue.format.script.initialIndent": false,
+  "vue.format.wrapAttributes": "preserve-aligned",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "prettier.singleQuote": true,
+  "prettier.semi": true,
+  "prettier.tabWidth": 2,
+  "prettier.useTabs": false
+}

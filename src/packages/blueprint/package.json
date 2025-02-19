@@ -1,0 +1,37 @@
+{
+  "name": "@finsoft/blueprint",
+  "private": false,
+  "version": "0.1.0",
+  "type": "module",
+  "main": "dist/blueprint.umd.js",
+  "module": "dist/blueprint.es.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/blueprint.es.js",
+      "require": "./dist/blueprint.umd.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "build:types": "tsc --emitDeclarationOnly",
+    "prepublishOnly": "npm run build && npm run build:types"
+  },
+  "devDependencies": {
+    "typescript": "catalog:",
+    "vite": "catalog:",
+    "vite-plugin-dts": "catalog:"
+  },
+  "peerDependencies": {
+    "vue": "catalog:"
+  },
+  "dependencies": {
+    "valibot": "catalog:"
+  }
+}
