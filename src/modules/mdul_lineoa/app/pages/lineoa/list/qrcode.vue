@@ -1,13 +1,16 @@
 <template>
-  <NuxtLink to="/lineoa/list/closed">
-    <div class="flex flex-col justify-center ">
-      <img
-        src="https://upload.wikimedia.org/wikipedia/commons/d/d0/QR_code_for_mobile_English_Wikipedia.svg"
-        alt="Description of image"
-      >
-    </div>
-  </NuxtLink>
-  <RealmPageList :pageId></RealmPageList>
+  <RealmPageList :pageId>
+    <template #default="{ wrapped }">
+      <h1 class="text-center font-bold">QR รับคิว</h1>
+      <div class="flex justify-center">
+        <FieldViewQrCode
+          modelValue="link_your_website_here/officerapp/list/complete"
+          style="width: 300px; height: 300px;"
+        ></FieldViewQrCode>
+      </div>
+      <li v-for="(msg, i) in messages">{{ msg.data }}</li>
+    </template>
+  </RealmPageList>
 </template>
 
 <script setup lang="ts">
@@ -17,4 +20,12 @@ definePageMeta({
 const pageId = {
   page: 'qrcode',
 };
+
+const { messageReceived } = useLiveSync("greetings", "verify");
+const messages = ref<any[]>([]);
+
+watch(messageReceived, (newMessages) => {
+  messages.value.push(newMessages);
+  navigateTo({ name: 'lineoa.list.root' }); 
+});
 </script>
