@@ -805,7 +805,7 @@
         "fontName": "Sarabun"
       },
       {
-        "name": "ืที่3",
+        "name": "ที่3",
         "type": "text",
         "position": {
           "x": 59.32,
@@ -830,7 +830,7 @@
         "fontName": "Sarabun"
       },
       {
-        "name": "ืที่4",
+        "name": "ที่4",
         "type": "text",
         "position": {
           "x": 59.52,
@@ -855,7 +855,7 @@
         "fontName": "Sarabun"
       },
       {
-        "name": "ืที่5",
+        "name": "ที่5",
         "type": "text",
         "position": {
           "x": 59.48,
@@ -880,7 +880,7 @@
         "fontName": "Sarabun"
       },
       {
-        "name": "ืที่6",
+        "name": "ที่6",
         "type": "text",
         "position": {
           "x": 59.41,
@@ -905,7 +905,7 @@
         "fontName": "Sarabun"
       },
       {
-        "name": "ืที่7",
+        "name": "ที่7",
         "type": "text",
         "position": {
           "x": 59.36,
@@ -930,7 +930,7 @@
         "fontName": "Sarabun"
       },
       {
-        "name": "ืที่8",
+        "name": "ที่8",
         "type": "text",
         "position": {
           "x": 59.3,
@@ -955,7 +955,7 @@
         "fontName": "Sarabun"
       },
       {
-        "name": "ืที่9",
+        "name": "ที่9",
         "type": "text",
         "position": {
           "x": 59.51,
@@ -980,7 +980,7 @@
         "fontName": "Sarabun"
       },
       {
-        "name": "ืที่10",
+        "name": "ที่10",
         "type": "text",
         "position": {
           "x": 59.46,
@@ -1005,7 +1005,7 @@
         "fontName": "Sarabun"
       },
       {
-        "name": "ืที่11",
+        "name": "ที่11",
         "type": "text",
         "position": {
           "x": 59.4,
@@ -1030,7 +1030,7 @@
         "fontName": "Sarabun"
       },
       {
-        "name": "ืที่12",
+        "name": "ที่12",
         "type": "text",
         "position": {
           "x": 59.35,
@@ -2557,7 +2557,7 @@
     ],
     [
       {
-        "name": "ใบสมัวันที่",
+        "name": "ใบสมัครวันที่",
         "type": "text",
         "position": {
           "x": 119.57,
@@ -2632,14 +2632,14 @@
         "fontName": "Sarabun"
       },
       {
-        "name": "ข้าพเจ้า",
+        "name": "name",
         "type": "text",
         "position": {
           "x": 67.55,
           "y": 96.41
         },
         "required": false,
-        "content": "พีรชัย ยศสุธรรม",
+        "content": "",
         "width": 50.27,
         "height": 7.62,
         "rotate": 0,
@@ -2657,7 +2657,7 @@
         "fontName": "Sarabun"
       },
       {
-        "name": "บ้านเลขที่",
+        "name": "homeNumber",
         "type": "text",
         "position": {
           "x": 141.31,
@@ -2682,7 +2682,7 @@
         "fontName": "Sarabun"
       },
       {
-        "name": "หมู่ที่",
+        "name": "village",
         "type": "text",
         "position": {
           "x": 174.06,
@@ -2707,14 +2707,14 @@
         "fontName": "Sarabun"
       },
       {
-        "name": "ถนน",
+        "name": "road",
         "type": "text",
         "position": {
           "x": 36.16,
           "y": 103.92
         },
         "required": false,
-        "content": "เรียบ",
+        "content": "",
         "width": 20.38,
         "height": 7.62,
         "rotate": 0,
@@ -2732,7 +2732,7 @@
         "fontName": "Sarabun"
       },
       {
-        "name": "ตำบล",
+        "name": "parish",
         "type": "text",
         "position": {
           "x": 72.03,
@@ -2757,7 +2757,7 @@
         "fontName": "Sarabun"
       },
       {
-        "name": "อำเภอ",
+        "name": "district",
         "type": "text",
         "position": {
           "x": 116.16,
@@ -2782,7 +2782,7 @@
         "fontName": "Sarabun"
       },
       {
-        "name": "จังหวัด",
+        "name": "province",
         "type": "text",
         "position": {
           "x": 157.7,
@@ -2807,7 +2807,7 @@
         "fontName": "Sarabun"
       },
       {
-        "name": "รหัสไปรษณีย์",
+        "name": "zipCode",
         "type": "text",
         "position": {
           "x": 49.16,
@@ -2832,7 +2832,7 @@
         "fontName": "Sarabun"
       },
       {
-        "name": "เบอร์โทรศัพท์",
+        "name": "phoneNumber",
         "type": "text",
         "position": {
           "x": 108.2,
@@ -2857,7 +2857,7 @@
         "fontName": "Sarabun"
       },
       {
-        "name": "อายุ",
+        "name": "age",
         "type": "text",
         "position": {
           "x": 81.42,
@@ -2957,7 +2957,7 @@
         "fontName": "Sarabun"
       },
       {
-        "name": "เลขประจำตัวประชาชน",
+        "name": "idCard",
         "type": "text",
         "position": {
           "x": 60.99,
@@ -2982,7 +2982,7 @@
         "fontName": "Sarabun"
       },
       {
-        "name": "เลขที่บัญชีธนาคารกรุงไทย",
+        "name": "bankAccount",
         "type": "text",
         "position": {
           "x": 142.16,
@@ -3007,7 +3007,7 @@
         "fontName": "Sarabun"
       },
       {
-        "name": "ตำแหน่ง",
+        "name": "jobPosition",
         "type": "text",
         "position": {
           "x": 67.49,
@@ -3032,7 +3032,7 @@
         "fontName": "Sarabun"
       },
       {
-        "name": "แผนก",
+        "name": "department",
         "type": "text",
         "position": {
           "x": 131.73,
@@ -3057,7 +3057,7 @@
         "fontName": "Sarabun"
       },
       {
-        "name": "เงินเดือน",
+        "name": "salary",
         "type": "text",
         "position": {
           "x": 88.87,
@@ -3082,7 +3082,7 @@
         "fontName": "Sarabun"
       },
       {
-        "name": "เงินเดือนภาษาไทย",
+        "name": "salarytext1",
         "type": "text",
         "position": {
           "x": 125.59,
@@ -3107,7 +3107,7 @@
         "fontName": "Sarabun"
       },
       {
-        "name": "อัตราเดือนละ",
+        "name": "stockValue",
         "type": "text",
         "position": {
           "x": 71.88,
@@ -3209,7 +3209,7 @@
     ],
     [
       {
-        "name": "ลงชื่อผู้สมัคร",
+        "name": "name2",
         "type": "text",
         "position": {
           "x": 120.4,
@@ -3311,7 +3311,7 @@
         "fontName": "Sarabun"
       },
       {
-        "name": "ข้าพเจ้า06",
+        "name": "name3",
         "type": "text",
         "position": {
           "x": 65.78,
@@ -3336,7 +3336,7 @@
         "fontName": "Sarabun"
       },
       {
-        "name": "อายุ06",
+        "name": "age2",
         "type": "text",
         "position": {
           "x": 140.66,
@@ -3361,7 +3361,7 @@
         "fontName": "Sarabun"
       },
       {
-        "name": "บ้านเลขที่06",
+        "name": "homeNumber2",
         "type": "text",
         "position": {
           "x": 42.71,
@@ -3386,7 +3386,7 @@
         "fontName": "Sarabun"
       },
       {
-        "name": "หมู่ที่06",
+        "name": "village2",
         "type": "text",
         "position": {
           "x": 63.03,
@@ -3411,7 +3411,7 @@
         "fontName": "Sarabun"
       },
       {
-        "name": "ซอย06",
+        "name": "alley",
         "type": "text",
         "position": {
           "x": 91.12,
@@ -3436,7 +3436,7 @@
         "fontName": "Sarabun"
       },
       {
-        "name": "ถนน06",
+        "name": "road2",
         "type": "text",
         "position": {
           "x": 119.91,
@@ -3461,7 +3461,7 @@
         "fontName": "Sarabun"
       },
       {
-        "name": "ตำบล06",
+        "name": "parish2",
         "type": "text",
         "position": {
           "x": 161.4,
@@ -3486,7 +3486,7 @@
         "fontName": "Sarabun"
       },
       {
-        "name": "อำเภอ06",
+        "name": "district2",
         "type": "text",
         "position": {
           "x": 45.78,
@@ -3511,7 +3511,7 @@
         "fontName": "Sarabun"
       },
       {
-        "name": "จังหวัด06",
+        "name": "province2",
         "type": "text",
         "position": {
           "x": 98.11,
@@ -3536,7 +3536,7 @@
         "fontName": "Sarabun"
       },
       {
-        "name": "เบอร์โทร06",
+        "name": "phoneNumber2",
         "type": "text",
         "position": {
           "x": 146.27,
@@ -3561,7 +3561,7 @@
         "fontName": "Sarabun"
       },
       {
-        "name": "ตำแหน่ง06",
+        "name": "jobPosition2",
         "type": "text",
         "position": {
           "x": 102.03,
@@ -3613,7 +3613,7 @@
     ],
     [
       {
-        "name": "ลงชื่อผู้สมัครจริง07",
+        "name": "name4",
         "type": "text",
         "position": {
           "x": 84.19,
@@ -3715,7 +3715,7 @@
         "fontName": "Sarabun"
       },
       {
-        "name": "ข้าพเจ้า08",
+        "name": "name5",
         "type": "text",
         "position": {
           "x": 65.2,
@@ -3740,7 +3740,7 @@
         "fontName": "Sarabun"
       },
       {
-        "name": "อายุ08",
+        "name": "age3",
         "type": "text",
         "position": {
           "x": 140.61,
@@ -3765,7 +3765,7 @@
         "fontName": "Sarabun"
       },
       {
-        "name": "บ้านเลขที่08",
+        "name": "homeNumber3",
         "type": "text",
         "position": {
           "x": 41.6,
@@ -3790,7 +3790,7 @@
         "fontName": "Sarabun"
       },
       {
-        "name": "หมู่ที่08",
+        "name": "village3",
         "type": "text",
         "position": {
           "x": 64.62,
@@ -3815,7 +3815,7 @@
         "fontName": "Sarabun"
       },
       {
-        "name": "ซอย08",
+        "name": "alley2",
         "type": "text",
         "position": {
           "x": 88.42,
@@ -3840,7 +3840,7 @@
         "fontName": "Sarabun"
       },
       {
-        "name": "ถนน08",
+        "name": "road3",
         "type": "text",
         "position": {
           "x": 118.53,
@@ -3865,7 +3865,7 @@
         "fontName": "Sarabun"
       },
       {
-        "name": "ตำบล08",
+        "name": "parish3",
         "type": "text",
         "position": {
           "x": 160.55,
@@ -3890,7 +3890,7 @@
         "fontName": "Sarabun"
       },
       {
-        "name": "อำเภอ08",
+        "name": "district3",
         "type": "text",
         "position": {
           "x": 44.93,
@@ -3915,7 +3915,7 @@
         "fontName": "Sarabun"
       },
       {
-        "name": "จังหวัด08",
+        "name": "province3",
         "type": "text",
         "position": {
           "x": 96.73,
@@ -3940,7 +3940,7 @@
         "fontName": "Sarabun"
       },
       {
-        "name": "เบอร์โทร08",
+        "name": "phoneNumber3",
         "type": "text",
         "position": {
           "x": 144.36,
@@ -3965,7 +3965,7 @@
         "fontName": "Sarabun"
       },
       {
-        "name": "ตำแหน่ง08",
+        "name": "jobPosition3",
         "type": "text",
         "position": {
           "x": 100.92,
@@ -4017,7 +4017,7 @@
     ],
     [
       {
-        "name": "ลงชื่อผู้สมัครจริง09",
+        "name": "name6",
         "type": "text",
         "position": {
           "x": 82.81,
@@ -4119,7 +4119,7 @@
         "fontName": "Sarabun"
       },
       {
-        "name": "ข้าพเจ้า10",
+        "name": "name7",
         "type": "text",
         "position": {
           "x": 64.35,
@@ -4144,7 +4144,7 @@
         "fontName": "Sarabun"
       },
       {
-        "name": "อายุ10",
+        "name": "age4",
         "type": "text",
         "position": {
           "x": 140.29,
@@ -4169,7 +4169,7 @@
         "fontName": "Sarabun"
       },
       {
-        "name": "บ้านเลขที่10",
+        "name": "homeNumber4",
         "type": "text",
         "position": {
           "x": 42.87,
@@ -4194,7 +4194,7 @@
         "fontName": "Sarabun"
       },
       {
-        "name": "หมู่ที่08 copy",
+        "name": "village4",
         "type": "text",
         "position": {
           "x": 65.09,
@@ -4219,7 +4219,7 @@
         "fontName": "Sarabun"
       },
       {
-        "name": "ซอย10",
+        "name": "alley3",
         "type": "text",
         "position": {
           "x": 89.69,
@@ -4244,7 +4244,7 @@
         "fontName": "Sarabun"
       },
       {
-        "name": "ถนน10",
+        "name": "road4",
         "type": "text",
         "position": {
           "x": 118.48,
@@ -4269,7 +4269,7 @@
         "fontName": "Sarabun"
       },
       {
-        "name": "ตำบล10",
+        "name": "parish4",
         "type": "text",
         "position": {
           "x": 161.29,
@@ -4294,7 +4294,7 @@
         "fontName": "Sarabun"
       },
       {
-        "name": "อำเภอ08 copy",
+        "name": "district4",
         "type": "text",
         "position": {
           "x": 44.35,
@@ -4319,7 +4319,7 @@
         "fontName": "Sarabun"
       },
       {
-        "name": "จังหวัด10",
+        "name": "province4",
         "type": "text",
         "position": {
           "x": 97.21,
@@ -4344,7 +4344,7 @@
         "fontName": "Sarabun"
       },
       {
-        "name": "เบอร์โทร10",
+        "name": "phoneNumber4",
         "type": "text",
         "position": {
           "x": 143.78,
@@ -4369,7 +4369,7 @@
         "fontName": "Sarabun"
       },
       {
-        "name": "ตำแหน่ง10",
+        "name": "jobPosition4",
         "type": "text",
         "position": {
           "x": 101.66,
@@ -4421,7 +4421,7 @@
     ],
     [
       {
-        "name": "ลงชื่อผู้สมัครจริง11",
+        "name": "name8",
         "type": "text",
         "position": {
           "x": 84.34,
@@ -4523,7 +4523,7 @@
         "fontName": "Sarabun"
       },
       {
-        "name": "ข้าพเจ้า10 copy",
+        "name": "name9",
         "type": "text",
         "position": {
           "x": 67.47,
@@ -4548,7 +4548,7 @@
         "fontName": "Sarabun"
       },
       {
-        "name": "ตำแหน่ง12",
+        "name": "jobPosition5",
         "type": "text",
         "position": {
           "x": 106.04,
@@ -4598,7 +4598,7 @@
         "fontName": "Sarabun"
       },
       {
-        "name": "คำยินยอมผู้สมัครจริง12",
+        "name": "name10",
         "type": "text",
         "position": {
           "x": 85.62,

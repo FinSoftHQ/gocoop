@@ -717,10 +717,10 @@ export const appModules = defineAppModules({
       root: {
         entity: data.newmembership,
         actions: [
-          {
-            label: 'ยืนยันตัวตน',
-            to: { page: 'takephoto' },
-          },
+          // {
+          //   label: 'ยืนยันตัวตน',
+          //   to: { page: 'takephoto' },
+          // },
           {
             label: 'กรอกข้อมูล',
             to: { page: 'fillin' },
