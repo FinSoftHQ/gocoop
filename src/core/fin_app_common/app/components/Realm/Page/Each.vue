@@ -25,8 +25,8 @@ import RealmRolesEachDefault from '../Roles/Each/Default.vue';
 import RealmRolesSharedCustomView from '../Roles/Shared/CustomView.vue';
 import RealmRolesSharedResult from '../Roles/Shared/Result.vue';
 import RealmRolesSharedMenu from '../Roles/Shared/Menu.vue';
-import RealmRolesXStepMobilePhoto from '../Roles/X/StepMobilePhoto.vue';
-import RealmRolesXStepMobileQr from '../Roles/X/StepMobileQr.vue';
+import RealmRolesCustonStepMobilePhoto from '../Roles/Custon/StepMobilePhoto.vue';
+import RealmRolesCustonStepMobileQr from '../Roles/Custon/StepMobileQr.vue';
 
 const baseRoles = useBaseRoles();
 const roles: Record<string, any> = {
@@ -40,8 +40,8 @@ const roles: Record<string, any> = {
   customview: RealmRolesSharedCustomView,
   webprint: RealmRolesEachWebPrint,
   default: RealmRolesEachDefault,
-  stepmobilephoto: RealmRolesXStepMobilePhoto,
-  stepmobileqr: RealmRolesXStepMobileQr,
+  stepmobilephoto: RealmRolesCustonStepMobilePhoto,
+  stepmobileqr: RealmRolesCustonStepMobileQr,
 };
 
 const props = defineProps<{
