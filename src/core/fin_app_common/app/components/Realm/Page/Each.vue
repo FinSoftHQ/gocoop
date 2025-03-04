@@ -27,6 +27,7 @@ import RealmRolesSharedResult from '../Roles/Shared/Result.vue';
 import RealmRolesSharedMenu from '../Roles/Shared/Menu.vue';
 import RealmRolesCustonStepMobilePhoto from '../Roles/Custon/StepMobilePhoto.vue';
 import RealmRolesCustonStepMobileQr from '../Roles/Custon/StepMobileQr.vue';
+import RealmRolesCustomTakePhoto from '../Roles/Custon/TakePhoto.vue';
 
 const baseRoles = useBaseRoles();
 const roles: Record<string, any> = {
@@ -42,6 +43,7 @@ const roles: Record<string, any> = {
   default: RealmRolesEachDefault,
   stepmobilephoto: RealmRolesCustonStepMobilePhoto,
   stepmobileqr: RealmRolesCustonStepMobileQr,
+  takephoto: RealmRolesCustomTakePhoto,
 };
 
 const props = defineProps<{
