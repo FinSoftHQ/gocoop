@@ -665,9 +665,39 @@ export const appModules = defineAppModules({
     dataPath: 'newmembership',
     label: 'Register',
     list: {
-      root: data.newmembership,
+      root: {
+        entity: data.newmembership,
+        tabs: [
+          {
+            label: 'กำลังดำเนินการ',
+            to: { page: 'root' },
+          },
+          {
+            label: 'เสร็จสิ้น',
+            to: { page: 'complete' },
+          },
+        ],
+      },
       closed: data.newmembership,
-      complete: data.newmembership,
+      complete: {
+        entity: data.newmembership,
+        tabs: [
+          {
+            label: 'กำลังดำเนินการ',
+            to: { page: 'root' },
+          },
+          {
+            label: 'เสร็จสิ้น',
+            to: { page: 'complete' },
+          },
+        ],
+        actions: [
+          {
+            label: 'ปิดยอด',
+            to: { page: 'closed' },
+          },
+        ],
+      },
     },
     create: {
       root: {
@@ -793,14 +823,12 @@ export const appModules = defineAppModules({
         post: true,
         role: 'stepmobilephoto',
         steps: steps.stepsverify,
-
       },
       signature: {
         entity: data.counterverify,
         post: true,
         role: 'stepmobilephoto',
         steps: steps.stepsverify,
-
       },
       takephoto: {
         entity: data.counterverify,
@@ -1019,81 +1047,100 @@ export const appModules = defineAppModules({
     },
   },
 
-// การเงิน
+  // การเงิน
   finance: {
     label: 'Finance',
     dataPath: 'loanfast',
     list: {
-      root: { // คำอนุมัติ
+      root: {
+        // คำอนุมัติ
         entity: data.loanfast,
-        tabs: [{
-          label: 'รายการคำอนุมัติ',
-          to: { page: 'root' },
-        },
-        {
-          label: 'รายการเตรียมจ่ายเงิน',
-          to: { page: 'active' },
-        },
-        {
-          label: 'รายงาน ณ สิ้นวัน',
-          to: { page: 'completed' },
-        },],
-        actions: [{
-          label: 'รายงานการเงิน',
-          to: { page: 'approve' },
-        },],
-      },
-      active: { // ทำรายการ  
-        entity: data.loanfast,
-        tabs: [{
-          label: 'รายการคำอนุมัติ',
-          to: { page: 'root' },
-        },
-        {
-          label: 'รายการเตรียมจ่ายเงิน',
-          to: { page: 'active' },
-        }, {
-          label: 'รายงาน ณ สิ้นวัน',
-          to: { page: 'completed' },
-        },],
-        actions: [{
-          label: 'โอนเงิน',
-          to: { page: 'transfermoney' },
-        },],
-      },
-      completed: { // ปิดยอด
-        entity: data.loanfast,
-        tabs: [{
-          label: 'รายการคำอนุมัติ',
-          to: { page: 'root' },
-        },
-        {
-          label: 'รายการเตรียมจ่ายเงิน',
-          to: { page: 'active' },
-        }, {
-          label: 'รายงาน ณ สิ้นวัน',
-          to: { page: 'completed' },
-        },],
-        actions: [{
-          label: 'ปริ้นรายงาน',
-          to: { page: 'report' },
-        },
-        {
-          label: 'ส่งเรื่องให้บัญชี',
-          to: { page: 'report' },
-        },
+        tabs: [
+          {
+            label: 'รายการคำอนุมัติ',
+            to: { page: 'root' },
+          },
+          {
+            label: 'รายการเตรียมจ่ายเงิน',
+            to: { page: 'active' },
+          },
+          {
+            label: 'รายงาน ณ สิ้นวัน',
+            to: { page: 'completed' },
+          },
+        ],
+        actions: [
+          {
+            label: 'รายงานการเงิน',
+            to: { page: 'approve' },
+          },
         ],
       },
-      transfermoney: { // โอนเงิน
+      active: {
+        // ทำรายการ
+        entity: data.loanfast,
+        tabs: [
+          {
+            label: 'รายการคำอนุมัติ',
+            to: { page: 'root' },
+          },
+          {
+            label: 'รายการเตรียมจ่ายเงิน',
+            to: { page: 'active' },
+          },
+          {
+            label: 'รายงาน ณ สิ้นวัน',
+            to: { page: 'completed' },
+          },
+        ],
+        actions: [
+          {
+            label: 'โอนเงิน',
+            to: { page: 'transfermoney' },
+          },
+        ],
+      },
+      completed: {
+        // ปิดยอด
+        entity: data.loanfast,
+        tabs: [
+          {
+            label: 'รายการคำอนุมัติ',
+            to: { page: 'root' },
+          },
+          {
+            label: 'รายการเตรียมจ่ายเงิน',
+            to: { page: 'active' },
+          },
+          {
+            label: 'รายงาน ณ สิ้นวัน',
+            to: { page: 'completed' },
+          },
+        ],
+        actions: [
+          {
+            label: 'ปริ้นรายงาน',
+            to: { page: 'report' },
+          },
+          {
+            label: 'ส่งเรื่องให้บัญชี',
+            to: { page: 'report' },
+          },
+        ],
+      },
+      transfermoney: {
+        // โอนเงิน
         entity: data.loanfast,
         post: true,
       },
-      approve: { // ปริ้นเอกสารใบประหน้า
+      approve: {
+        // ปริ้นเอกสารใบประหน้า
         entity: data.loanfast,
         post: true,
         role: 'webprint',
       },
-      report: { // ปริ้น รายงานการเงิน
+      report: {
+        // ปริ้น รายงานการเงิน
         entity: data.loanfast,
         post: true,
         role: 'print',
@@ -1103,7 +1150,6 @@ export const appModules = defineAppModules({
       root: {
         entity: data.counterloanfast,
         post: true,
-
       },
     },
     each: {
@@ -1121,5 +1167,5 @@ export const appModules = defineAppModules({
         role: 'confirm',
       },
     },
-  }
+  },
 });
