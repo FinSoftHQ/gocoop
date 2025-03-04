@@ -316,7 +316,7 @@ export const appModules = defineAppModules({
           },
           {
             title: 'ยืนยันตัวตน',
-            to: { page: 'qrcode' },
+            to: { page: 'qrverify' },
             icon: 'i-mdi-account-lock-outline',
           },
           // {
@@ -326,7 +326,7 @@ export const appModules = defineAppModules({
           // },
           {
             title: 'กู้ฉุกเฉิน',
-            to: { module: 'loanfast', realm: 'create', page: 'root' },
+            // to: { module: 'loanfast', realm: 'create', page: 'root' },
             icon: 'i-mdi-cash-fast',
           },
         ],
