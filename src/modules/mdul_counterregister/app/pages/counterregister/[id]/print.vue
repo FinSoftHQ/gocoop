@@ -23,7 +23,7 @@ const { formatNumber, numberToThaiText,currencyToThaiText, } = useValueFormatter
 useAppExtraRolesAndComponents();
 usePdfPrint({
   templatePath: '/register.json',
-  basePdfPath: '/register.pdf',
+  basePdfPath: '/register2.pdf',
   // blankBasePdfPath: false,
   dataTransformer: (data) => {
     return {
