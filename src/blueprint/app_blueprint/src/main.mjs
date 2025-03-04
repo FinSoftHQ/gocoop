@@ -187,7 +187,7 @@ export const appModules = defineAppModules({
       requestloan: {
         entity: data.loanfast,
         post: true,
-        role: 'stepedit',
+        role: 'stepcheckloanfast',
         subName: 'filldata',
         steps: steps.loanfastconfirm,
       },

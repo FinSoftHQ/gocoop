@@ -21,6 +21,8 @@ import RealmRolesSharedStepConfirm from '../Roles/Shared/StepConfirm.vue';
 import RealmRolesCreateModalEdit from '../Roles/Create/ModalEdit.vue';
 import RealmRolesCreateDefault from '../Roles/Create/Default.vue';
 import RealmRolesSharedCustomView from '../Roles/Shared/CustomView.vue';
+import RealmRolesCustomStepCheckLoanFast from '../Roles/Custom/StepCheckLoanFast.vue';
+import RealmRolesCustomStepLoanLimit from '../Roles/Custom/StepLoanLimit.vue';
 
 const baseRoles = useBaseRoles();
 const roles: Record<string, any> = {
@@ -30,6 +32,8 @@ const roles: Record<string, any> = {
   modaledit: RealmRolesCreateModalEdit,
   customview: RealmRolesSharedCustomView,
   default: RealmRolesCreateDefault,
+  stepcheckloanfast: RealmRolesCustomStepCheckLoanFast,
+  steploanlimit: RealmRolesCustomStepLoanLimit,
 };
 
 const props = defineProps<{
