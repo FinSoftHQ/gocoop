@@ -426,6 +426,18 @@ export const data = defineEntities({
         component: 'text',
       },
       {
+        model: 'alley',
+        label: 'ตรอก/ซอย',
+        spec: {},
+        component: 'text',
+      },
+      {
+        model: 'homeNumber',
+        label: 'บ้านเลขที่',
+        spec: {},
+        component: 'text',
+      },
+      {
         model: 'village',
         label: 'หมู่ที่',
         spec: {},
