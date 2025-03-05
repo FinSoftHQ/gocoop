@@ -352,6 +352,12 @@ export const data = defineEntities({
   newmembership: {
     root: [
       {
+        model: 'datetime',
+        label: 'เขียนเมื่อวันที่',
+        spec: {},
+        component: 'date',
+      },
+      {
         model: 'prefix',
         label: 'คำนำหน้าชื่อ',
         spec: {},
@@ -360,28 +366,22 @@ export const data = defineEntities({
       },
       {
         model: 'name',
-        label: 'ชื่อ - สกุล',
+        label: 'ชื่อ',
         spec: {},
         component: 'text',
       },
-      // {
-      //   model: 'lname',
-      //   label: 'สกุล',
-      //   spec: {},
-      //   component: 'text',
-      // },
+      {
+        model: 'lname',
+        label: 'สกุล',
+        spec: {},
+        component: 'text',
+      },
       {
         model: 'birthDate',
         label: 'วัน/เดือน/ปี เกิด',
         spec: {},
         component: 'date',
-      },
-      {
-        model: 'age',
-        label: 'อายุ',
-        spec: {},
-        component: 'text',
-      },
+      },      
       {
         model: 'idCard',
         label: 'เลขบัตรประชาชน',

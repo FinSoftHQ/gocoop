@@ -42,8 +42,8 @@ const steps = defineSteps({
     qrcode: 'สแกน QR Code ยืนยันตัวตน',
   },
   stepsfillin: {
-    fillin: 'กรอกข้อมูล',
-    edit: 'กรอกข้อมูลเพิ่มเติม',
+    edit: 'ข้อมูลผู้สมัคร',
+    fillin: 'ผู้รับผลประโยชน์',
     confirmfillin: 'ตรวจสอบข้อมูล',
   },
   stepstakephoto: {
@@ -752,7 +752,7 @@ export const appModules = defineAppModules({
           // },
           {
             label: 'กรอกข้อมูล',
-            to: { page: 'fillin' },
+            to: { page: 'edit' },
           },
           {
             label: 'ปริ้นเอกสาร',
@@ -763,7 +763,8 @@ export const appModules = defineAppModules({
       edit: {
         entity: data.newmembership,
         post: true,
-        role: 'edit',
+        role: 'stepedit',
+        steps: steps.stepsfillin,
       },
       takephoto: {
         entity: data.newmembership,
@@ -799,7 +800,6 @@ export const appModules = defineAppModules({
         entity: data.newmembership,
         post: true,
         role: 'stepconfirm',
-        subName: 'beneficiary',
         steps: steps.stepsfillin,
       },
       close: {
@@ -844,8 +844,6 @@ export const appModules = defineAppModules({
       edit: {
         entity: data.counterverify,
         post: true,
-        role: 'stepedit',
-        steps: steps.stepsfillin,
       },
       photo: {
         entity: data.counterverify,
@@ -885,7 +883,7 @@ export const appModules = defineAppModules({
       fillin: {
         entity: data.counterverify,
         post: true,
-        role: 'stepedit',
+        role: 'stepconfirm',
         subName: 'beneficiary',
         steps: steps.stepsfillin,
       },
