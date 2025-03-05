@@ -37,8 +37,8 @@ const steps = defineSteps({
     confirm: 'ยืนยันข้อมูล',
   },
   stepsverify: {
-    photo: 'ถ่ายรูป',
     signature: 'เก็บลายเซนต์',
+    photo: 'ถ่ายรูป',
     qrcode: 'สแกน QR Code ยืนยันตัวตน',
   },
   stepsfillin: {
@@ -859,7 +859,7 @@ export const appModules = defineAppModules({
         actions: [
           {
             label: 'ยืนยันตัวตน',
-            to: { page: 'photo' },
+            to: { page: 'signature' },
           },
         ],
       },
