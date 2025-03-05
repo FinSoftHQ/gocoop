@@ -7,10 +7,8 @@
       </tr>
     </thead>
     <tbody>
-      <tr
-        v-for="detail in paymentDetails"
-        :key="detail.month"
-      >
+      <tr v-for="detail in paymentDetails"
+        :key="detail.month">
         <td class="border p-2">{{ detail.month }}</td>
         <td class="border p-2">{{ detail.totalPayment.toFixed(2) }} บาท</td>
       </tr>
