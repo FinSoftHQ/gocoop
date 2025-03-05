@@ -780,7 +780,7 @@
         "fontName": "Sarabun"
       },
       {
-        "name": "ืที่2",
+        "name": "ที่2",
         "type": "text",
         "position": {
           "x": 59.36,
@@ -2557,7 +2557,7 @@
     ],
     [
       {
-        "name": "ใบสมัครวันที่",
+        "name": "datetimeDay",
         "type": "text",
         "position": {
           "x": 119.57,
@@ -2582,7 +2582,7 @@
         "fontName": "Sarabun"
       },
       {
-        "name": "เดือน4",
+        "name": "datetimeMonth",
         "type": "text",
         "position": {
           "x": 140.15,
@@ -2607,7 +2607,7 @@
         "fontName": "Sarabun"
       },
       {
-        "name": "ปี4",
+        "name": "datetimeYear",
         "type": "text",
         "position": {
           "x": 166.29,
@@ -2857,7 +2857,7 @@
         "fontName": "Sarabun"
       },
       {
-        "name": "age",
+        "name": "age1",
         "type": "text",
         "position": {
           "x": 81.42,
@@ -3209,7 +3209,7 @@
     ],
     [
       {
-        "name": "name2",
+        "name": "nameSing1",
         "type": "text",
         "position": {
           "x": 120.4,
@@ -3236,7 +3236,7 @@
     ],
     [
       {
-        "name": "วันที่06",
+        "name": "datetimeDay2",
         "type": "text",
         "position": {
           "x": 111.88,
@@ -3261,7 +3261,7 @@
         "fontName": "Sarabun"
       },
       {
-        "name": "เดือน06",
+        "name": "datetimeMonth2",
         "type": "text",
         "position": {
           "x": 134.32,
@@ -3286,7 +3286,7 @@
         "fontName": "Sarabun"
       },
       {
-        "name": "ปี06",
+        "name": "datetimeYear2",
         "type": "text",
         "position": {
           "x": 173.16,
@@ -3311,7 +3311,7 @@
         "fontName": "Sarabun"
       },
       {
-        "name": "name3",
+        "name": "name2",
         "type": "text",
         "position": {
           "x": 65.78,
@@ -3640,7 +3640,7 @@
     ],
     [
       {
-        "name": "วันที่08",
+        "name": "datetimeDay3",
         "type": "text",
         "position": {
           "x": 112.02,
@@ -3665,7 +3665,7 @@
         "fontName": "Sarabun"
       },
       {
-        "name": "เดือน08",
+        "name": "datetimeMonth3",
         "type": "text",
         "position": {
           "x": 134.19,
@@ -3690,7 +3690,7 @@
         "fontName": "Sarabun"
       },
       {
-        "name": "ปี08",
+        "name": "datetimeYear3",
         "type": "text",
         "position": {
           "x": 172.55,
@@ -4044,7 +4044,7 @@
     ],
     [
       {
-        "name": "วันที่101",
+        "name": "datetimeDay4",
         "type": "text",
         "position": {
           "x": 112.23,
@@ -4069,7 +4069,7 @@
         "fontName": "Sarabun"
       },
       {
-        "name": "เดือน10",
+        "name": "datetimeMonth4",
         "type": "text",
         "position": {
           "x": 132.28,
@@ -4094,7 +4094,7 @@
         "fontName": "Sarabun"
       },
       {
-        "name": "ปี10",
+        "name": "datetimeYear4",
         "type": "text",
         "position": {
           "x": 172.23,
@@ -4448,7 +4448,7 @@
     ],
     [
       {
-        "name": "วันที่12copy",
+        "name": "datetimeDay5",
         "type": "text",
         "position": {
           "x": 102.92,
@@ -4473,7 +4473,7 @@
         "fontName": "Sarabun"
       },
       {
-        "name": "เดือน12",
+        "name": "datetimeMonth5",
         "type": "text",
         "position": {
           "x": 122.17,
@@ -4498,7 +4498,7 @@
         "fontName": "Sarabun"
       },
       {
-        "name": "ปี12",
+        "name": "datetimeYear5",
         "type": "text",
         "position": {
           "x": 165.3,
