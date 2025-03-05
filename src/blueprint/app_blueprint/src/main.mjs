@@ -617,7 +617,10 @@ export const appModules = defineAppModules({
           },
         ],
       },
-      closed: data.loanfast,
+      closed: {
+        entity: data.loanfast,
+        role: 'closed',
+      },
     },
     create: {
       root: {
@@ -707,7 +710,26 @@ export const appModules = defineAppModules({
           },
         ],
       },
-      closed: data.newmembership,
+      closed: {
+        entity: data.newmembership,
+        role: 'closed',
+        tabs: [
+          {
+            label: 'รายการทั้งหมด',
+            to: { page: 'closed' },
+          },
+        ],
+        actions: [
+          {
+            label: 'ยืนยันการปิดยอด',
+            to: { page: 'root' },
+          },
+          {
+            label: 'ยกเลิกการปิดยอด',
+            to: { page: 'root' },
+          },
+        ],
+      },
       complete: {
         entity: data.newmembership,
         tabs: [
