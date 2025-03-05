@@ -1,5 +1,13 @@
 <template>
-  <RealmPageEach :pageId></RealmPageEach>
+  <RealmPageEach :pageId>
+    <template #default="{ wrapped, entries, resolver }">
+      <slot
+        :wrapped
+        :entries
+        :resolver
+      ></slot>
+    </template>    
+  </RealmPageEach>
 </template>
 
 <script setup lang="ts">
