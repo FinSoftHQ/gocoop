@@ -827,7 +827,7 @@ export const appModules = defineAppModules({
       signature: {
         entity: data.counterverify,
         post: true,
-        role: 'stepmobilephoto',
+        role: 'scanner',
         steps: steps.stepsverify,
       },
       takephoto: {

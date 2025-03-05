@@ -11,7 +11,7 @@
       @photoTaken="onSave"
     ></FTakePhoto>
 
-    <RealmCardView
+    <!-- <RealmCardView
       :pageId="pageDef.pageId"
       :initial="data"
       :showBackButton="pageDef.hasPrevPage"
@@ -26,7 +26,7 @@
           :resolver
         ></slot>
       </template>
-    </RealmCardView>
+    </RealmCardView> -->
   </div>
 </template>
 

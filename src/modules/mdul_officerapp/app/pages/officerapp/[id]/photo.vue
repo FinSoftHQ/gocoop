@@ -1,5 +1,6 @@
 <template>
-  <RealmPageEach :pageId></RealmPageEach>
+  <RealmPageEach :pageId>
+  </RealmPageEach>
 </template>
 
 <script setup lang="ts">
