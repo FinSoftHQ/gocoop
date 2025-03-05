@@ -27,17 +27,37 @@ const departmentMapping: Record<string, string> = {
   option5: 'รักษาพยาบาลบุคคลในครอบครัว',
 };
 
-const { formatNumber, numberToThaiText,currencyToThaiText, } = useValueFormatters();
+const { formatNumber, numberToThaiText, currencyToThaiText, } = useValueFormatters();
 useAppExtraRolesAndComponents();
 usePdfPrint({
   templatePath: '/loanfast.json',
   basePdfPath: '/loanfast.pdf',
   // blankBasePdfPath: false,
   dataTransformer: (data) => {
+    const totalPayments = computed(() => {
+      const monthlyInterest = (data.amount * 5.59 / 100) / 12;
+      const lastMonthInterest = monthlyInterest;
+      const adjustedMonthlyInterest = (data.amount * 5.59 / 100 - lastMonthInterest) / (12 - 1);
+
+      const interestPayments = Array(12 - 1).fill(adjustedMonthlyInterest);
+      if (interestPayments[0] !== undefined) {
+        interestPayments[0] += lastMonthInterest; // Combine the interest of the 12th month with the 1st month
+      }
+      interestPayments.push(0); // Add a zero for the 12th month interest
+
+      return interestPayments.map((interest, index) => interest + data.amount / 12);
+    });
+
+    const paymentDetails = computed(() => {
+      return totalPayments.value.map((totalPayment, index) => ({
+        month: index + 1,
+        totalPayment
+      }));
+    });
     return {
       ...data,
       writeat: 'สหกรณ์โรงพยาบาลศรีสะเกษ',
-      idmember: data.idmember,    
+      idmember: data.idmember,
       fullname: data.fname + '   ' + data.lname,
       fullname2: data.fname + '   ' + data.lname,
       // fullname3: data.fname + '   ' + data.lname,
@@ -72,6 +92,21 @@ usePdfPrint({
       year10: '2568',
       year11: '2568',
       year12: '2568',
+
+
+      instalment1: formatNumber(totalPayments.value[0]),  
+      instalment2: formatNumber(totalPayments.value[1]),
+      instalment3: formatNumber(totalPayments.value[2]),  
+      instalment4: formatNumber(totalPayments.value[3]),
+      instalment5: formatNumber(totalPayments.value[4]),
+      instalment6: formatNumber(totalPayments.value[5]),
+      instalment7: formatNumber(totalPayments.value[6]),
+      instalment8: formatNumber(totalPayments.value[7]),
+      instalment9: formatNumber(totalPayments.value[8]),
+      instalment10: formatNumber(totalPayments.value[9]),
+      instalment11: formatNumber(totalPayments.value[10]),
+      instalment12: formatNumber(totalPayments.value[11]),
+
 
       amount1: formatNumber(data.amount),
       amount2: formatNumber(data.amount),

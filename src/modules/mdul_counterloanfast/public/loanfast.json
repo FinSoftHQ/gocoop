@@ -952,7 +952,7 @@
         "fontName": "Sarabun"
       },
       {
-        "name": "บาท1",
+        "name": "instalment1",
         "type": "text",
         "content": "5000.",
         "position": {
@@ -977,7 +977,7 @@
         "fontName": "Sarabun"
       },
       {
-        "name": "บาท2",
+        "name": "instalment2",
         "type": "text",
         "content": "5000..",
         "position": {
@@ -1002,7 +1002,7 @@
         "fontName": "Sarabun"
       },
       {
-        "name": "บาท3",
+        "name": "instalment3",
         "type": "text",
         "content": "5000",
         "position": {
@@ -1027,7 +1027,7 @@
         "fontName": "Sarabun"
       },
       {
-        "name": "บาท4",
+        "name": "instalment4",
         "type": "text",
         "content": "5000",
         "position": {
@@ -1052,7 +1052,7 @@
         "fontName": "Sarabun"
       },
       {
-        "name": "บาท5",
+        "name": "instalment5",
         "type": "text",
         "content": "5000",
         "position": {
@@ -1077,7 +1077,7 @@
         "fontName": "Sarabun"
       },
       {
-        "name": "บาท6",
+        "name": "instalment6",
         "type": "text",
         "content": "5000",
         "position": {
@@ -1102,7 +1102,7 @@
         "fontName": "Sarabun"
       },
       {
-        "name": "บาท7",
+        "name": "instalment7",
         "type": "text",
         "content": "5000",
         "position": {
@@ -1127,7 +1127,7 @@
         "fontName": "Sarabun"
       },
       {
-        "name": "บาท",
+        "name": "instalment8",
         "type": "text",
         "content": "5000",
         "position": {
@@ -1152,7 +1152,7 @@
         "fontName": "Sarabun"
       },
       {
-        "name": "บาท9",
+        "name": "instalment9",
         "type": "text",
         "content": "5000..",
         "position": {
@@ -1177,7 +1177,7 @@
         "fontName": "Sarabun"
       },
       {
-        "name": "บาท10",
+        "name": "instalment10",
         "type": "text",
         "content": "5000",
         "position": {
@@ -1202,7 +1202,7 @@
         "fontName": "Sarabun"
       },
       {
-        "name": "บาท11",
+        "name": "instalment11",
         "type": "text",
         "content": "5000",
         "position": {
@@ -1227,7 +1227,7 @@
         "fontName": "Sarabun"
       },
       {
-        "name": "บาท12",
+        "name": "instalment12",
         "type": "text",
         "content": "5000",
         "position": {
