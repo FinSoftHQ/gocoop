@@ -44,11 +44,10 @@ export const choices = defineChoices({
     option4: 'คู่สมรส',
   },
   employmentStates: {
-    option1: 'ข้าราชการ / ลูกจ้างประจำ',
-    option2: 'พนักงานราชการ',
-    option3: 'พนักงานกระทรวง',
-    option4: 'ลูกจ้างเงินบำรุง',
-    option5: 'ข้าราชการบำนาญ',
+    option1: 'ข้าราชการและลูกจ้างประจำ',
+    option2: 'ลูกจ้าง เงินบำรุง และพนักงานกระทรวงสาธารณสุข',
+    option3: 'พนักงานราชการ ลูกจ้างเงินบำรุง (ตามวุฒิ) และพนักงานกระทรวงสาธารณสุข (ตามวุฒิ)',
+    option4: 'เจ้าหน้าที่และลูกจ้างสหกรณ์',
   },
   positionStates: {
     governmentOfficer: 'ข้าราชการและลูกจ้างประจำ',
@@ -219,7 +218,7 @@ export const data = defineEntities({
         label: 'ตำแหน่ง',
         spec: {},
         component: 'select',
-        choices: choices.positionStates,
+        choices: choices.employmentStates,
       },
       {
         model: 'department',
@@ -273,6 +272,12 @@ export const data = defineEntities({
             spec: {},
             component: 'number',
           },
+          {
+            model: 'expense',
+            label: 'ค่าใช้จ่าย',
+            spec: {},
+            component: 'number',
+          },
         ],
       },
       {
@@ -302,7 +307,7 @@ export const data = defineEntities({
             label: 'ตำแหน่ง',
             spec: {},
             component: 'select',
-            choices: choices.positionStates,
+            choices: choices.employmentStates,
           },
           {
             model: 'department',
