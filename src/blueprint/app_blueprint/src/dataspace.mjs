@@ -381,13 +381,7 @@ export const data = defineEntities({
         label: 'วัน/เดือน/ปี เกิด',
         spec: {},
         component: 'date',
-      },
-      {
-        model: 'age',
-        label: 'อายุ',
-        spec: {},
-        component: 'text',
-      },
+      },      
       {
         model: 'idCard',
         label: 'เลขบัตรประชาชน',
