@@ -76,10 +76,10 @@ usePdfPrint({
       birthDateDay: formatDate(data.birthDate),
       birthDateMonth: formatDate(data.birthDate),
       birthDateYear: formatDate(data.birthDate),
-      age1: data.birthDate,
-      age2: data.birthDate,
-      age3: data.birthDate,
-      age4: data.birthDate,
+      age1: formatAge(data.birthDate),
+      age2: formatAge(data.birthDate),
+      age3: formatAge(data.birthDate),
+      age4: formatAge(data.birthDate),
       homeNumber2: data.homeNumber,
       homeNumber3: data.homeNumber,
       homeNumber4: data.homeNumber,
@@ -106,4 +106,8 @@ usePdfPrint({
     };
   },
 });
+const { formatDisplay: formatAge } = useDisplayField({
+  dateFormat: 'age',
+});
+
 </script>
