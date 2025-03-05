@@ -2882,7 +2882,7 @@
         "fontName": "Sarabun"
       },
       {
-        "name": "birthDate",
+        "name": "birthDateDay",
         "type": "text",
         "position": {
           "x": 114.18,
@@ -2907,7 +2907,7 @@
         "fontName": "Sarabun"
       },
       {
-        "name": "เดือนข้อ1",
+        "name": "birthDateMonth",
         "type": "text",
         "position": {
           "x": 136.35,
@@ -2932,7 +2932,7 @@
         "fontName": "Sarabun"
       },
       {
-        "name": "ปีข้อ1",
+        "name": "birthDateYear",
         "type": "text",
         "position": {
           "x": 169.69,

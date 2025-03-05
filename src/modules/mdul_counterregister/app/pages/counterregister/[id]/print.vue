@@ -19,7 +19,7 @@ const positionMapping: Record<string, string> = {
   temporaryEmployeeDuration: 'ลูกจ้างชั่วคราว (ตามระยะเวลา)',
 };
 
-const { formatNumber, numberToThaiText,currencyToThaiText, } = useValueFormatters();
+const { formatNumber, numberToThaiText,currencyToThaiText,formatDate, } = useValueFormatters();
 useAppExtraRolesAndComponents();
 usePdfPrint({
   templatePath: '/register.json',
@@ -47,6 +47,9 @@ usePdfPrint({
       name8: data.name,
       name9: data.name,
       name10: data.name,
+      birthDateDay: formatDate(data.birthDate),
+      birthDateMonth: formatDate(data.birthDate),
+      birthDateYear: formatDate(data.birthDate),
       age2: data.age,
       age3: data.age,
       age4: data.age,
