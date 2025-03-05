@@ -582,22 +582,52 @@ export const appModules = defineAppModules({
 
   // counterloanfast
   counterloanfast: {
-    label: 'Loanfast',
+    label: 'เคาน์เตอร์กู้ฉุกเฉิน',
     dataPath: 'loanfast',
     list: {
-      root: data.loanfast,
+      root: {
+        entity: data.loanfast,
+        tabs: [
+          {
+            label: 'กำลังดำเนินการ',
+            to: { page: 'root' },
+          },
+          {
+            label: 'เสร็จสิ้น',
+            to: { page: 'complete' },
+          },
+        ],
+      },
+      complete: {
+        entity: data.loanfast,
+        actions: [
+          {
+            label: 'ปิดยอด',
+            to: { page: 'closed' },
+          },
+        ],
+        tabs: [
+          {
+            label: 'กำลังดำเนินการ',
+            to: { page: 'root' },
+          },
+          {
+            label: 'เสร็จสิ้น',
+            to: { page: 'complete' },
+          },
+        ],
+      },
       closed: data.loanfast,
-      complete: data.loanfast,
     },
     create: {
       root: {
-        entity: data.counterloanfast,
+        entity: data.loanfast,
         post: true,
         role: 'stepedit',
         steps: steps.rootconfirm,
       },
       confirm: {
-        entity: data.counterloanfast,
+        entity: data.loanfast,
         post: true,
         role: 'stepconfirm',
         steps: steps.rootconfirm,
@@ -605,7 +635,7 @@ export const appModules = defineAppModules({
     },
     each: {
       root: {
-        entity: data.counterloanfast,
+        entity: data.loanfast,
         actions: [
           {
             label: 'ปริ้นเอกสาร',
@@ -613,7 +643,7 @@ export const appModules = defineAppModules({
           },
           {
             label: 'บันทึกเอกสาร',
-            to: { page: 'takephoto' },
+            to: { page: 'scan' },
           },
           {
             label: 'กรอกข้อมูล',
@@ -622,39 +652,38 @@ export const appModules = defineAppModules({
         ],
       },
       edit: {
-        entity: data.counterloanfast,
+        entity: data.loanfast,
         post: true,
         role: 'edit',
       },
       print: {
-        entity: data.counterloanfast,
+        entity: data.loanfast,
         post: true,
         role: 'print',
       },
-      takephoto: {
-        entity: data.counterloanfast,
+      scan: {
+        entity: data.loanfast,
         post: true,
-        role: 'stepscandoc',
+        role: 'scanner',
         steps: steps.stepstakephoto,
       },
       qrcode: {
-        entity: data.counterloanfast,
+        entity: data.loanfast,
         post: true,
         role: 'qrcode',
       },
       fillin: {
-        entity: data.counterloanfast,
+        entity: data.loanfast,
         post: true,
         role: 'edit',
-        subName: 'loanfast',
       },
       result: {
-        entity: data.counterloanfast,
+        entity: data.loanfast,
         role: 'result',
         steps: steps.stepstakephoto,
       },
       close: {
-        entity: data.counterloanfast,
+        entity: data.loanfast,
         role: 'confirm',
       },
     },

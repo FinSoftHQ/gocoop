@@ -304,7 +304,7 @@
       {
         "name": "amounttext1",
         "type": "text",
-        "content": "       ห้าแสนบาททวน",
+        "content": "ห้าแสนบาททวน",
         "position": {
           "x": 135.46,
           "y": 85.14
@@ -329,7 +329,7 @@
       {
         "name": "purpose",
         "type": "text",
-        "content": "                           เพื่อการลงทุน",
+        "content": "เพื่อการลงทุน",
         "position": {
           "x": 57.41,
           "y": 91.05
@@ -379,7 +379,7 @@
       {
         "name": "month3",
         "type": "text",
-        "content": "   มีนาคม",
+        "content": "มีนาคม",
         "position": {
           "x": 69.06,
           "y": 115.83
@@ -404,7 +404,7 @@
       {
         "name": "month2",
         "type": "text",
-        "content": "   กุภาพันธ์",
+        "content": "กุภาพันธ์",
         "position": {
           "x": 69.32,
           "y": 109.49
@@ -429,7 +429,7 @@
       {
         "name": "month4",
         "type": "text",
-        "content": "    เมษายน",
+        "content": "เมษายน",
         "position": {
           "x": 67.73,
           "y": 122.54
