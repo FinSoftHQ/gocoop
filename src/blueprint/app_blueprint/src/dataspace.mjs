@@ -76,7 +76,12 @@ export const data = defineEntities({
       {
         model: 'createdAt',
         label: 'Date Created',
-        spec: v.optional(v.pipe(v.string(), v.regex(/^\d{8}$/, "Invalid format, date should be 'YYYYMMDD'"))),
+        spec: v.optional(
+          v.pipe(
+            v.string(),
+            v.regex(/^\d{8}$/, "Invalid format, date should be 'YYYYMMDD'")
+          )
+        ),
         // spec: v.union([v.optional(v.date()), v.pipe(v.string(), v.transform(dt => new Date(dt)), v.date())]),
         component: 'date',
       },
@@ -92,8 +97,12 @@ export const data = defineEntities({
       {
         name: 'products',
         component: 'list',
-        link2: 'product',
-        look4: 'categoryId',
+        // link2: '/api/fin-app/products',
+        link2: 'products',
+        dataLabel: (data) => `${data.name}`,
+        query: {
+          look4: 'categoryId',
+        },
       },
     ],
   },
@@ -473,6 +482,19 @@ export const data = defineEntities({
         spec: {},
         component: 'number',
       },
+      {
+        model: 'beneficiary',
+        label: 'เพิ่มผู้รับผลประโยชน์',
+        spec: {},
+        component: 'link2multisearch',
+        link: {
+          name: 'member',
+          component: 'appendable',
+          link2: 'member', // { module: 'category', realm: 'list', page: 'root' },
+          dataLabel: (data) => `${data.fname} ${data.lname} ${data.idmember}`,
+          query: (search) => ({ q: search }), // (search) => ({ name: search })
+        },
+      },
     ],
     sub: [
       {
@@ -480,36 +502,17 @@ export const data = defineEntities({
         component: 'entry',
         fields: [
           {
-            model: 'prefix',
-            label: 'คำนำหน้าชื่อ',
+            model: 'categoryId',
+            label: 'เพิ่มผู้รับผลประโยชน์',
             spec: {},
-            component: 'select',
-            choices: choices.prefixStates,
-          },
-          {
-            model: 'fname',
-            label: 'ชื่อ',
-            spec: {},
-            component: 'text',
-          },
-          {
-            model: 'lname',
-            label: 'สกุล',
-            spec: {},
-            component: 'text',
-          },
-          {
-            model: 'phoneNumber',
-            label: 'เบอร์โทร',
-            spec: {},
-            component: 'text',
-          },
-          {
-            model: 'relationship',
-            label: 'ความสัมพันธ์กับสมาชิก',
-            spec: {},
-            component: 'select',
-            choices: choices.relationshipStates,
+            component: 'link2multisearch',
+            link: {
+              name: 'category',
+              component: 'appendable',
+              link2: 'category', // { module: 'category', realm: 'list', page: 'root' },
+              dataLabel: (data) => `${data.name}`, 
+              query: (search) => ({ q: search }), // (search) => ({ name: search })
+            },
           },
         ],
       },
@@ -742,5 +745,40 @@ export const data = defineEntities({
         spec: {},
         component: 'text',
       },]
+  },
+
+  member: {
+    root: [
+      {
+        model: 'fname',
+        label: 'ชื่อ',
+        spec: {},
+        component: 'text',
+      },
+      {
+        model: 'lname',
+        label: 'สกุล',
+        spec: {},
+        component: 'text',
+      },
+      {
+        model: 'idmember',
+        label: 'รหัสสมาชิก',
+        spec: {},
+        component: 'text',
+      },
+    ],
+    links: [
+      {
+        name: 'newmembership',
+        component: 'list',
+        // link2: '/api/fin-app/products',
+        link2: 'newmembership',
+        dataLabel: (data) => `${data.name}`,
+        query: {
+          look4: 'beneficiary',
+        },
+      },
+    ],
   },
 });
