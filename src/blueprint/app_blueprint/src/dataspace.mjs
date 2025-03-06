@@ -221,6 +221,12 @@ export const data = defineEntities({
         choices: choices.employmentStates,
       },
       {
+        model: 'bureau',
+        label: 'หน่วยงาน',
+        spec: {},
+        component: 'text',
+      },
+      {
         model: 'department',
         label: 'สังกัด',
         spec: {},
@@ -252,6 +258,12 @@ export const data = defineEntities({
         spec: {},
         component: 'select',
         choices: choices.purposeStates,
+      },
+      {
+        model: 'createdAt',
+        label: 'Date Created',
+        spec: v.optional(v.pipe(v.string(), v.regex(/^\d{8}$/, "Invalid format, date should be 'YYYYMMDD'"))),
+        component: 'date',
       },
     ],
     sub: [

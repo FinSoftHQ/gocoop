@@ -11,12 +11,10 @@ const pageId = {
 };
 
 const positionMapping: Record<string, string> = {
-  governmentOfficer: 'ข้าราชการและลูกจ้างประจำ',
-  temporaryEmployee: 'ลูกจ้างชั่วคราว',
-  healthMinistryEmployee: 'พนักงานกระทรวงสาธารณสุข',
-  cooperativeStaff: 'เจ้าหน้าที่และลูกจ้างสหกรณ์',
-  permanentEmployee: 'ลูกจ้างประจำ',
-  temporaryEmployeeDuration: 'ลูกจ้างชั่วคราว (ตามระยะเวลา)',
+  option1: 'ข้าราชการและลูกจ้างประจำ',
+  option2: 'ลูกจ้าง เงินบำรุง และพนักงานกระทรวงสาธารณสุข',
+  option3: 'พนักงานราชการ ลูกจ้างเงินบำรุง (ตามวุฒิ) และพนักงานกระทรวงสาธารณสุข (ตามวุฒิ)',
+  option4: 'เจ้าหน้าที่และลูกจ้างสหกรณ์',
 };
 
 const departmentMapping: Record<string, string> = {
@@ -54,6 +52,29 @@ usePdfPrint({
         totalPayment
       }));
     });
+
+    const monthNames = [
+      'มกราคม', 'กุมภาพันธ์', 'มีนาคม', 'เมษายน', 'พฤษภาคม', 'มิถุนายน',
+      'กรกฎาคม', 'สิงหาคม', 'กันยายน', 'ตุลาคม', 'พฤศจิกายน', 'ธันวาคม'
+    ];
+
+    const createdAtDate = new Date(
+      parseInt(data.createdAt.substring(0, 4), 10),
+      parseInt(data.createdAt.substring(4, 6), 10) - 1,
+      parseInt(data.createdAt.substring(6, 8), 10)
+    );
+
+    const months = Array.from({ length: 12 }, (_, i) => {
+      const monthIndex = (createdAtDate.getMonth() + i) % 12;
+      return monthNames[monthIndex];
+    });
+
+    const years = Array.from({ length: 12 }, (_, i) => {
+      const year = createdAtDate.getFullYear() + Math.floor((createdAtDate.getMonth() + i) / 12);
+      return (year + 543).toString(); // Convert to Thai Buddhist calendar year
+    });
+
+    console.log('years', years);
     return {
       ...data,
       writeat: 'สหกรณ์โรงพยาบาลศรีสะเกษ',
@@ -67,36 +88,36 @@ usePdfPrint({
       position: positionMapping[data.position] || data.position,
       department: data.department,
       purpose: departmentMapping[data.purpose] || data.purpose,
-      month1: 'มกราคม',
-      month2: 'กุมภาพันธ์',
-      month3: 'มีนาคม',
-      month4: 'เมษายน',
-      month5: 'พฤษภาคม',
-      month6: 'มิถุนายน',
-      month7: 'กรกฎาคม',
-      month8: 'สิงหาคม',
-      month9: 'กันยายน',
-      month10: 'ตุลาคม',
-      month11: 'พฤศจิกายน',
-      month12: 'ธันวาคม',
+      month1: months[0],
+      month2: months[1],
+      month3: months[2],
+      month4: months[3],
+      month5: months[4],
+      month6: months[5],
+      month7: months[6],
+      month8: months[7],
+      month9: months[8],
+      month10: months[9],
+      month11: months[10],
+      month12: months[11],
 
-      year1: '2568',
-      year2: '2568',
-      year3: '2568',
-      year4: '2568',
-      year5: '2568',
-      year6: '2568',
-      year7: '2568',
-      year8: '2568',
-      year9: '2568',
-      year10: '2568',
-      year11: '2568',
-      year12: '2568',
+      year1: years[0],
+      year2: years[1],
+      year3: years[2],
+      year4: years[3],
+      year5: years[4],
+      year6: years[5],
+      year7: years[6],
+      year8: years[7],
+      year9: years[8],
+      year10: years[9],
+      year11: years[10],
+      year12: years[11],
 
 
-      instalment1: formatNumber(totalPayments.value[0]),  
+      instalment1: formatNumber(totalPayments.value[0]),
       instalment2: formatNumber(totalPayments.value[1]),
-      instalment3: formatNumber(totalPayments.value[2]),  
+      instalment3: formatNumber(totalPayments.value[2]),
       instalment4: formatNumber(totalPayments.value[3]),
       instalment5: formatNumber(totalPayments.value[4]),
       instalment6: formatNumber(totalPayments.value[5]),
