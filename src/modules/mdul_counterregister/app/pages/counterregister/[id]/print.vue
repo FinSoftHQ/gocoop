@@ -29,13 +29,31 @@ const prefixStates: Record<string, string> = {
   option8: 'แพทย์หญิง',
 };
 
-const { formatNumber, numberToThaiText,currencyToThaiText,formatDate, } = useValueFormatters();
+const { formatNumber, numberToThaiText, currencyToThaiText, formatDate, } = useValueFormatters();
 useAppExtraRolesAndComponents();
 usePdfPrint({
   templatePath: '/register.json',
   basePdfPath: '/register2.pdf',
   // blankBasePdfPath: false,
   dataTransformer: (data) => {
+
+    const beneficiaryInfo = computed(() => {
+      const label = data.beneficiary[0].label;
+      const regex = /^(.*?)\s+(.*?)\s+(\d+)$/;
+      const match = label.match(regex);
+      if (match) {
+        return {
+          beneficiaryname: match[1],
+          relationship: match[2],
+          beneficiaryphone: match[3],
+        };
+      }
+      return {
+        beneficiaryname: '',
+        relationship: '',
+        beneficiaryphone: '',
+      };
+    });
     return {
       ...data,
       // month5: data.Idmember,
@@ -63,7 +81,7 @@ usePdfPrint({
       datetimeDay5: data.datetime,
       datetimeMonth5: data.datetime,
       datetimeYear5: data.datetime,
-      name:prefixStates[data.prefix] + data.name + '   ' + data.lname,
+      name: prefixStates[data.prefix] + data.name + '   ' + data.lname,
       nameSing1: prefixStates[data.prefix] + data.name + '   ' + data.lname,
       name2: prefixStates[data.prefix] + data.name + '   ' + data.lname,
       name4: prefixStates[data.prefix] + data.name + '   ' + data.lname,
@@ -103,6 +121,9 @@ usePdfPrint({
       phoneNumber2: data.phoneNumber,
       phoneNumber3: data.phoneNumber,
       phoneNumber4: data.phoneNumber,
+      beneficiaries: beneficiaryInfo.value.beneficiaryname,
+      relationship:  beneficiaryInfo.value.relationship,
+      beneficiariesphone:  beneficiaryInfo.value.beneficiaryphone,
     };
   },
 });

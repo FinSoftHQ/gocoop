@@ -65,12 +65,12 @@ usePdfPrint({
     );
 
     const months = Array.from({ length: 12 }, (_, i) => {
-      const monthIndex = (createdAtDate.getMonth() + i) % 12;
+      const monthIndex = (createdAtDate.getMonth() + i + 1) % 12 ;
       return monthNames[monthIndex];
     });
 
     const years = Array.from({ length: 12 }, (_, i) => {
-      const year = createdAtDate.getFullYear() + Math.floor((createdAtDate.getMonth() + i) / 12);
+      const year = createdAtDate.getFullYear() + Math.floor((createdAtDate.getMonth() + i + 1) / 12);
       return (year + 543).toString(); // Convert to Thai Buddhist calendar year
     });
 

@@ -4623,7 +4623,7 @@
         "fontName": "Sarabun"
       },
       {
-        "name": "ผู้รับผลประโยชน์จริง12",
+        "name": "beneficiaries",
         "type": "text",
         "position": {
           "x": 85.76,
@@ -4648,7 +4648,7 @@
         "fontName": "Sarabun"
       },
       {
-        "name": "เกี่ยวข้องเป็น12",
+        "name": "relationship",
         "type": "text",
         "position": {
           "x": 107.14,
@@ -4673,7 +4673,7 @@
         "fontName": "Sarabun"
       },
       {
-        "name": "เบอร์โทร12",
+        "name": "beneficiariesphone",
         "type": "text",
         "position": {
           "x": 101.53,
