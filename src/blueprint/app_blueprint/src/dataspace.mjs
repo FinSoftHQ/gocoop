@@ -503,7 +503,7 @@ export const data = defineEntities({
           name: 'member',
           component: 'appendable',
           link2: 'member', // { module: 'category', realm: 'list', page: 'root' },
-          dataLabel: (data) => `${data.fname} ${data.lname} ${data.idmember}`,
+          dataLabel: (data) => `${data.fname} ${data.lname} ${data.relevant} ${data.phone}`,
           query: (search) => ({ q: search }), // (search) => ({ name: search })
         },
       },
@@ -774,8 +774,14 @@ export const data = defineEntities({
         component: 'text',
       },
       {
-        model: 'idmember',
-        label: 'รหัสสมาชิก',
+        model: 'relevant',
+        label: 'เกี่ยวข้องเป็น',
+        spec: {},
+        component: 'text',
+      },
+      {
+        model: 'phone',
+        label: 'เบอร์โทร',
         spec: {},
         component: 'text',
       },

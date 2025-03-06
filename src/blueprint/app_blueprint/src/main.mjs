@@ -786,8 +786,7 @@ export const appModules = defineAppModules({
       edit: {
         entity: data.newmembership,
         post: true,
-        role: 'stepedit',
-        steps: steps.stepsfillin,
+        role: 'edit',
       },
       takephoto: {
         entity: data.newmembership,
@@ -823,7 +822,7 @@ export const appModules = defineAppModules({
         entity: data.newmembership,
         post: true,
         role: 'stepconfirm',
-        steps: steps.stepsfillin,
+        steps: steps.newmembershipconfirm,
       },
       close: {
         entity: data.newmembership,
