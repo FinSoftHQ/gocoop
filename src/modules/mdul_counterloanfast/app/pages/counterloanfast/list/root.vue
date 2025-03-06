@@ -52,6 +52,7 @@ const columns = [
   }, {
     key: 'amount',
     label: 'ยอดที่ต้องการกู้ (บาท)',
+    sortable: true
   },
 ]
 
