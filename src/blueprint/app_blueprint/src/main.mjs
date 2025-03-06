@@ -19,6 +19,7 @@ export const data = {
   accTransactions: _data.accTransactions,
   deduction: _data.deduction,
   countercheque: _data.countercheque,
+  member: _data.member,
 };
 
 const steps = defineSteps({
@@ -1214,6 +1215,43 @@ export const appModules = defineAppModules({
       close: {
         entity: data.loanfast,
         post: true,
+        role: 'confirm',
+      },
+    },
+  },
+
+  member: {
+    label: 'Member',
+    list: {
+      root: data.member,
+      closed: data.member,
+    },
+    create: {
+      root: {
+        entity: data.member,
+        post: true,
+        role: 'stepedit',
+        steps: steps.rootconfirm,
+      },
+      confirm: {
+        entity: data.member,
+        post: true,
+        role: 'stepconfirm',
+        steps: steps.rootconfirm,
+      },
+    },
+    each: {
+      root: {
+        entity: data.member,
+        actions: ['Edit'],
+      },
+      edit: {
+        entity: data.member,
+        post: true,
+        role: 'edit',
+      },
+      close: {
+        entity: data.member,
         role: 'confirm',
       },
     },
