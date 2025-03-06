@@ -37,8 +37,8 @@ const columns = [
     label: 'ลำดับ',
   },
   {
-    key: 'datetime',
-    label: 'เขียนเมื่อวันที่',
+    key: 'idmember',
+    label: 'รหัสสมาชิก',
     sortable: true
   },
   {

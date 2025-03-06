@@ -33,9 +33,10 @@ const columns = [
     label: 'ลำดับ',
   },
   {
-    key: 'createdAt',
-    label: 'เขียนเมื่อวันที่',
-    sortable: true
+    model: 'idmember',
+    label: 'รหัสสมาชิก',
+    spec: {},
+    component: 'text',
   },
   {
     key: 'fullname',

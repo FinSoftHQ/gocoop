@@ -620,6 +620,22 @@ export const appModules = defineAppModules({
       },
       closed: {
         entity: data.loanfast,
+        tabs: [
+          {
+            label: 'รายการทั้งหมด',
+            to: { page: 'closed' },
+          },
+        ],
+        actions: [
+          {
+            label: 'ยืนยันการปิดยอด',
+            to: { page: 'root' },
+          },
+          {
+            label: 'ยกเลิกการปิดยอด',
+            to: { page: 'root' },
+          },
+        ],
         role: 'closed',
       },
     },
@@ -1152,7 +1168,7 @@ export const appModules = defineAppModules({
       },
       completed: {
         // ปิดยอด
-        entity: data.loanfast,
+        entity: data.loanfast,       
         tabs: [
           {
             label: 'รายการคำอนุมัติ',
@@ -1170,7 +1186,7 @@ export const appModules = defineAppModules({
         actions: [
           {
             label: 'ปริ้นรายงาน',
-            to: { page: 'report' },
+            to: { page: 'approve' },
           },
           {
             label: 'ส่งเรื่องให้บัญชี',
@@ -1191,9 +1207,24 @@ export const appModules = defineAppModules({
       },
       report: {
         // ปริ้น รายงานการเงิน
-        entity: data.loanfast,
+        entity: data.loanfast,  
+        tabs: [
+          {
+            label: 'รายการทั้งหมด',
+            to: { page: 'report' },
+          },
+        ],
+        actions: [
+          {
+            label: 'ยืนยันการปิดยอด',
+            to: { page: 'root' },
+          },
+          {
+            label: 'ยกเลิกการปิดยอด',
+            to: { page: 'root' },
+          },
+        ],      
         post: true,
-        role: 'print',
       },
     },
     create: {
