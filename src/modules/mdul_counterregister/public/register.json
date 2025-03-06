@@ -2635,7 +2635,7 @@
         "name": "name",
         "type": "text",
         "position": {
-          "x": 67.55,
+          "x": 75.55,
           "y": 96.41
         },
         "required": false,
@@ -2986,7 +2986,7 @@
         "type": "text",
         "position": {
           "x": 142.16,
-          "y": 140.75
+          "y": 141.50
         },
         "required": false,
         "content": "983-9-88310-1",
@@ -3314,7 +3314,7 @@
         "name": "name2",
         "type": "text",
         "position": {
-          "x": 65.78,
+          "x": 80.78,
           "y": 78.92
         },
         "required": false,
@@ -3440,7 +3440,7 @@
         "type": "text",
         "position": {
           "x": 119.91,
-          "y": 85.69
+          "y": 86.69
         },
         "required": false,
         "content": "ครุคระ",
@@ -3564,7 +3564,7 @@
         "name": "jobPosition2",
         "type": "text",
         "position": {
-          "x": 102.03,
+          "x": 128.03,
           "y": 101.66
         },
         "required": false,
@@ -3718,7 +3718,7 @@
         "name": "name5",
         "type": "text",
         "position": {
-          "x": 65.2,
+          "x": 80.2,
           "y": 78.07
         },
         "required": false,
@@ -3844,7 +3844,7 @@
         "type": "text",
         "position": {
           "x": 118.53,
-          "y": 85.37
+          "y": 86
         },
         "required": false,
         "content": "ครุคระ",
@@ -3968,7 +3968,7 @@
         "name": "jobPosition3",
         "type": "text",
         "position": {
-          "x": 100.92,
+          "x": 128.92,
           "y": 100.28
         },
         "required": false,
@@ -4122,7 +4122,7 @@
         "name": "name7",
         "type": "text",
         "position": {
-          "x": 64.35,
+          "x": 80.35,
           "y": 78.28
         },
         "required": false,
@@ -4372,8 +4372,8 @@
         "name": "jobPosition4",
         "type": "text",
         "position": {
-          "x": 101.66,
-          "y": 100.75
+          "x": 128.66,
+          "y": 102
         },
         "required": false,
         "content": "ประธานบริษัท",
@@ -4526,7 +4526,7 @@
         "name": "name9",
         "type": "text",
         "position": {
-          "x": 67.47,
+          "x": 80.47,
           "y": 95.16
         },
         "required": false,
@@ -4551,7 +4551,7 @@
         "name": "jobPosition5",
         "type": "text",
         "position": {
-          "x": 106.04,
+          "x": 125.04,
           "y": 110.19
         },
         "required": false,
