@@ -386,7 +386,7 @@ export const data = defineEntities({
         choices: choices.prefixStates,
       },
       {
-        model: 'name',
+        model: 'fname',
         label: 'ชื่อ',
         spec: {},
         component: 'text',
@@ -648,7 +648,7 @@ export const data = defineEntities({
   counterregister: {
     root: [
       {
-        model: 'name',
+        model: 'fname',
         label: 'Name',
         spec: {},
         component: 'text',
