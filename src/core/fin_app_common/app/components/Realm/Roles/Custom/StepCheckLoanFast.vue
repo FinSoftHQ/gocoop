@@ -12,11 +12,11 @@
           <p class="flex justify-center text-md font-bold text-gray-500 dark:text-gray-400 dark:text-white">
               คุณสามารถกู้เงินได้สูงสุด
           </p>
-          <div class="flex justify-center">
-              <p class=" text-4xl font-bold text-green-600 dark:text-white mt-5">
+          <div class="flex justify-center mt-5">
+              <p class="text-2xl sm:text-4xl font-bold text-green-600 dark:text-white ">
                   {{ resultMessage }}
               </p>
-              <p class=" text-md font-bold text-gray-500 dark:text-gray-400 dark:text-white ml-2 mt-9">
+              <p class="text-md font-bold text-gray-500 dark:text-gray-400 dark:text-white ml-2 mt-2 sm:mt-4">
                   บาท
               </p>
           </div>
