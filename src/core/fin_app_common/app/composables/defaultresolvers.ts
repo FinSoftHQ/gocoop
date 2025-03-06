@@ -21,6 +21,8 @@ import FieldViewTextarea from '../components/Field/View/Textarea.vue';
 import FieldViewDate from '../components/Field/View/Date.vue';
 import FieldViewToggle from '../components/Field/View/Toggle.vue';
 import FieldViewImage from '../components/Field/View/Image.vue';
+import XImgColx from '../components/X/ImgColx.vue';
+import ImgColx from '../components/X/ImgColx.vue';
 
 const defaultEditResolvers = createComponentResolver(
   {
@@ -40,6 +42,7 @@ const defaultEditResolvers = createComponentResolver(
     qr: FieldInputText,
     image: FieldInputText,
     webprint: FieldInputText,
+    ImgColx: ImgColx,    
   },
   (_) => FieldInputText
 );
@@ -61,6 +64,8 @@ const defaultViewResolvers = createComponentResolver(
     toggle: FieldViewToggle,
     qr: FieldViewQrCode,
     image: FieldViewImage,
+    webprint: FieldViewText,
+    ImgColx: XImgColx,
   },
   (_) => FieldViewText
 );

@@ -773,13 +773,13 @@ export const appModules = defineAppModules({
           //   to: { page: 'takephoto' },
           // },
           {
-            label: 'กรอกข้อมูล',
-            to: { page: 'edit' },
-          },
-          {
             label: 'ปริ้นเอกสาร',
             to: { page: 'print' },
           },
+          {
+            label: 'กรอกข้อมูล',
+            to: { page: 'edit' },
+          }
         ],
       },
       edit: {
@@ -856,6 +856,7 @@ export const appModules = defineAppModules({
     each: {
       root: {
         entity: data.counterverify,
+        component: 'ImgColx',
         actions: [
           {
             label: 'ยืนยันตัวตน',
