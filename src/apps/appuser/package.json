@@ -13,6 +13,10 @@
   "dependencies": {
     "@pinia/nuxt": "catalog:",
     "fin-ready": "workspace:^",
+    "mdul-lineoa": "workspace:^",
+    "mdul-loanfast": "workspace:^",
+    "mdul-member": "workspace:^",
+    "mdul-newmembership": "workspace:^",
     "nuxt": "catalog:",
     "pinia": "catalog:",
     "vue": "catalog:",
