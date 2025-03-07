@@ -8,7 +8,7 @@ export default defineNuxtConfig({
   experimental: {
     inlineRouteRules: true,
   },
-  extends: ['fin-ready'],
+  extends: ['fin-ready', 'mdul-lineoa', 'mdul-loanfast', 'mdul-member', 'mdul-newmembership'],
 
   runtimeConfig: {
     // apiServer: {
