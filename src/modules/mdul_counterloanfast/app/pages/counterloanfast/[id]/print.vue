@@ -25,6 +25,16 @@ const departmentMapping: Record<string, string> = {
   option5: 'รักษาพยาบาลบุคคลในครอบครัว',
 };
 
+const prefixMapping: Record<string, string> = {
+  option1: 'นาย',
+  option2: 'นาง',
+  option3: 'นางสาว',
+  option4: 'เด็กชาย',
+  option5: 'เด็กหญิง',
+  option6: 'ดอกเตอร์',
+  option7: 'แพทย์ชาย',
+  option8: 'แพทย์หญิง',
+};
 const { formatNumber, numberToThaiText, currencyToThaiText, } = useValueFormatters();
 useAppExtraRolesAndComponents();
 usePdfPrint({
@@ -79,14 +89,14 @@ usePdfPrint({
       ...data,
       writeat: 'สหกรณ์โรงพยาบาลศรีสะเกษ',
       idmember: data.idmember,
-      fullname: data.fname + '   ' + data.lname,
-      fullname2: data.fname + '   ' + data.lname,
+      fullname:  prefixMapping[data.prefix] + ' ' + data.fname + '   ' + data.lname,
+      fullname2:  prefixMapping[data.prefix] + ' ' + data.fname + '   ' + data.lname,
       // fullname3: data.fname + '   ' + data.lname,
       // fullname4: data.fname + '   ' + data.lname,
       fullname5: data.fname + '   ' + data.lname,
       // position: data.position ,
       position: positionMapping[data.position] || data.position,
-      department: data.department,
+      department:  prefixMapping[data.prefix] + ' ' + data.department,
       purpose: departmentMapping[data.purpose] || data.purpose,
       month1: months[0],
       month2: months[1],
