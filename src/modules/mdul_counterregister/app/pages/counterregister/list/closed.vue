@@ -36,11 +36,11 @@ const columns = [
     key: 'no',
     label: 'ลำดับ',
   },
-  {
-    key: 'idmember',
-    label: 'รหัสสมาชิก',
-    sortable: true
-  },
+  // {
+  //   key: 'idmember',
+  //   label: 'รหัสสมาชิก',
+  //   sortable: true
+  // },
   {
     key: 'fullname',
     label: 'ชื่อ-สกุล',
