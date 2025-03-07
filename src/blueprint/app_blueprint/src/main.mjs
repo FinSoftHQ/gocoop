@@ -320,14 +320,14 @@ export const appModules = defineAppModules({
             to: { page: 'qrverify' },
             icon: 'i-mdi-account-lock-outline',
           },
-          // {
-          //   title: 'สมัครสมาชิก',
-          //   to: { module: 'newmembership', realm: 'create', page: 'qrcode' },
-          //   icon: 'i-mdi-cash-fast',
-          // },
+          {
+            title: 'สมัครสมาชิก',
+            to: { module: 'newmembership', realm: 'create', page: 'root' },
+            icon: 'i-mdi-cash-fast',
+          },
           {
             title: 'กู้ฉุกเฉิน',
-            // to: { module: 'loanfast', realm: 'create', page: 'root' },
+            to: { module: 'loanfast', realm: 'create', page: 'root' },
             icon: 'i-mdi-cash-fast',
           },
         ],
