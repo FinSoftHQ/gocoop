@@ -32,12 +32,12 @@ const columns = [
     key: 'no',
     label: 'ลำดับ',
   },
-  {
-    model: 'idmember',
-    label: 'รหัสสมาชิก',
-    spec: {},
-    component: 'text',
-  },
+  // {
+  //   model: 'idmember',
+  //   label: 'รหัสสมาชิก',
+  //   spec: {},
+  //   component: 'text',
+  // },
   {
     key: 'fullname',
     label: 'ชื่อ-สกุล',
