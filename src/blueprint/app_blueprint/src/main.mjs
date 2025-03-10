@@ -1224,6 +1224,20 @@ export const appModules = defineAppModules({
         // โอนเงิน
         entity: data.loanfast,
         post: true,
+        tabs: [
+ 
+        ],
+        actions: [
+          {
+            label: 'QRCode โอนเงิน',
+            to: { page: 'qrcode' },
+          },
+        ],
+      },
+      qrcode: {
+        // Qr Code
+        entity: data.loanfast,
+        post: true,
       },
       approve: {
         // ปริ้นเอกสารใบประหน้า
