@@ -1119,12 +1119,38 @@ export const appModules = defineAppModules({
     dataPath: 'loanfast',
     list: {
       root: {
-        // คำอนุมัติ
+        // เมนู
         entity: data.loanfast,
+        role: 'menu',
+        actions: [
+          {
+            title: 'กู้ฉุกเฉิน',
+            to: { page: 'waitinglist' },
+            icon: 'i-mdi-qrcode',
+          },
+          {
+            title: 'สมาชิกใหม่รอตรวจสอบเงินเดือน',
+            icon: 'i-mdi-account-lock-outline',
+          },             
+          {
+            title: 'โอนเงิน',
+            to: { page: 'active' },
+            icon: 'i-mdi-account-lock-outline',
+          },           
+          {
+            title: 'ส่งเรื่องให้บัญชี / ปิดเคาเดอร์',
+            to: { page: 'completed' },
+            icon: 'i-mdi-account-lock-outline',
+          },                         
+        ]       
+      },
+      waitinglist: {
+        // คำอนุมัติ
+        entity: data.loanfast,       
         tabs: [
           {
             label: 'รายการคำอนุมัติ',
-            to: { page: 'root' },
+            to: { page: 'waitinglist' },
           },
           {
             label: 'รายการเตรียมจ่ายเงิน',
@@ -1140,7 +1166,7 @@ export const appModules = defineAppModules({
             label: 'รายงานการเงิน',
             to: { page: 'approve' },
           },
-        ],
+        ]
       },
       active: {
         // ทำรายการ
@@ -1148,7 +1174,7 @@ export const appModules = defineAppModules({
         tabs: [
           {
             label: 'รายการคำอนุมัติ',
-            to: { page: 'root' },
+            to: { page: 'waitinglist' },
           },
           {
             label: 'รายการเตรียมจ่ายเงิน',
@@ -1172,7 +1198,7 @@ export const appModules = defineAppModules({
         tabs: [
           {
             label: 'รายการคำอนุมัติ',
-            to: { page: 'root' },
+            to: { page: 'waitinglist' },
           },
           {
             label: 'รายการเตรียมจ่ายเงิน',
