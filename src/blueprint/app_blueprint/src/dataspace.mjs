@@ -319,6 +319,13 @@ export const data = defineEntities({
             component: 'text',
           },
           {
+            model: 'prefix',
+            label: 'คำนำหน้าชื่อ',
+            spec: {},
+            component: 'select',
+            choices: choices.prefixStates,
+          },
+          {
             model: 'fname',
             label: 'ชื่อ',
             spec: {},
@@ -336,6 +343,12 @@ export const data = defineEntities({
             spec: {},
             component: 'select',
             choices: choices.employmentStates,
+          },
+          {
+            model: 'bureau',
+            label: 'หน่วยงาน',
+            spec: {},
+            component: 'text',
           },
           {
             model: 'department',
@@ -370,7 +383,12 @@ export const data = defineEntities({
             component: 'select',
             choices: choices.purposeStates,
           },
-          
+          {
+            model: 'createdAt',
+            label: 'Date Created',
+            spec: v.optional(v.pipe(v.string(), v.regex(/^\d{8}$/, "Invalid format, date should be 'YYYYMMDD'"))),
+            component: 'date',
+          },
         ],
       },
     ],
@@ -618,6 +636,12 @@ export const data = defineEntities({
         component: 'select',
         choices: choices.purposeStates,
       },        
+      {
+        model: 'createdAt',
+        label: 'Date Created',
+        spec: v.optional(v.pipe(v.string(), v.regex(/^\d{8}$/, "Invalid format, date should be 'YYYYMMDD'"))),
+        component: 'date',
+      },
     ],
     sub: [
       {
