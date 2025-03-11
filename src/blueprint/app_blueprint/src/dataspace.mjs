@@ -397,12 +397,7 @@ export const data = defineEntities({
   // newmembership
   newmembership: {
     root: [
-      {
-        model: 'datetime',
-        label: 'เขียนเมื่อวันที่',
-        spec: {},
-        component: 'date',
-      },
+      
       {
         model: 'prefix',
         label: 'คำนำหน้าชื่อ',
@@ -531,6 +526,12 @@ export const data = defineEntities({
           dataLabel: (data) => `${data.fname} ${data.lname} ${data.relevant} ${data.phone}`,
           query: (search) => ({ q: search }), // (search) => ({ name: search })
         },
+      },
+      {
+        model: 'createdAt',
+        label: 'เขียนเมื่อวันที่',
+        spec: {},
+        component: 'date',
       },
     ],
     sub: [
