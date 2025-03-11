@@ -28,10 +28,10 @@ const pageDef = usePageDefinition(pageId);
 const pageFunctions = usePageFunctions(pageDef);
 
 const columns = [
-  {
-    key: 'no',
-    label: 'ลำดับ',
-  },  
+  // {
+  //   key: 'no',
+  //   label: 'ลำดับ',
+  // },  
   {
     key: 'idmember',
     label: 'รหัสสมาชิก',

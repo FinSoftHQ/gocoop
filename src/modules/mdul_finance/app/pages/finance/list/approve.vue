@@ -126,10 +126,10 @@ const pageDef = usePageDefinition(pageId);
 const pageFunctions = usePageFunctions(pageDef);
 
 const columns = [
-  {
-    key: 'no',
-    label: 'ที่',
-  },
+  // {
+  //   key: 'no',
+  //   label: 'ที่',
+  // },
   {
     key: 'idmember',
     label: 'เลขสมาชิก',
