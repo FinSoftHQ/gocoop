@@ -1938,7 +1938,7 @@
         "fontName": "Sarabun"
       },
       {
-        "name": "วันที่",
+        "name": "createday2",
         "type": "text",
         "content": "31",
         "position": {
@@ -1988,12 +1988,12 @@
         "fontName": "Sarabun"
       },
       {
-        "name": "เดือน1",
+        "name": "createmounth2",
         "type": "text",
         "content": "ม.ค.",
         "position": {
           "x": 141.71,
-          "y": 236.76
+          "y": 237.61
         },
         "width": 12.72,
         "height": 10,
@@ -2013,12 +2013,12 @@
         "fontName": "Sarabun"
       },
       {
-        "name": "พศ1",
+        "name": "createyear2",
         "type": "text",
         "content": "2568",
         "position": {
           "x": 154.62,
-          "y": 237.5
+          "y": 237.61
         },
         "width": 12.72,
         "height": 10,
