@@ -61,7 +61,7 @@
         </template>
         <template #amount-data="{ row, column }">
           <div class="text-right">
-            {{ row.amount }}
+            {{ formatNumber(row.amount) }}
           </div>
         </template>
         <template #stockValue-data="{ row, column }">
@@ -86,7 +86,7 @@
         </template>
         <template #balance-data="{ row, column }">
           <div class="text-right">
-            {{ row.balance }}
+            {{ formatNumber(row.amount) }}
           </div>
         </template>
         <template #bankAccount-data="{ row, column }">
@@ -96,16 +96,16 @@
         </template>
        
       </EntityTable>
-      <div class="flex justify-between w-full px-4">
+      <div class="flex justify-between w-full px-4 mt-4">
         <p class="font-normal text-gray-900 dark:text-white">
-          รวมหน่วย :  
+            วงเงินกู้รวม : {{ formatNumber(wrapped.data.reduce((total, row) => total + row.amount, 0)) }} บาท
         </p>
         <p class="font-normal text-gray-900 dark:text-white">
         </p>
       </div>
       <div class="flex justify-between w-full px-4">
         <p class="font-normal text-gray-900 dark:text-white">
-          ยอดรวมทั้งสิ้น : {{ data }}
+          คงเหลือรับรวม : {{ formatNumber(wrapped.data.reduce((total, row) => total + row.amount, 0)) }} บาท
         </p>
         <p class="font-normal text-gray-900 dark:text-white">
         </p>
@@ -124,7 +124,7 @@ const pageId = {
 
 const pageDef = usePageDefinition(pageId);
 const pageFunctions = usePageFunctions(pageDef);
-
+const { formatNumber, numberToThaiText, currencyToThaiText, } = useValueFormatters();
 const columns = [
   // {
   //   key: 'no',
