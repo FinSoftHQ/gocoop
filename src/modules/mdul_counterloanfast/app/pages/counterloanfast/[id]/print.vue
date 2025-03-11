@@ -74,6 +74,10 @@ usePdfPrint({
       parseInt(data.createdAt.substring(6, 8), 10)
     );
 
+    const createdAtDay = createdAtDate.getDate();
+    const createdAtMonth = monthNames[createdAtDate.getMonth()];
+    const createdAtYear = (createdAtDate.getFullYear() + 543).toString();
+
     const months = Array.from({ length: 12 }, (_, i) => {
       const monthIndex = (createdAtDate.getMonth() + i + 1) % 12 ;
       return monthNames[monthIndex];
@@ -81,22 +85,22 @@ usePdfPrint({
 
     const years = Array.from({ length: 12 }, (_, i) => {
       const year = createdAtDate.getFullYear() + Math.floor((createdAtDate.getMonth() + i + 1) / 12);
-      return (year + 543).toString(); // Convert to Thai Buddhist calendar year
+      return (year + 543).toString(); 
     });
 
-    console.log('years', years);
+    console.log(createdAtDay, createdAtMonth, createdAtYear);
     return {
       ...data,
       writeat: 'สหกรณ์โรงพยาบาลศรีสะเกษ',
-      idmember: data.idmember,
-      fullname:  prefixMapping[data.prefix] + ' ' + data.fname + '   ' + data.lname,
-      fullname2:  prefixMapping[data.prefix] + ' ' + data.fname + '   ' + data.lname,
-      // fullname3: data.fname + '   ' + data.lname,
-      // fullname4: data.fname + '   ' + data.lname,
-      fullname5: data.fname + '   ' + data.lname,
-      // position: data.position ,
+      createday: '1',
+      createmounth: 'มกราคม',
+      createyear: '2564',
+      idmember: '',
+      fullname: prefixMapping[data.prefix]  + data.fname + '   ' + data.lname,
+      fullname2: prefixMapping[data.prefix]  + data.fname + '   ' + data.lname,
+      fullname5: prefixMapping[data.prefix]  + data.fname + '   ' + data.lname,
       position: positionMapping[data.position] || data.position,
-      department:  prefixMapping[data.prefix] + ' ' + data.department,
+      department:  data.department,
       purpose: departmentMapping[data.purpose] || data.purpose,
       month1: months[0],
       month2: months[1],
@@ -142,8 +146,8 @@ usePdfPrint({
       amount1: formatNumber(data.amount),
       amount2: formatNumber(data.amount),
       amount3: formatNumber(data.amount),
-      amounttext1: numberToThaiText(data.amount),
-      amounttext2: numberToThaiText(data.amount),
+      amounttext1: numberToThaiText(data.amount) + 'บาทถ้วน',
+      amounttext2: numberToThaiText(data.amount) + 'บาทถ้วน',
       salary: formatNumber(data.salary),
       // monthlyIncome: 'รายได้รายเดือน',
       // principalLoan:  'ต้นเงินกู้สามัญ',

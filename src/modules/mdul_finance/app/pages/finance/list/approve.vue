@@ -94,17 +94,18 @@
             {{ row.bankAccount }}
           </div>
         </template>
+       
       </EntityTable>
       <div class="flex justify-between w-full px-4">
         <p class="font-normal text-gray-900 dark:text-white">
-          รวมหน่วย :
+          รวมหน่วย :  
         </p>
         <p class="font-normal text-gray-900 dark:text-white">
         </p>
       </div>
       <div class="flex justify-between w-full px-4">
         <p class="font-normal text-gray-900 dark:text-white">
-          ยอดรวมทั้งสิ้น :
+          ยอดรวมทั้งสิ้น : {{ data }}
         </p>
         <p class="font-normal text-gray-900 dark:text-white">
         </p>
