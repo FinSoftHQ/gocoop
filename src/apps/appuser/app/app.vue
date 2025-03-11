@@ -18,15 +18,18 @@
 const { data: navigation } = await useAsyncData('navigation', () => fetchContentNavigation(), { default: () => [] })
 
 const headlinks = [{
-  label: 'Docs',
-  to: '/docs'
-}, {
-  label: 'Pricing',
-  to: '/pricing'
-}, {
-  label: 'Blog',
-  to: '/blog'
-}]
+  label: 'LineOA',
+  to: '/lineoa/list/root'
+}, 
+// {
+//   label: 'Pricing',
+//   to: '/pricing'
+// }, 
+// {
+//   label: 'Blog',
+//   to: '/blog'
+// }
+]
 
 const footers = [{
   label: 'Resources',

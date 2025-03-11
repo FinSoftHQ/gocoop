@@ -18,15 +18,20 @@
 const { data: navigation } = await useAsyncData('navigation', () => fetchContentNavigation(), { default: () => [] })
 
 const headlinks = [{
-  label: 'Docs',
-  to: '/docs'
+  label: 'รับเรื่องสมัครสมาชิก',
+  to: '/counterregister/list/root'
 }, {
-  label: 'Pricing',
-  to: '/pricing'
+  label: 'รับเรื่องยืนยันตัวตน',
+  to: '/counterverify/list/root'
 }, {
-  label: 'Blog',
-  to: '/blog'
-}]
+  label: 'รับเรื่องขอกู้ฉุกเฉิน',
+  to: '/counterloanfast/list/root'
+},
+{
+  label: 'การเงิน',
+  to: '/finance/list/root'
+}
+]
 
 const footers = [{
   label: 'Resources',
