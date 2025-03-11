@@ -1129,10 +1129,6 @@ export const appModules = defineAppModules({
             icon: 'i-mdi-qrcode',
           },
           {
-            title: 'สมาชิกใหม่รอตรวจสอบเงินเดือน',
-            icon: 'i-mdi-account-lock-outline',
-          },             
-          {
             title: 'โอนเงิน',
             to: { page: 'active' },
             icon: 'i-mdi-account-lock-outline',
@@ -1142,6 +1138,10 @@ export const appModules = defineAppModules({
             to: { page: 'completed' },
             icon: 'i-mdi-account-lock-outline',
           },                         
+          {
+            title: 'สมาชิกใหม่รอตรวจสอบเงินเดือน',
+            icon: 'i-mdi-account-lock-outline',
+          },             
         ]       
       },
       waitinglist: {
@@ -1151,15 +1151,7 @@ export const appModules = defineAppModules({
           {
             label: 'รายการคำอนุมัติ',
             to: { page: 'waitinglist' },
-          },
-          {
-            label: 'รายการเตรียมจ่ายเงิน',
-            to: { page: 'active' },
-          },
-          {
-            label: 'รายงาน ณ สิ้นวัน',
-            to: { page: 'completed' },
-          },
+          }          
         ],
         actions: [
           {
@@ -1173,17 +1165,9 @@ export const appModules = defineAppModules({
         entity: data.loanfast,
         tabs: [
           {
-            label: 'รายการคำอนุมัติ',
-            to: { page: 'waitinglist' },
-          },
-          {
             label: 'รายการเตรียมจ่ายเงิน',
             to: { page: 'active' },
-          },
-          {
-            label: 'รายงาน ณ สิ้นวัน',
-            to: { page: 'completed' },
-          },
+          }         
         ],
         actions: [
           {
@@ -1195,29 +1179,21 @@ export const appModules = defineAppModules({
       completed: {
         // ปิดยอด
         entity: data.loanfast,       
-        tabs: [
+        tabs: [         
           {
-            label: 'รายการคำอนุมัติ',
-            to: { page: 'waitinglist' },
-          },
-          {
-            label: 'รายการเตรียมจ่ายเงิน',
-            to: { page: 'active' },
-          },
-          {
-            label: 'รายงาน ณ สิ้นวัน',
+            label: 'รายการโอนแล้ว',
             to: { page: 'completed' },
-          },
+          }
         ],
         actions: [
           {
             label: 'ปริ้นรายงาน',
             to: { page: 'approve' },
-          },
+          },        
           {
             label: 'ส่งเรื่องให้บัญชี',
             to: { page: 'report' },
-          },
+          }         
         ],
       },
       transfermoney: {
@@ -1289,6 +1265,7 @@ export const appModules = defineAppModules({
       },
     },
   },
+
 
   member: {
     label: 'Member',
