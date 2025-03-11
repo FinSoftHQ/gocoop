@@ -6,6 +6,8 @@
   "scripts": {
     "dev": "pnpm --filter facingweb run dev",
     "build": "pnpm prep1st && cd apps/facingweb && pnpm build",
+    "buildo": "pnpm prep1st && cd apps/appofficer && pnpm build",
+    "buildu": "pnpm prep1st && cd apps/appuser && pnpm build",
     "wow": "plop --plopfile xgen/wow.mjs",
     "prep1st": "pnpm --filter @finsoft/blueprint install && pnpm --filter @finsoft/blueprint run build && pnpm install --ignore-scripts=false",
     "projs": "pnpm m ls --depth -1 -r",
