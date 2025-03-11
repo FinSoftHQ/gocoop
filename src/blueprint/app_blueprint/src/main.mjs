@@ -794,6 +794,10 @@ export const appModules = defineAppModules({
             to: { page: 'print' },
           },
           {
+            label: 'บันทึกเอกสาร',
+            to: { page: 'scan' },
+          },
+          {
             label: 'กรอกข้อมูล',
             to: { page: 'edit' },
           }
@@ -821,6 +825,12 @@ export const appModules = defineAppModules({
         post: true,
         role: 'stepverifyconfirm',
         steps: steps.stepsverify,
+      },
+      scan: {
+        entity: data.newmembership,
+        post: true,
+        role: 'scanner',
+        steps: steps.stepstakephoto,
       },
       print: {
         entity: data.newmembership,

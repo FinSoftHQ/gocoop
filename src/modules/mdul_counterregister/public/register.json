@@ -4526,7 +4526,7 @@
         "name": "name9",
         "type": "text",
         "position": {
-          "x": 80.47,
+          "x": 70.47,
           "y": 95.16
         },
         "required": false,
@@ -4534,7 +4534,7 @@
         "width": 62.67,
         "height": 7.62,
         "rotate": 0,
-        "alignment": "left",
+        "alignment": "center",
         "verticalAlignment": "top",
         "fontSize": 16,
         "lineHeight": 1,
@@ -4551,7 +4551,7 @@
         "name": "jobPosition5",
         "type": "text",
         "position": {
-          "x": 125.04,
+          "x": 105.04,
           "y": 110.19
         },
         "required": false,
@@ -4559,7 +4559,7 @@
         "width": 52.09,
         "height": 7.62,
         "rotate": 0,
-        "alignment": "left",
+        "alignment": "center",
         "verticalAlignment": "top",
         "fontSize": 16,
         "lineHeight": 1,
