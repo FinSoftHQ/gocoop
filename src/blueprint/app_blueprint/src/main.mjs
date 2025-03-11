@@ -1192,6 +1192,7 @@ export const appModules = defineAppModules({
           },        
           {
             label: 'ส่งเรื่องให้บัญชี',
+            to: { page: 'report' },
           }         
         ],
       },
