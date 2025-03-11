@@ -39,48 +39,73 @@ usePdfPrint({
 
     const beneficiaryInfo = computed(() => {
       const label = data.beneficiary[0].label;
-      const regex = /^(.*?)\s+(.*?)\s+(\d+)$/;
+      const regex = /^(.*?)\s+(.*?)\s+(.*?)\s+(\d+)$/;
       const match = label.match(regex);
       if (match) {
-        return {
-          beneficiaryname: match[1],
-          relationship: match[2],
-          beneficiaryphone: match[3],
-        };
+      return {
+        beneficiaryname: match[1] + ' ' + match[2],
+        relationship: match[3],
+        beneficiaryphone: match[4],
+      };
       }
       return {
-        beneficiaryname: '',
-        relationship: '',
-        beneficiaryphone: '',
+      beneficiaryname: '',
+      relationship: '',
+      beneficiaryphone: '',
       };
     });
+
+    const monthNames = [
+      'มกราคม', 'กุมภาพันธ์', 'มีนาคม', 'เมษายน', 'พฤษภาคม', 'มิถุนายน',
+      'กรกฎาคม', 'สิงหาคม', 'กันยายน', 'ตุลาคม', 'พฤศจิกายน', 'ธันวาคม'
+    ];
+
+    const createdAtDate = new Date(
+      parseInt(data.createdAt.substring(0, 4), 10),
+      parseInt(data.createdAt.substring(4, 6), 10) - 1,
+      parseInt(data.createdAt.substring(6, 8), 10)
+    );
+
+    const createdAtDay = createdAtDate.getDate();
+    const createdAtMonth = monthNames[createdAtDate.getMonth()];
+    const createdAtYear = (createdAtDate.getFullYear() + 543).toString();
+
+    const birthDate = new Date(
+      parseInt(data.birthDate.substring(0, 4), 10),
+      parseInt(data.birthDate.substring(4, 6), 10) - 1,
+      parseInt(data.birthDate.substring(6, 8), 10)
+    );
+
+    const birthDateDay = birthDate.getDate();
+    const birthDateMonth = monthNames[birthDate.getMonth()];
+    const birthDateYear = (birthDate.getFullYear() + 543).toString();
     return {
       ...data,
       // month5: data.Idmember,
       text: '123456',
       salary: formatNumber(data.salary),
-      salarytext1: numberToThaiText(data.salary),
+      salarytext1: numberToThaiText(data.salary) + 'บาท',
       stockValue: formatNumber(data.stockValue),
       jobPosition: positionMapping[data.jobPosition] || data.jobPosition,
       jobPosition2: positionMapping[data.jobPosition] || data.jobPosition,
       jobPosition3: positionMapping[data.jobPosition] || data.jobPosition,
       jobPosition4: positionMapping[data.jobPosition] || data.jobPosition,
       jobPosition5: positionMapping[data.jobPosition] || data.jobPosition,
-      datetimeDay: data.datetime,
-      datetimeMonth: data.datetime,
-      datetimeYear: data.datetime,
-      datetimeDay2: data.datetime,
-      datetimeMonth2: data.datetime,
-      datetimeYear2: data.datetime,
-      datetimeDay3: data.datetime,
-      datetimeMonth3: data.datetime,
-      datetimeYear3: data.datetime,
-      datetimeDay4: data.datetime,
-      datetimeMonth4: data.datetime,
-      datetimeYear4: data.datetime,
-      datetimeDay5: data.datetime,
-      datetimeMonth5: data.datetime,
-      datetimeYear5: data.datetime,
+      datetimeDay: createdAtDay.toString(),
+      datetimeMonth: createdAtMonth,
+      datetimeYear: createdAtYear,
+      datetimeDay2: createdAtDay.toString(),
+      datetimeMonth2: createdAtMonth,
+      datetimeYear2: createdAtYear,
+      datetimeDay3: createdAtDay.toString(),
+      datetimeMonth3: createdAtMonth,
+      datetimeYear3: createdAtYear,
+      datetimeDay4: createdAtDay.toString(),
+      datetimeMonth4: createdAtMonth,
+      datetimeYear4: createdAtYear,
+      datetimeDay5: createdAtDay.toString(),
+      datetimeMonth5: createdAtMonth,
+      datetimeYear5: createdAtYear,
       name: prefixStates[data.prefix] +  data.fname + '   ' + data.lname,
       nameSing1: prefixStates[data.prefix] + data.fname + '   ' + data.lname,
       name2: prefixStates[data.prefix] + data.fname + '   ' + data.lname,
@@ -91,9 +116,9 @@ usePdfPrint({
       name8: prefixStates[data.prefix] + data.fname + '   ' + data.lname,
       name9: prefixStates[data.prefix] + data.fname + '   ' + data.lname,
       name10: prefixStates[data.prefix] + data.fname + '   ' + data.lname,
-      birthDateDay: formatDate(data.birthDate),
-      birthDateMonth: formatDate(data.birthDate),
-      birthDateYear: formatDate(data.birthDate),
+      birthDateDay: birthDateDay.toString(),
+      birthDateMonth: birthDateMonth,
+      birthDateYear: birthDateYear,
       age1: formatAge(data.birthDate),
       age2: formatAge(data.birthDate),
       age3: formatAge(data.birthDate),
