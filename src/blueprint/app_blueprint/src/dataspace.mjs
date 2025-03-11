@@ -276,6 +276,12 @@ export const data = defineEntities({
         choices: choices.purposeStates,
       },
       {
+        model: 'bankAccount',
+        label: 'เลขบัญชีธนาคารกรุงไทย',
+        spec: {},
+        component: 'text',
+      },
+      {
         model: 'createdAt',
         label: 'Date Created',
         spec: v.optional(v.pipe(v.string(), v.regex(/^\d{8}$/, "Invalid format, date should be 'YYYYMMDD'"))),
