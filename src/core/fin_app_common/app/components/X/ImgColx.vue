@@ -14,7 +14,12 @@
       class="flex justify-end"
     >
       <div>
-        <p>รูปสมาชิก</p>
+        <p class="text-center mb-1 font-bold">
+          รูปสมาชิก
+          <span v-if="data.photo" class="text-green-500">✔️</span>
+          <span v-else class="text-red-500">❌</span>
+        </p>
+        <UCard>
         <FieldViewImage
           v-if="data.photo"
           v-model="data.photo"
@@ -22,10 +27,15 @@
           :resolver
           class="image-500"
         ></FieldViewImage>
-        <p v-else>ไม่มีรูปภาพ</p>
+        <p v-else class="text-center mt-24 mb-28 font-bold text-gray-400">ยังไม่มีรูปภาพ</p>
+        </UCard>
       </div>
       <div>
-        <p>ลายเซ็น</p>
+        <p class="text-center mb-1 font-bold">ลายเซ็น
+              <span v-if="data.signature" class="text-green-500">✔️</span>
+          <span v-else class="text-red-500">❌</span>
+        </p>
+        <UCard>
         <FieldViewImage
           v-if="data.signature"
           v-model="data.signature"
@@ -34,7 +44,8 @@
           class="image-500"
         >
         </FieldViewImage>
-        <p v-else>ไม่มีรูปภาพ</p>
+        <p v-else class="text-center mt-24 mb-28 font-bold text-gray-400">ยังไม่มีลายเซ็น</p>
+      </UCard>
       </div>
     </FItemGrid>
   </FItemGrid>
