@@ -56,9 +56,10 @@ const resultMessage = ref<string>('');
 
 const maxLoanLimits: Record<string, number> = {
     option1: 200000,
-    option2: 50000,
-    option3: 100000,
-    option4: 100000
+    option2: 100000,
+    option3: 50000,
+    option4: 100000,
+    option5: 100000
 };
 
 const maxLoanAmount = computed(() => {

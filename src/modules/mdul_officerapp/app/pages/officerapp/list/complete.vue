@@ -43,7 +43,6 @@ watch(messageReceived, (newMessages) => {
 
 function sendMessage() {
   publish(message.value);
-  // navigateTo({ name: 'officerapp.list.root' }); 
-  window.close();
+  navigateTo({ name: 'officerapp.list.root' }); 
 }
 </script>
