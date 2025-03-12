@@ -1313,4 +1313,83 @@ export const appModules = defineAppModules({
       },
     },
   },
+
+  salarycheck: {
+    label: 'salarycheck',
+    list: {     
+      root: {
+        entity: data.newmembership,
+        tabs: [
+          {
+            label: 'รายการรอตรวจสอบ',
+            to: { page: 'root' },
+          },
+          {
+            label: 'ตรวจสอบแล้ว',
+            to: { page: 'closed' },
+          },
+        ],
+        actions: [
+          {
+            label: 'ส่งให้ รพ ตรวจสอบ',
+            to: { page: 'sendlink' },
+          },
+         
+        ],
+      },
+      sendlink:{ 
+        entity: data.newmembership,
+        tabs: [
+          {
+            label: 'รายการรอตรวจสอบ',
+            to: { page: 'root' },
+          }
+        ]
+      },
+      closed:  {
+        entity: data.newmembership,
+        component: 'modal',
+        post: true,       
+      },
+      salarycheck:  {
+        entity: data.newmembership,
+        component: 'modal',
+        post: true,       
+      },
+      login: {
+        entity: data.newmembership,
+        post: true,       
+      }
+    },
+    create: {
+      root: {
+        entity: data.newmembership,
+        post: true,
+        role: 'stepedit',
+        steps: steps.rootconfirm,
+      },
+      confirm: {
+        entity: data.newmembership,
+        post: true,
+        role: 'stepconfirm',
+        steps: steps.rootconfirm,
+      },
+    },
+    each: {
+      root: {
+        entity: data.newmembership,
+        actions: ['Edit'],
+      },
+      edit: {
+        entity: data.newmembership,
+        post: true,
+        role: 'edit',
+        subName: 'salarycheck',
+      },
+      close: {
+        entity: data.newmembership,
+        role: 'confirm',
+      }     
+    },
+  }
 });

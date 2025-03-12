@@ -567,6 +567,25 @@ export const data = defineEntities({
           }
         ],
       },
+      {
+        name: 'salarycheck',
+        component: 'entry',
+        fields: [
+          {
+            model: 'position',
+            label: 'ตำแหน่ง',
+            spec: {},
+            component: 'select',
+            choices: choices.employmentStates,
+          },
+          {
+            model: 'salary',
+            label: 'เงินเดือน',
+            spec: {},
+            component: 'number',
+          }         
+        ],
+      },
     ],
   },
 
