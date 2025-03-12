@@ -18,15 +18,9 @@
 const { data: navigation } = await useAsyncData('navigation', () => fetchContentNavigation(), { default: () => [] })
 
 const headlinks = [{
-  label: 'Docs',
-  to: '/docs'
-}, {
-  label: 'Pricing',
-  to: '/pricing'
-}, {
-  label: 'Blog',
-  to: '/blog'
-}]
+  label: 'officerapp',
+  to: '/officerapp'
+},]
 
 const footers = [{
   label: 'Resources',

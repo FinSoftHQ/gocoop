@@ -12,9 +12,10 @@ const pageId = {
 
 const positionMapping: Record<string, string> = {
   option1: 'ข้าราชการและลูกจ้างประจำ',
-  option2: 'ลูกจ้าง',
-  option3: 'พนักงานราชการ',
-  option4: 'เจ้าหน้าที่และลูกจ้างสหกรณ์',
+  option2: 'ข้าราชการบำนาญ',
+  option3: 'ลูกจ้าง',
+  option4: 'พนักงานราชการ',
+  option5: 'เจ้าหน้าที่และลูกจ้างสหกรณ์',
 };
 
 const departmentMapping: Record<string, string> = {

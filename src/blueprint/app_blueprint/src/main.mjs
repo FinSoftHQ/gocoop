@@ -1148,10 +1148,10 @@ export const appModules = defineAppModules({
             to: { page: 'completed' },
             icon: 'i-mdi-account-lock-outline',
           },                         
-          {
-            title: 'สมาชิกใหม่รอตรวจสอบเงินเดือน',
-            icon: 'i-mdi-account-lock-outline',
-          },             
+          // {
+          //   title: 'สมาชิกใหม่รอตรวจสอบเงินเดือน',
+          //   icon: 'i-mdi-account-lock-outline',
+          // },             
         ]       
       },
       waitinglist: {
