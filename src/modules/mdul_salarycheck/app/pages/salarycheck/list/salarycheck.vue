@@ -22,11 +22,13 @@
 
 <script setup lang="ts">
 definePageMeta({
-  name: `salarycheck.list.closed`,
+  name: `salarycheck.list.salarycheck`,
 });
 const pageId = {
-  page: 'closed',
+  page: 'salarycheck',
 };
+
+
 const pageDef = usePageDefinition(pageId);
 const pageFunctions = usePageFunctions(pageDef);
 
@@ -53,13 +55,7 @@ const columns = [
   }, {
     key: 'department',
     label: 'แผนก',
-  }, {
-    key: 'phoneNumber',
-    label: 'เบอร์โทร',
-  }, {
-    key: 'stockValue',
-    label: 'ส่งเงินค่าหุ้นรายเดือนละ',
-  },
+  }
 ]
 
 const { formatDisplay: formatAge } = useDisplayField({

@@ -1323,6 +1323,10 @@ export const appModules = defineAppModules({
             label: 'รายการรอตรวจสอบ',
             to: { page: 'root' },
           },
+          {
+            label: 'ตรวจสอบแล้ว',
+            to: { page: 'closed' },
+          },
         ],
         actions: [
           {
@@ -1346,6 +1350,15 @@ export const appModules = defineAppModules({
         component: 'modal',
         post: true,       
       },
+      salarycheck:  {
+        entity: data.newmembership,
+        component: 'modal',
+        post: true,       
+      },
+      login: {
+        entity: data.newmembership,
+        post: true,       
+      }
     },
     create: {
       root: {
@@ -1370,13 +1383,12 @@ export const appModules = defineAppModules({
         entity: data.newmembership,
         post: true,
         role: 'edit',
+        subName: 'salarycheck',
       },
       close: {
         entity: data.newmembership,
         role: 'confirm',
-      },
+      }     
     },
-  },
-
-
+  }
 });
