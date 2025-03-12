@@ -6,6 +6,7 @@
         :columns="columns"
         :entries="entries"
         :resolver="resolver"
+        v-model="selected"
         @selectionChanged="select"
       >
         <template #fullname-data="{ row, column }">
@@ -26,6 +27,9 @@ const pageId = {
 
 const pageDef = usePageDefinition(pageId);
 const pageFunctions = usePageFunctions(pageDef);
+
+const selected = ref([]);
+const people = ref([]);
 
 const columns = [
   // {
@@ -71,7 +75,7 @@ function getPrefix(key: string): string {
   return prefix[key] || '';
 }
 
-function select(item: any) {
-  navigateTo({ name: pageFunctions.relativeName({ module: 'counterloanfast', realm: 'each', page: 'root' }), params: { id: item.id } });
-}
+// function select(item: any) {
+//   navigateTo({ name: pageFunctions.relativeName({ module: 'counterloanfast', realm: 'each', page: 'root' }), params: { id: item.id } });
+// }
 </script>
