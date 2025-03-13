@@ -1142,26 +1142,26 @@ export const appModules = defineAppModules({
             title: 'โอนเงิน',
             to: { page: 'active' },
             icon: 'i-mdi-account-lock-outline',
-          },           
+          },
           {
             title: 'ส่งเรื่องให้บัญชี / ปิดเคาเดอร์',
             to: { page: 'completed' },
             icon: 'i-mdi-account-lock-outline',
-          },                         
+          },
           // {
           //   title: 'สมาชิกใหม่รอตรวจสอบเงินเดือน',
           //   icon: 'i-mdi-account-lock-outline',
           // },             
-        ]       
+        ]
       },
       waitinglist: {
         // คำอนุมัติ
-        entity: data.loanfast,       
+        entity: data.loanfast,
         tabs: [
           {
             label: 'รายการคำอนุมัติ',
             to: { page: 'waitinglist' },
-          }          
+          }
         ],
         actions: [
           {
@@ -1177,7 +1177,7 @@ export const appModules = defineAppModules({
           {
             label: 'รายการเตรียมจ่ายเงิน',
             to: { page: 'active' },
-          }         
+          }
         ],
         actions: [
           {
@@ -1188,8 +1188,8 @@ export const appModules = defineAppModules({
       },
       completed: {
         // ปิดยอด
-        entity: data.loanfast,       
-        tabs: [         
+        entity: data.loanfast,
+        tabs: [
           {
             label: 'รายการโอนแล้ว',
             to: { page: 'completed' },
@@ -1198,12 +1198,12 @@ export const appModules = defineAppModules({
         actions: [
           {
             label: 'ปริ้นรายงาน',
-            to: { page: 'approve' },
-          },        
+            to: { page: 'report' },
+          },
           {
             label: 'ส่งเรื่องให้บัญชี',
-            to: { page: 'report' },
-          }         
+            to: { page: 'closed' },
+          }
         ],
       },
       transfermoney: {
@@ -1211,7 +1211,7 @@ export const appModules = defineAppModules({
         entity: data.loanfast,
         post: true,
         tabs: [
- 
+
         ],
         actions: [
           {
@@ -1231,9 +1231,9 @@ export const appModules = defineAppModules({
         post: true,
         role: 'webprint',
       },
-      report: {
-        // ปริ้น รายงานการเงิน
-        entity: data.loanfast,  
+      closed: {
+        // ปิดยอด
+        entity: data.loanfast,
         tabs: [
           {
             label: 'รายการทั้งหมด',
@@ -1249,8 +1249,14 @@ export const appModules = defineAppModules({
             label: 'ยกเลิกการปิดยอด',
             to: { page: 'root' },
           },
-        ],      
+        ],
         post: true,
+      },
+      report: {
+        // ปริ้น รายงานการเงิน
+        entity: data.loanfast,
+        post: true,
+        role: 'webprint',
       },
     },
     create: {
@@ -1316,7 +1322,7 @@ export const appModules = defineAppModules({
 
   salarycheck: {
     label: 'salarycheck',
-    list: {     
+    list: {
       root: {
         entity: data.newmembership,
         tabs: [
@@ -1334,10 +1340,10 @@ export const appModules = defineAppModules({
             label: 'ส่งให้ รพ ตรวจสอบ',
             to: { page: 'sendlink' },
           },
-         
+
         ],
       },
-      sendlink:{ 
+      sendlink: {
         entity: data.newmembership,
         tabs: [
           {
@@ -1346,19 +1352,19 @@ export const appModules = defineAppModules({
           }
         ]
       },
-      closed:  {
+      closed: {
         entity: data.newmembership,
         component: 'modal',
-        post: true,       
+        post: true,
       },
-      salarycheck:  {
+      salarycheck: {
         entity: data.newmembership,
         component: 'modal',
-        post: true,       
+        post: true,
       },
       login: {
         entity: data.newmembership,
-        post: true,       
+        post: true,
       }
     },
     create: {
@@ -1389,7 +1395,7 @@ export const appModules = defineAppModules({
       close: {
         entity: data.newmembership,
         role: 'confirm',
-      }     
+      }
     },
   }
 });
