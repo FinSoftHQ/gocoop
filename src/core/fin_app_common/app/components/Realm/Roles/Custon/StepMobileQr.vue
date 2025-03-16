@@ -18,7 +18,7 @@
         <div class="mx-auto max-w-screen-sm text-center">
           <div>
             <h3 class="text-2xl font-bold dark:text-white">
-              กรุณาเปิดกล้องโทรศัทพ์ของคุณในการสแกน
+              กรุณาเปิดกล้องโทรศัทพ์ของคุณสแกน
             </h3>
             <h3 class="text-2xl font-bold dark:text-white">
               QR Code บนโทรศัทพ์ของสมาชิก
@@ -26,15 +26,9 @@
 
             <div class="flex justify-center mt-8">
               <!-- <FieldViewQrCode modelValue="กรุณาเปิดกล้องโทรศัทพ์ของคุณในการสแกน" class="w-[150px] h-[150px]" ></FieldViewQrCode> -->
-              <UIcon
-                name="mdi:scan"
-                size="150"
-              ></UIcon>
-
-
-
-
-
+              <div class="flex justify-center ml-11">
+                <FLottie src="/ScanWithPhone.lottie"  size="150"></FLottie>
+              </div>
 
             </div>
           </div>
