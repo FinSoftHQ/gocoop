@@ -2,40 +2,30 @@
   <div>
     <FPartActionsBar>
       <template #left>
-        <UButton
-          icon="i-heroicons-arrow-left"
-          @click="$router.back()"
-        >Close</UButton>
+        <UButton icon="i-heroicons-arrow-left"
+          @click="$router.back()">Close</UButton>
       </template>
       <template #right>
-        <UPagination
-          v-model="currentPage"
+        <UPagination v-model="currentPage"
           :total="pages"
-          :page-count="1"
-        ></UPagination>
-        <UButton
-          icon="i-heroicons-printer"
-          @click="printPdf"
-        >Print</UButton>
+          :page-count="1"></UPagination>
+        <UButton icon="i-heroicons-printer"
+          @click="printPdf">Print</UButton>
       </template>
     </FPartActionsBar>
-    <ClientOnly>
-      <VuePDF
-        :pdf="pdf"
-        :page="currentPage"
-      />
-    </ClientOnly>
-    <div
-      v-if="printSrc"
-      class="hidden"
-    >
-      <iframe
-        ref="pdfPrintObject"
-        :src="printSrc"
-        type="application/pdf"
-        width="0"
-        height="0"
-      ></iframe>
+    <div class="flex justify-center items-center">
+      <ClientOnly>
+        <VuePDF :pdf="pdf"
+          :page="currentPage" />
+      </ClientOnly>
+      <div v-if="printSrc"
+        class="hidden">
+        <iframe ref="pdfPrintObject"
+          :src="printSrc"
+          type="application/pdf"
+          width="0"
+          height="0"></iframe>
+      </div>
     </div>
   </div>
 </template>
