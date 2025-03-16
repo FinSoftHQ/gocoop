@@ -26,14 +26,9 @@
 
             <div class="flex justify-center mt-8">
               <!-- <FieldViewQrCode modelValue="กรุณาเปิดกล้องโทรศัทพ์ของคุณในการสแกน" class="w-[150px] h-[150px]" ></FieldViewQrCode> -->
-               <div class="flex justify-center ml-11">
-                            <FLottie src="/ScanWithPhone.lottie"  size="150"></FLottie>
-                          </div>
-
-
-
-
-
+              <div class="flex justify-center ml-11">
+                <FLottie src="/ScanWithPhone.lottie"  size="150"></FLottie>
+              </div>
 
             </div>
           </div>
