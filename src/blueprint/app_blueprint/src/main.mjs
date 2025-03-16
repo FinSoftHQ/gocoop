@@ -172,7 +172,7 @@ export const appModules = defineAppModules({
 
   // loanfast
   loanfast: {
-    label: 'ขอสินเชื่อฉุกเฉิน',
+    label: 'ขอกู้ฉุกเฉิน',
     list: {
       root: data.loanfast,
       closed: data.loanfast,
@@ -219,7 +219,7 @@ export const appModules = defineAppModules({
 
   // newmembership
   newmembership: {
-    label: 'Newmembership',
+    label: 'สมัครสมาชิกใหม่',
     list: {
       root: data.newmembership,
       closed: data.newmembership,
@@ -583,7 +583,7 @@ export const appModules = defineAppModules({
 
   // counterloanfast
   counterloanfast: {
-    label: 'เคาน์เตอร์กู้ฉุกเฉิน',
+    label: 'รับเรื่องขอกู้ฉุกเฉิน',
     dataPath: 'loanfast',
     list: {
       root: {
@@ -712,7 +712,7 @@ export const appModules = defineAppModules({
   // counterregister
   counterregister: {
     dataPath: 'newmembership',
-    label: 'Register',
+    label: 'รับเรื่องสมัครสมาชิกใหม่',
     list: {
       root: {
         entity: data.newmembership,
@@ -859,7 +859,7 @@ export const appModules = defineAppModules({
 
   // counterverify
   counterverify: {
-    label: 'Verify',
+    label: 'รับเรื่องยืนยันตัวตน',
     list: {
       root: data.counterverify,
       closed: data.counterverify,
@@ -1125,7 +1125,7 @@ export const appModules = defineAppModules({
 
   // การเงิน
   finance: {
-    label: 'Finance',
+    label: 'การเงิน',
     dataPath: 'loanfast',
     list: {
       root: {
