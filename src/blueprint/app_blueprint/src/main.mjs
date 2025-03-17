@@ -906,18 +906,18 @@ export const appModules = defineAppModules({
         role: 'scanner',
         steps: steps.stepsverify,
       },
-      takephoto: {
-        entity: data.counterverify,
-        post: true,
-        role: 'stepmobilephoto',
-        subName: 'photo',
-      },
-      signed: {
-        entity: data.counterverify,
-        post: true,
-        role: 'stepmobilephoto',
-        subName: 'signature',
-      },
+      // takephoto: {
+      //   entity: data.counterverify,
+      //   post: true,
+      //   role: 'stepmobilephoto',
+      //   subName: 'photo',
+      // },
+      // signed: {
+      //   entity: data.counterverify,
+      //   post: true,
+      //   role: 'stepmobilephoto',
+      //   subName: 'signature',
+      // },
       qrcode: {
         entity: data.counterverify,
         post: true,

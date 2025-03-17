@@ -3,35 +3,39 @@
     <FPartTitle icon="i-heroicons-pencil-square-20-solid">
       {{ title }}
     </FPartTitle>
-    <FPartStepper
-      :modelValue="pageDef.currentStepIndex"
+    <FPartStepper :modelValue="pageDef.currentStepIndex"
       :steps="pageDef.steps?.steps"
-      class="mb-4"
-    ></FPartStepper>    
-   
-    <RealmCardEdit
-      :pageId="pageDef.pageId"
+      class="mb-4"></FPartStepper>
+
+    <RealmCardEdit :pageId="pageDef.pageId"
       :initial="data"
       :showBackButton="pageDef.hasPrevPage"
-      @save="save"
-    >
-    <UCard>
-      <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
+      @save="save">
+      <UCard>
         <div class="mx-auto max-w-screen-sm text-center">
-          <di>
-            <h3 class="text-2xl font-bold dark:text-white">สแกนเก็บลายเซ็น</h3>
-
-            <div class="flex justify-center ml-11">
-              <FLottie src="/scan.lottie" class="w-[300px] h-[300px]"></FLottie>
+          <h3 class="text-2xl font-bold dark:text-white">
+            สแกนเก็บเอกสาร
+          </h3>
+          <div>
+            <p class="text-lg text-gray-500 dark:text-gray-400 mt-4">
+              กรุณานำเอกสารใส่เครื่องสแกนและกดปุ่ม "scan" เพื่อแสกนเอกสารเข้าในระบบ
+            </p>
+          </div>
+          <div class="flex justify-center ml-10">
+            <div class="flex justify-center">
+              <FLottie src="/scan.lottie"
+              class="w-[250px] h-[250px]"></FLottie>
             </div>
-            <UButton 
-            icon="i-heroicons-play-solid"
-            variant="solid"
-            @click="alertScannerNotConnected">เริ่มสแกน</UButton>
-          </di>         
+          </div>
+          <div class="flex justify-center">
+            <UButton icon="i-heroicons-play-solid"
+              variant="solid"
+              @click="alertScannerNotConnected">scan</UButton>
+          </div>
+
         </div>
-      </div>
-    </UCard>
+
+      </UCard>
       <template #buttons>
         <UButton type="submit"> Next </UButton>
       </template>
