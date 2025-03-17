@@ -722,12 +722,12 @@ export const data = defineEntities({
         spec: {},
         component: 'image',
       },
-      {
-        model: 'signature',
-        label: 'รายเซ็นชื่อ',
-        spec: {},
-        component: 'image',
-      },
+      // {
+      //   model: 'signature',
+      //   label: 'รายเซ็นชื่อ',
+      //   spec: {},
+      //   component: 'image',
+      // },
     ],
     sub: [
       {
