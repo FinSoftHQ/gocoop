@@ -999,7 +999,7 @@ export const appModules = defineAppModules({
   // officerapp:
   officerapp: {
     dataPath: 'counterverify',
-    label: 'App Officer',
+    label: 'แอพเจ้าหน้าที่',
     list: {
       root: data.counterverify,
       closed: data.counterverify,
@@ -1022,7 +1022,14 @@ export const appModules = defineAppModules({
     each: {
       root: {
         entity: data.counterverify,
-        actions: ['Photo', 'signature', 'verify'],
+        actions: [
+          {
+            label: 'ถ่ายรูป',
+            to: { page: 'photo' }
+          },
+          // 'signature', 
+          // 'verify'
+        ],
       },
       edit: {
         entity: data.counterverify,
