@@ -1,7 +1,7 @@
 <template>
   <RealmPageList :pageId>
     <template #default="{ wrapped }">
-      <h1 class="text-center font-bold">QR ยืนยันตัวตน</h1>
+      <h1 class="text-center font-bold mt-10 text-xl">QR Code ยืนยันตัวตน</h1>
       <div class="flex justify-center">
         <FieldViewQrCode
           modelValue="link_your_website_here/officerapp/list/complete"

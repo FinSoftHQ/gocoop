@@ -347,10 +347,12 @@ export const appModules = defineAppModules({
       qrcode: {
         entity: data.newmembership,
         post: true,
+        role: 'showqr',
       },
       qrverify: {
         entity: data.newmembership,
         post: true,
+        role: 'showqr',
       },
       success: data.newmembership,
       closed: data.newmembership,
