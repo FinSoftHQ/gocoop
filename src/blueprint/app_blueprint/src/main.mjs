@@ -1134,7 +1134,7 @@ export const appModules = defineAppModules({
         role: 'menu',
         actions: [
           {
-            title: 'กู้ฉุกเฉิน',
+            title: 'อนุมัติขอกู้ฉุเฉิน',
             to: { page: 'waitinglist' },
             icon: 'i-mdi-qrcode',
           },
