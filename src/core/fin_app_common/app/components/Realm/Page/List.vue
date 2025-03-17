@@ -25,6 +25,7 @@ import RealmRolesSharedCustomView from '../Roles/Shared/CustomView.vue';
 import RealmRolesSharedMenu from '../Roles/Shared/Menu.vue';
 import RealmRolesSharedResult from '../Roles/Shared/Result.vue';
 import RealmRolesXClosed from '../Roles/X/Closed.vue';
+import RealmRoleListShowQR from '../Roles/List/ShowQR.vue';
 
 const baseRoles = useBaseRoles();
 const roles: Record<string, any> = {
@@ -35,6 +36,7 @@ const roles: Record<string, any> = {
   result: RealmRolesSharedResult,
   default: RealmRolesListDefault,
   closed: RealmRolesXClosed,
+  showqr: RealmRoleListShowQR,
 };
 
 const props = defineProps<{
