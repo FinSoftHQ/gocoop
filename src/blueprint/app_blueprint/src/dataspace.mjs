@@ -399,7 +399,7 @@ export const data = defineEntities({
   newmembership: {
     root: [
       
-      {
+      [{
         model: 'prefix',
         label: 'คำนำหน้าชื่อ',
         spec: {},
@@ -417,8 +417,8 @@ export const data = defineEntities({
         label: 'สกุล',
         spec: {},
         component: 'text',
-      },
-      {
+      },],
+      [{
         model: 'birthDate',
         label: 'วัน/เดือน/ปี เกิด',
         spec: {},
@@ -435,8 +435,8 @@ export const data = defineEntities({
         label: 'เลขบัญชีธนาคารกรุงไทย',
         spec: {},
         component: 'text',
-      },
-      {
+      },],
+      [{
         model: 'phoneNumber',
         label: 'เบอร์โทร',
         spec: {},
@@ -453,8 +453,8 @@ export const data = defineEntities({
         label: 'จังหวัด',
         spec: {},
         component: 'text',
-      },
-      {
+      },],
+      [{
         model: 'district',
         label: 'อำเภอ',
         spec: {},
@@ -471,8 +471,8 @@ export const data = defineEntities({
         label: 'ถนน',
         spec: {},
         component: 'text',
-      },
-      {
+      },],
+      [{
         model: 'alley',
         label: 'ตรอก/ซอย',
         spec: {},
@@ -489,8 +489,8 @@ export const data = defineEntities({
         label: 'หมู่ที่',
         spec: {},
         component: 'text',
-      },
-      {
+      },],
+      [{
         model: 'jobPosition',
         label: 'ตําแหน่งงาน',
         spec: {},
@@ -508,13 +508,19 @@ export const data = defineEntities({
         label: 'เงินเดือน',
         spec: {},
         component: 'number',
-      },
-      {
+      },],
+      [{
         model: 'stockValue',
         label: 'ส่งเงินค่าหุ้นรายเดือนละ',
         spec: {},
         component: 'number',
       },
+      {
+        model: 'createdAt',
+        label: 'เขียนเมื่อวันที่',
+        spec: {},
+        component: 'date',
+      },],
       {
         model: 'beneficiary',
         label: 'เพิ่มผู้รับผลประโยชน์',
@@ -528,12 +534,7 @@ export const data = defineEntities({
           query: (search) => ({ q: search }), // (search) => ({ name: search })
         },
       },
-      {
-        model: 'createdAt',
-        label: 'เขียนเมื่อวันที่',
-        spec: {},
-        component: 'date',
-      },
+     
     ],
     sub: [
       {
