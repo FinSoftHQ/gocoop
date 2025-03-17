@@ -32,9 +32,7 @@
               variant="solid"
               @click="alertScannerNotConnected">scan</UButton>
           </div>
-
         </div>
-
       </UCard>
       <template #buttons>
         <UButton type="submit"> Next </UButton>
