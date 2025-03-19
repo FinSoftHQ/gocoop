@@ -616,6 +616,18 @@ export const data = defineEntities({
             component: 'number',
           },
         ]
+      },     
+      {
+        name: 'deducted',
+        component: 'entry',
+        fields: [
+          {
+            model: 'deducted',
+            label: 'ที่หักได้',
+            spec: {},
+            component: 'number',
+          }         
+        ]
       }      
     ]
   },

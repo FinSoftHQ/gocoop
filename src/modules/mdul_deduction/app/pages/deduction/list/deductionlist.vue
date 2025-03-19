@@ -1,19 +1,33 @@
 <template>
   <RealmPageList :pageId>
     <template #default="{ wrapped, entries, resolver }">
+      <div class="flex justify-end mb-4 gap-4">
+        <UButton type="button">
+          หักเงินได้แล้ว
+        </UButton>
+        <UButton
+          type="button"
+          @click="navigateTo({ name: 'deduction.list.deductioncheck' })"
+        >
+          แก้ไขการหักเงิน
+        </UButton>
+      </div>
       <EntityTable
         :data="wrapped.data"
         :columns="columns"
         :entries="entries"
         :resolver="resolver"
-        @selectionChanged="select"
+        v-model="selected"
       >
 
         <template #fullname-data="{ row, column }">
           {{ getPrefix(row.prefix) }}{{ row.fname }} {{ row.lname }}
-        </template>       
+        </template>
         <template #alldebts-data="{ row, column }">
           {{ formatNumber(calculateTotalDeduction(row)) }}
+        </template>
+        <template #deducted-data="{ row, column }">
+          {{ formatNumber(row.deducted) }}
         </template>
       </EntityTable>
     </template>
@@ -48,7 +62,7 @@ const columns = [
   {
     key: 'fullname',
     label: 'ชื่อ-สกุล',
-  },{
+  }, {
     key: 'jobPosition',
     label: 'ตำแหน่ง',
   }, {
@@ -84,8 +98,8 @@ function select(item: any) {
 }
 
 function calculateTotalDeduction(row: any): number {
-const selected = ref([]);
-  const { loanfast = 0, loangeneral = 0, loanspecial = 0, loanstock = 0 ,stockValue} = row;
+  const selected = ref([]);
+  const { loanfast = 0, loangeneral = 0, loanspecial = 0, loanstock = 0, stockValue } = row;
   return loanfast + loangeneral + loanspecial + loanstock + stockValue;
 }
 </script>
