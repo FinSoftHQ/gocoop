@@ -1191,6 +1191,7 @@ export const appModules = defineAppModules({
         // Qr Code
         entity: data.loanfast,
         post: true,
+        role: 'showqr',
       },
       approve: {
         // ปริ้นเอกสารใบประหน้า
