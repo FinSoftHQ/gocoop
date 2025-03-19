@@ -1436,18 +1436,7 @@ export const appModules = defineAppModules({
             label: 'ตรวจสอบแล้ว',
             to: { page: 'confirmcheck' },
           }
-        ],
-        actions: [
-          {
-            label: 'หักเงินได้แล้ว',
-            // to: { page: 'sendlink' },
-          },
-          {
-            label: 'แก้ไขการหักเงิน',
-            to: { page: 'deductioncheck' },
-          },
-        ]
-       
+        ]       
       },
       confirmcheck: {
         label: 'รายชื่อที่ต้องหักเงินเดือนทั้งหมด',

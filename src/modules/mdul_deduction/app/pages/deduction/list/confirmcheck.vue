@@ -3,7 +3,7 @@
     <template #default="{ wrapped, entries, resolver }">
       <div class="flex justify-end mb-4">
         <UButton type="button">
-          บันทึกผลการหักเงิน
+          บันทึกและส่งเรื่องให้ สหกรณ์
         </UButton>
       </div>
       <EntityTable
