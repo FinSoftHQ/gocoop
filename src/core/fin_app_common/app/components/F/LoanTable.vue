@@ -23,24 +23,37 @@ const props = defineProps<{
   months: number;
 }>();
 
+// const totalPayments = computed(() => {
+//   const monthlyInterest = (props.loanAmount * props.interestRate / 100) / props.months;
+//   const lastMonthInterest = monthlyInterest;
+//   const adjustedMonthlyInterest = (props.loanAmount * props.interestRate / 100 - lastMonthInterest) / (props.months - 1);
+
+//   const interestPayments = Array(props.months - 1).fill(adjustedMonthlyInterest);
+//   if (interestPayments[0] !== undefined) {
+//     interestPayments[0] += lastMonthInterest; // Combine the interest of the 12th month with the 1st month
+//   }
+//   interestPayments.push(0); // Add a zero for the 12th month interest
+
+//   return interestPayments.map((interest, index) => interest + props.loanAmount / props.months);
+// });
 const totalPayments = computed(() => {
-  const monthlyInterest = (props.loanAmount * props.interestRate / 100) / props.months;
-  const lastMonthInterest = monthlyInterest;
-  const adjustedMonthlyInterest = (props.loanAmount * props.interestRate / 100 - lastMonthInterest) / (props.months - 1);
+  const monthlyInterest = (props.loanAmount * props.interestRate / 100) / props.months; // ดอกเบี้ยเฉลี่ยต่อเดือน
+  const monthlyPrincipal = props.loanAmount / props.months; // เงินต้นเฉลี่ยต่อเดือน
 
-  const interestPayments = Array(props.months - 1).fill(adjustedMonthlyInterest);
-  if (interestPayments[0] !== undefined) {
-    interestPayments[0] += lastMonthInterest; // Combine the interest of the 12th month with the 1st month
-  }
-  interestPayments.push(0); // Add a zero for the 12th month interest
+  // สร้างอาร์เรย์สำหรับการชำระเงินรายเดือน
+  const payments = Array(props.months).fill(monthlyPrincipal + monthlyInterest);
 
-  return interestPayments.map((interest, index) => interest + props.loanAmount / props.months);
+  // ย้ายดอกเบี้ยเดือนสุดท้ายไปบวกกับเดือนแรก
+  payments[0] += monthlyInterest; // เพิ่มดอกเบี้ยของเดือนสุดท้ายไปยังเดือนแรก
+  payments[payments.length - 1] -= monthlyInterest; // ลบดอกเบี้ยของเดือนสุดท้ายออก
+
+  return payments;
 });
-
 const paymentDetails = computed(() => {
   return totalPayments.value.map((totalPayment, index) => ({
     month: index + 1,
-    totalPayment
+    // totalPayment
+    totalPayment: Math.round(totalPayment / 100) * 100 
   }));
 });
 </script>
