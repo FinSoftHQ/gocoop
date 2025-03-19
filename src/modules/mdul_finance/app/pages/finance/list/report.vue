@@ -5,7 +5,8 @@
         <h2 class="text-xl font-bold text-center py-2">สหกรณ์ออมทรัพย์โรงพยาบาลศรีเกษ จำกัด</h2>
         <div class="flex justify-between w-full px-4">
           <p class="font-normal text-gray-900 dark:text-white">
-            วันที่พิมพ์ :{{ new Date().toLocaleDateString('th-TH', { year: 'numeric', month: 'long', day: 'numeric' }) }}
+            วันที่พิมพ์ :{{ new Date().toLocaleDateString('th-TH', { year: 'numeric', month: 'long', day: 'numeric' })
+            }}
           </p>
           <p class="font-normal text-gray-900 dark:text-white">
             รายงานการจ่ายเงินกู้
@@ -19,15 +20,16 @@
             ประเภท : เงินกู้ฉุกเฉิน
           </p>
           <p class="font-normal text-gray-900 dark:text-white">
-            รายงานการจ่ายเงินกู้ฉุกเฉินวันที่ {{ new Date().toLocaleDateString('th-TH', { year: 'numeric', month: 'long', day: 'numeric' }) }}
+            รายงานการจ่ายเงินกู้ฉุกเฉินวันที่ {{ new Date().toLocaleDateString('th-TH', {
+              year: 'numeric', month:
+                'long', day: 'numeric' }) }}
           </p>
           <p class="font-normal text-gray-900 dark:text-white">
             ผู้พิมพ์ :
           </p>
         </div>
       </div>
-      <EntityTable
-        :data="wrapped.data"
+      <EntityTable :data="wrapped.data"
         :columns="columns"
         :entries="entries"
         :resolver="resolver"
@@ -53,12 +55,18 @@
             size: 'text-sm'
           },
         }"
-        @selectionChanged="select"
-      >
+        @selectionChanged="select">
         <template #fullname-data="{ row, column }">
           {{ getPrefix(row.prefix) }}{{ row.fname }} {{ row.lname }}
         </template>
       </EntityTable>
+      <div class="flex justify-between w-full px-4 mt-4">
+        <p class="font-normal text-gray-900 dark:text-white">
+          วงเงินกู้รวม : {{formatNumber(wrapped.data.reduce((total : any , row : any) => total + row.amount, 0))}} บาท
+        </p>
+        <p class="font-normal text-gray-900 dark:text-white">
+        </p>
+      </div>
     </template>
   </RealmPageList>
 </template>
@@ -74,6 +82,8 @@ const pageId = {
 
 const pageDef = usePageDefinition(pageId);
 const pageFunctions = usePageFunctions(pageDef);
+const { formatNumber } = useValueFormatters();
+
 
 const columns = [
   // {
@@ -91,7 +101,7 @@ const columns = [
   }, {
     key: 'position',
     label: 'ตำแหน่ง',
-  },{
+  }, {
     key: 'bureau',
     label: 'หน่วยงาน',
   }, {
