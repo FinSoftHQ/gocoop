@@ -8,32 +8,38 @@
         :resolver="resolver"
         @selectionChanged="select"
       >
+
         <template #fullname-data="{ row, column }">
           {{ getPrefix(row.prefix) }}{{ row.fname }} {{ row.lname }}
+        </template>       
+        <template #alldebts-data="{ row, column }">
+          {{ formatNumber(calculateTotalDeduction(row)) }}
         </template>
       </EntityTable>
     </template>
-    
   </RealmPageList>
 </template>
 
+
 <script setup lang="ts">
 definePageMeta({
-  name: `finance.list.completed`,
+  name: `deduction.list.deductionlist`,
 });
 const pageId = {
-  page: 'completed',
+  page: 'deductionlist',
 };
-
 
 const pageDef = usePageDefinition(pageId);
 const pageFunctions = usePageFunctions(pageDef);
+const { formatNumber } = useValueFormatters();
+
+const selected = ref([]);
 
 const columns = [
-  // {
-  //   key: 'no',
-  //   label: 'ลำดับ',
-  // },  
+  {
+    key: 'no',
+    label: 'ลำดับ',
+  },
   // {
   //   key: 'idmember',
   //   label: 'รหัสสมาชิก',
@@ -42,21 +48,21 @@ const columns = [
   {
     key: 'fullname',
     label: 'ชื่อ-สกุล',
-  }, {
-    key: 'position',
+  },{
+    key: 'jobPosition',
     label: 'ตำแหน่ง',
   }, {
     key: 'department',
-    label: 'สังกัด',
+    label: 'แผนก',
   }, {
-    key: 'bureau',
-    label: 'หน่วยงาน',
-  }, {
-    key: 'amount',
-    label: 'ยอดที่ต้องการกู้ (บาท)',
-    sortable: true
-  },
+    key: 'alldebts',
+    label: 'หนี้สินทั้งหมด',
+  }
 ]
+
+const { formatDisplay: formatAge } = useDisplayField({
+  dateFormat: 'age',
+});
 
 const prefix: { [key: string]: string } = {
   option1: 'นาย',
@@ -74,6 +80,12 @@ function getPrefix(key: string): string {
 }
 
 function select(item: any) {
-  navigateTo({ name: pageFunctions.relativeName({ module: 'counterloanfast', realm: 'each', page: 'root' }), params: { id: item.id } });
+  navigateTo({ name: pageFunctions.relativeName({ module: 'deduction', realm: 'each', page: 'root' }), params: { id: item.id } });
+}
+
+function calculateTotalDeduction(row: any): number {
+const selected = ref([]);
+  const { loanfast = 0, loangeneral = 0, loanspecial = 0, loanstock = 0 ,stockValue} = row;
+  return loanfast + loangeneral + loanspecial + loanstock + stockValue;
 }
 </script>

@@ -952,52 +952,6 @@ export const appModules = defineAppModules({
     },
   },
 
-  // deduction
-  deduction: {
-    label: 'deduction',
-    dataPath: 'newmembership',
-    list: {
-      root: data.newmembership,
-      closed: data.newmembership,
-      complete: data.newmembership,
-    },
-    create: {
-      root: {
-        entity: data.newmembership,
-        post: true,
-        role: 'stepedit',
-        steps: steps.rootconfirm,
-      },
-      confirm: {
-        entity: data.deduction,
-        post: true,
-        role: 'stepconfirm',
-        steps: steps.rootconfirm,
-      },
-    },
-    each: {
-      root: {
-        entity: data.newmembership,
-        role: 'infomember',
-        actions: [
-          {
-            label: 'ประวัติ',
-            to: { page: 'history' },
-          },
-        ],
-      },
-      edit: {
-        entity: data.newmembership,
-        post: true,
-        role: 'stepedit',
-      },
-      history: {
-        entity: data.newmembership,
-        post: true,
-      },
-    },
-  },
-
   // officerapp:
   officerapp: {
     dataPath: 'counterverify',
@@ -1157,13 +1111,17 @@ export const appModules = defineAppModules({
             to: { page: 'completed' },
             icon: 'i-mdi-account-lock-outline',
           },
-          // {
-          //   title: 'สมาชิกใหม่รอตรวจสอบเงินเดือน',
-          //   icon: 'i-mdi-account-lock-outline',
-          // },             
+          {
+            title: 'สมาชิกใหม่รอตรวจสอบเงินเดือน',
+            icon: 'i-mdi-account-clock',
+          },             
+          {
+            title: 'หักหนี้เงินเดือน',
+            icon: 'i-mdi-cash-minus',
+          }                   
         ]
-      },
-      waitinglist: {
+            },
+            waitinglist: {
         // คำอนุมัติ
         entity: data.loanfast,
         tabs: [
@@ -1400,6 +1358,147 @@ export const appModules = defineAppModules({
         post: true,
         role: 'edit',
         subName: 'salarycheck',
+      },
+      close: {
+        entity: data.newmembership,
+        role: 'confirm',
+      }
+    },
+  },
+
+  deduction: {
+    label: 'deduction',
+    list: {
+      root: {
+        label: 'รายชื่อที่หักเงิน',
+        entity: data.newmembership,
+        tabs: [
+          {
+            label: 'รายการรอส่งหัดเงิน',
+            to: { page: 'root' },
+          },
+          {
+            label: 'ที่หักไม่ได้',
+            to: { page: 'closed' },
+          },
+        ],
+        actions: [
+          {
+            label: 'ส่งให้ รพ. หักเงิน',
+            to: { page: 'sendlink' },
+          },
+
+        ],
+      },
+      sendlink: {
+        label: 'รายชื่อที่ต้องหักเงินเดือนทั้งหมด',
+        entity: data.newmembership,
+        tabs: [
+          {
+            label: 'รายการรอตรวจสอบ',
+            to: { page: 'root' },
+          }
+        ]
+      },
+      closed: {
+        label: 'รายชื่อที่หักเงิน',
+        entity: data.newmembership,
+        component: 'modal',
+        post: true,
+        tabs: [
+          {
+            label: 'รายการรอส่งหัดเงิน',
+            to: { page: 'root' },
+          },
+          {
+            label: 'ที่หักไม่ได้',
+            to: { page: 'closed' },
+          },
+        ],
+        // actions: [
+        //   {
+        //     label: 'ส่งให้บัญชี',
+        //     to: { page: 'sendlink' },
+        //   }
+        // ]
+      },
+      deductionlist: {
+        label: 'รายชื่อที่ต้องหักเงินเดือนทั้งหมด',
+        entity: data.newmembership,
+        component: 'modal',
+        post: true,
+        tabs: [
+          {
+            label: 'รอตรวจสอบ',
+            // to: { page: 'root' },
+          }
+        ],
+        actions: [
+          {
+            label: 'หักเงินได้ทั้งหมด',
+            to: { page: 'confirmcheck' },
+          },
+          {
+            label: 'แก้ไขการหักเงิน',
+            to: { page: 'deductioncheck' },
+          },
+
+        ],
+      },
+      confirmcheck: {
+        label: 'รายชื่อที่หักเงินได้',
+        entity: data.newmembership,
+        component: 'modal',
+        post: true,
+      },
+      deductioncheck: {
+        label: 'รายชื่อที่ต้องหักเงินเดือนทั้งหมด',
+        entity: data.newmembership,
+        component: 'modal',
+        post: true,
+        tabs: [
+          {
+            label: 'รอตรวจสอบ',
+            // to: { page: 'root' },
+          }
+        ],
+        actions: [
+          {
+            label: 'ยืนยันการเลือก',
+            to: { page: 'confirmcheck' },
+          },
+
+        ],
+      },
+      login: {
+        entity: data.newmembership,
+        post: true,
+      }
+    },
+    create: {
+      root: {
+        entity: data.newmembership,
+        post: true,
+        role: 'stepedit',
+        steps: steps.rootconfirm,
+      },
+      confirm: {
+        entity: data.newmembership,
+        post: true,
+        role: 'stepconfirm',
+        steps: steps.rootconfirm,
+      },
+    },
+    each: {
+      root: {
+        entity: data.newmembership,
+        actions: ['Edit'],
+      },
+      edit: {
+        entity: data.newmembership,
+        post: true,
+        role: 'edit',
+        subName: 'deduction',
       },
       close: {
         entity: data.newmembership,
