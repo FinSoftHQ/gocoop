@@ -1,19 +1,22 @@
 <template>
   <RealmPageList :pageId>
-    <template #default="{ wrapped, entries, resolver }">
+    <template #default="{ wrapped, entries, resolver }">     
       <EntityTable
         :data="wrapped.data"
         :columns="columns"
         :entries="entries"
         :resolver="resolver"
-        @selectionChanged="select"
+        v-model="selected"
       >
 
         <template #fullname-data="{ row, column }">
           {{ getPrefix(row.prefix) }}{{ row.fname }} {{ row.lname }}
-        </template>       
+        </template>
         <template #alldebts-data="{ row, column }">
           {{ formatNumber(calculateTotalDeduction(row)) }}
+        </template>
+        <template #deducted-data="{ row, column }">
+          {{ formatNumber(row.deducted) }}
         </template>
       </EntityTable>
     </template>

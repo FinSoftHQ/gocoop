@@ -18,6 +18,9 @@
         <template #alldebts-data="{ row, column }">
           {{ formatNumber(calculateTotalDeduction(row)) }}
         </template>
+        <template #deducted-data="{ row, column }">
+          {{ formatNumber(row.deducted) }}
+        </template>
       </EntityTable>
     </template>
   </RealmPageList>
@@ -57,6 +60,9 @@ const columns = [
   }, {
     key: 'alldebts',
     label: 'หนี้สินทั้งหมด',
+  },{
+    key: 'deducted',
+    label: 'หนี้ที่หักได้',
   }
 ]
 

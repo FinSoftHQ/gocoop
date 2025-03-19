@@ -8,7 +8,7 @@
 const navigation = ref([]);
 const headlinks = [{
   label: 'deduction',
-  to: '/deduction'
+  to: '/deduction/list/deductionlist'
 }]
 
 const footers: any[] = []

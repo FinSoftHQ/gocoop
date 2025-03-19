@@ -1374,11 +1374,11 @@ export const appModules = defineAppModules({
         entity: data.newmembership,
         tabs: [
           {
-            label: 'รายการรอส่งหัดเงิน',
+            label: 'รายการรอส่งหักเงิน',
             to: { page: 'root' },
           },
           {
-            label: 'ที่หักไม่ได้',
+            label: 'ผลการหักเงินจากรพ.',
             to: { page: 'closed' },
           },
         ],
@@ -1411,16 +1411,16 @@ export const appModules = defineAppModules({
             to: { page: 'root' },
           },
           {
-            label: 'ที่หักไม่ได้',
+            label: 'ผลการหักเงินจากรพ',
             to: { page: 'closed' },
           },
         ],
-        // actions: [
-        //   {
-        //     label: 'ส่งให้บัญชี',
-        //     to: { page: 'sendlink' },
-        //   }
-        // ]
+        actions: [
+          {
+            label: 'ปริ้นรายงาน',
+            to: { page: 'sendlink' },
+          }
+        ]
       },
       deductionlist: {
         label: 'รายชื่อที่ต้องหักเงินเดือนทั้งหมด',
@@ -1431,25 +1431,39 @@ export const appModules = defineAppModules({
           {
             label: 'รอตรวจสอบ',
             // to: { page: 'root' },
+          },
+          {
+            label: 'ตรวจสอบแล้ว',
+            to: { page: 'confirmcheck' },
           }
         ],
         actions: [
           {
-            label: 'หักเงินได้ทั้งหมด',
-            to: { page: 'confirmcheck' },
+            label: 'หักเงินได้แล้ว',
+            // to: { page: 'sendlink' },
           },
           {
             label: 'แก้ไขการหักเงิน',
             to: { page: 'deductioncheck' },
           },
-
-        ],
+        ]
+       
       },
       confirmcheck: {
-        label: 'รายชื่อที่หักเงินได้',
+        label: 'รายชื่อที่ต้องหักเงินเดือนทั้งหมด',
         entity: data.newmembership,
         component: 'modal',
         post: true,
+        tabs: [
+          {
+            label: 'รอตรวจสอบ',
+            to: { page: 'deductioncheck' },
+          },
+          {
+            label: 'ตรวจสอบแล้ว',
+            to: { page: 'confirmcheck' },
+          }
+        ]       
       },
       deductioncheck: {
         label: 'รายชื่อที่ต้องหักเงินเดือนทั้งหมด',
@@ -1459,16 +1473,14 @@ export const appModules = defineAppModules({
         tabs: [
           {
             label: 'รอตรวจสอบ',
-            // to: { page: 'root' },
-          }
-        ],
-        actions: [
-          {
-            label: 'ยืนยันการเลือก',
-            to: { page: 'confirmcheck' },
+            to: { page: 'deductioncheck' },
           },
-
-        ],
+          {
+            label: 'ตรวจสอบแล้ว',
+            to: { page: 'confirmcheck' },
+          }
+        ]
+              
       },
       login: {
         entity: data.newmembership,
@@ -1498,7 +1510,7 @@ export const appModules = defineAppModules({
         entity: data.newmembership,
         post: true,
         role: 'edit',
-        subName: 'deduction',
+        subName: 'deducted',
       },
       close: {
         entity: data.newmembership,

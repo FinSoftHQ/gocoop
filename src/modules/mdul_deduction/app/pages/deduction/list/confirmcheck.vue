@@ -2,9 +2,7 @@
   <RealmPageList :pageId>
     <template #default="{ wrapped, entries, resolver }">
       <div class="flex justify-end mb-4">
-        <UButton
-          type="button"
-        >         
+        <UButton type="button">
           บันทึกผลการหักเงิน
         </UButton>
       </div>
@@ -18,9 +16,12 @@
 
         <template #fullname-data="{ row, column }">
           {{ getPrefix(row.prefix) }}{{ row.fname }} {{ row.lname }}
-        </template>       
+        </template>
         <template #alldebts-data="{ row, column }">
           {{ formatNumber(calculateTotalDeduction(row)) }}
+        </template>
+        <template #deducted-data="{ row, column }">
+          {{ formatNumber(row.deducted) }}
         </template>
       </EntityTable>
     </template>
@@ -54,7 +55,7 @@ const columns = [
   {
     key: 'fullname',
     label: 'ชื่อ-สกุล',
-  },{
+  }, {
     key: 'jobPosition',
     label: 'ตำแหน่ง',
   }, {
@@ -63,6 +64,9 @@ const columns = [
   }, {
     key: 'alldebts',
     label: 'หนี้สินทั้งหมด',
+  }, {
+    key: 'deducted',
+    label: 'หนี้ที่หักได้',
   }
 ]
 
@@ -90,8 +94,8 @@ function select(item: any) {
 }
 
 function calculateTotalDeduction(row: any): number {
-const selected = ref([]);
-  const { loanfast = 0, loangeneral = 0, loanspecial = 0, loanstock = 0 ,stockValue} = row;
+  const selected = ref([]);
+  const { loanfast = 0, loangeneral = 0, loanspecial = 0, loanstock = 0, stockValue } = row;
   return loanfast + loangeneral + loanspecial + loanstock + stockValue;
 }
 </script>
