@@ -162,6 +162,7 @@ function confirmPhoto() {
   if (capturedImage.value) {
     // console.log('Taking photo:', capturedImage.value);
     emits('photoTaken', capturedImage.value);
+    
   }
 }
 

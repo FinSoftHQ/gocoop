@@ -1057,6 +1057,11 @@ export const appModules = defineAppModules({
         post: true,
         subName: 'verify',
       },
+      success: {
+        entity: data.counterverify,
+        post: true,
+        role: 'result',
+      },
       close: {
         entity: data.counterverify,
         role: 'confirm',
