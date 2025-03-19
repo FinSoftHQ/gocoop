@@ -247,11 +247,10 @@ export const appModules = defineAppModules({
     },
     each: {
       root: {
+        label: 'เตรียมข้อมูลสมัครสมาชิกเรียบร้อยแล้ว',
         entity: data.newmembership,
-        // actions: [{
-        //   label: 'ปริ้นเอกสาร',
-        //   to: { page: 'print' },
-        // },
+        role:'result',
+        
         // {
         //   label: 'บันทึกเอกสาร',
         //   to: { page: 'takephoto' },
