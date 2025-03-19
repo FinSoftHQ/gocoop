@@ -587,7 +587,37 @@ export const data = defineEntities({
           }         
         ],
       },
-    ],
+      {
+        name: 'deduction',
+        component: 'entry',
+        fields: [
+          {
+            model: 'loanfast',
+            label: 'สินเชื่อฉุกเฉิน',
+            spec: {},
+            component: 'number',
+          },
+          {
+            model: 'loangeneral',
+            label: 'สินเชื่อสามัญทั่วไป',
+            spec: {},
+            component: 'number',
+          },
+          {
+            model: 'loanspecial',
+            label: 'สินเชื่อพิเศษ',
+            spec: {},
+            component: 'number',
+          },
+          {
+            model: ' loanstock',
+            label: 'สินเชื่อกู้หุ้น',
+            spec: {},
+            component: 'number',
+          },
+        ]
+      }      
+    ]
   },
 
   // counterloanfast
