@@ -33,7 +33,7 @@ const { formatNumber, numberToThaiText, currencyToThaiText, formatDate, } = useV
 useAppExtraRolesAndComponents();
 usePdfPrint({
   templatePath: '/register.json',
-  basePdfPath: '/register2.pdf',
+  basePdfPath: '/register3.pdf',
   // blankBasePdfPath: false,
   dataTransformer: (data) => {
 

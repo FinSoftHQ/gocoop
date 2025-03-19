@@ -1,12 +1,14 @@
 <template>
   <RealmPageList :pageId>
     <template #default="{ wrapped }">
-      <h1 class="text-center font-bold mt-10 text-xl">QR Code รับคิว</h1>
       <div class="flex justify-center">
-        <FieldViewQrCode
-          modelValue="link_your_website_here/officerapp/list/complete"
-          style="width: 300px; height: 300px;"
-        ></FieldViewQrCode>
+        <UCard>
+          <h1 class="text-center font-bold text-xl">QR Code รับคิว</h1>
+          <FieldViewQrCode
+            modelValue="link_your_website_here/officerapp/list/complete"
+            style="width: 300px; height: 300px;"
+          ></FieldViewQrCode>
+        </UCard>
       </div>
       <li v-for="(msg, i) in messages">{{ msg.data }}</li>
     </template>
