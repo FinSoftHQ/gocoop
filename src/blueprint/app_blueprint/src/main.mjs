@@ -203,8 +203,8 @@ export const appModules = defineAppModules({
     each: {
       root: {
         entity: data.loanfast,
-        subName: 'filldata',
-        actions: ['Edit'],
+        role:'result',
+        label: 'เตรียมข้อมูลขอกู้ฉุกเฉินเรียบร้อยแล้ว',
       },
       edit: {
         entity: data.loanfast,

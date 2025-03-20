@@ -1,6 +1,6 @@
 <template>
   <RealmPageEach :pageId>
-    <template #default="{ wrapped, entries, resolver }">
+    <!-- <template #default="{ wrapped, entries, resolver }">
       <EntitySection v-model="wrapped.data"
         :entries
         :resolver></EntitySection>
@@ -8,7 +8,7 @@
       <FLoanTable :months="12"
         :interest-rate="5.59"
         :loan-amount="wrapped.data.amount" />
-    </template>
+    </template> -->
   </RealmPageEach>
 </template>
 
