@@ -1,38 +1,28 @@
 <template>
-  <RealmCardView
-    :pageId="pageDef.pageId"
-    :initial="data"
-  >
+  <RealmCardView :pageId="pageDef.pageId"
+    :initial="data">
     <template #default="{ wrapped, entries, resolver }">
-      <slot
-        name="result"
+      <slot name="result"
         :wrapped
         :entries
-        :resolver
-      >
+        :resolver>
         <div class="flex flex-col items-center justify-center text-center w-full">
-          <UIcon
-            class="w-16 h-16 mb-4"
+          <UIcon class="w-16 h-16 mb-4"
             :class="iconClass"
-            :name="icon"
-          />
+            :name="icon" />
           <h1 class="text-2xl font-bold mb-4">{{ title }}</h1>
 
-          <slot
-            name="default"
+          <slot name="default"
             :wrapped
             :entries
-            :resolver
-          ></slot>
+            :resolver></slot>
 
           <FPartActionsBar class="mt-4">
-            <UButton
-              v-for="(abtn, idx) in actions"
+            <UButton v-for="(abtn, idx) in actions"
               :key="idx"
               v-bind="{ ...abtn, color: abtn.color as ButtonColor || 'white', target: abtn.target ?? undefined }"
-              @click="(abtn.click ?? (() => { }))()"
-            ></UButton>
-            <UButton @click="goNextPage">OK</UButton>
+              @click="(abtn.click ?? (() => { }))()"></UButton>
+            <UButton @click="link">OK</UButton>
           </FPartActionsBar>
         </div>
       </slot>
@@ -53,4 +43,11 @@ const failureIcons = ['fail', 'failed', 'failure', 'fails', 'false'];
 const success = !failureIcons.includes(pageDef.icon ?? 'success');
 const icon = success ? 'i-line-md-confirm-circle' : 'i-line-md-close-circle';
 const iconClass = success ? 'text-green-500' : 'text-red-500';
+
+
+const link = () => {
+  navigateTo({
+    name: pageFunctions.nextPageId({ realm: 'list', page: 'root' }),
+  }); 
+}
 </script>
