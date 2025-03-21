@@ -32,9 +32,9 @@ const prefixStates: Record<string, string> = {
 const { formatNumber, numberToThaiText, currencyToThaiText, formatDate, } = useValueFormatters();
 useAppExtraRolesAndComponents();
 usePdfPrint({
-  templatePath: '/register.json',
-  basePdfPath: '/register3.pdf',
-  // blankBasePdfPath: false,
+  templatePath: '/Rcut.json',
+  basePdfPath: '/register4.pdf',
+  // blankBasePdf: false,
   dataTransformer: (data) => {
 
     const beneficiaryInfo = computed(() => {
