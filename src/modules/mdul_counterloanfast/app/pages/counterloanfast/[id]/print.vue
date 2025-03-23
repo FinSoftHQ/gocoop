@@ -153,6 +153,7 @@ usePdfPrint({
       amounttext1: numberToThaiText(data.amount) + 'บาท',
       amounttext2: numberToThaiText(data.amount) + 'บาท',
       salary: formatNumber(data.salary),
+      qrcode: '1234',
       // monthlyIncome: 'รายได้รายเดือน',
       // principalLoan:  'ต้นเงินกู้สามัญ',
       // emergencyLoan:  'ต้นเงินกู้เพื่อเหตุฉุกเฉิน',
