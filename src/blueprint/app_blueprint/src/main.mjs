@@ -791,8 +791,12 @@ export const appModules = defineAppModules({
           //   to: { page: 'takephoto' },
           // },
           {
-            label: 'ปริ้นเอกสาร',
+            label: 'ปริ้นเอกสารหน้า',
             to: { page: 'print' },
+          },
+          {
+            label: 'ปริ้นเอกสารหลัง',
+            to: { page: 'printback' },
           },
           {
             label: 'บันทึกเอกสาร',
@@ -834,6 +838,11 @@ export const appModules = defineAppModules({
         steps: steps.stepstakephoto,
       },
       print: {
+        entity: data.newmembership,
+        post: true,
+        role: 'print',
+      },
+      printback: {
         entity: data.newmembership,
         post: true,
         role: 'print',
