@@ -1430,7 +1430,7 @@
         "name": "qrcode",
         "type": "qrcode",
         "content": "https://pdfme.com/",
-        "position": { "x": 4.76, "y": 262.78 },
+        "position": { "x": 4.76, "y": 258.78 },
         "backgroundColor": "#ffffff",
         "barColor": "#000000",
         "width": 30,
