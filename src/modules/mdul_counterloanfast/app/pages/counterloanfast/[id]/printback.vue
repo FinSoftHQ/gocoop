@@ -4,10 +4,10 @@
 
 <script setup lang="ts">
 definePageMeta({
-  name: `counterloanfast.each.print`,
+  name: `counterloanfast.each.printback`,
 });
 const pageId = {
-  page: 'print',
+  page: 'printback',
 };
 
 const positionMapping: Record<string, string> = {
@@ -39,8 +39,8 @@ const prefixMapping: Record<string, string> = {
 const { formatNumber, numberToThaiText, currencyToThaiText, } = useValueFormatters();
 useAppExtraRolesAndComponents();
 usePdfPrint({
-  templatePath: '/loanfastFront.json',
-  basePdfPath: '/loanfast-front.pdf',
+  templatePath: '/loanfastBack.json',
+  basePdfPath: '/loanfast-back.pdf',
   // blankBasePdfPath: false,
   dataTransformer: (data) => {
     const totalPayments = computed(() => {

@@ -685,6 +685,13 @@ export const appModules = defineAppModules({
         entity: data.loanfast,
         post: true,
         role: 'print',
+        steps: steps.stepprint,
+      },
+      printback: {
+        entity: data.loanfast,
+        post: true,
+        role: 'print',
+        steps: steps.stepprint,
       },
       scan: {
         entity: data.loanfast,
