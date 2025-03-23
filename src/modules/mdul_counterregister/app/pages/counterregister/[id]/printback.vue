@@ -4,10 +4,10 @@
 
 <script setup lang="ts">
 definePageMeta({
-  name: `counterregister.each.print`,
+  name: `counterregister.each.printback`,
 });
 const pageId = {
-  page: 'print',
+  page: 'printback',
 };
 
 const positionMapping: Record<string, string> = {
@@ -32,8 +32,8 @@ const prefixStates: Record<string, string> = {
 const { formatNumber, numberToThaiText, currencyToThaiText, formatDate, } = useValueFormatters();
 useAppExtraRolesAndComponents();
 usePdfPrint({
-  templatePath: '/registerandqrcodeCopyfront.json',
-  basePdfPath: '/pdfPrintRegister-Front.pdf',
+  templatePath: '/registerandqrcodeCopyback.json',
+  basePdfPath: '/pdfPrintRegister-Back.pdf',
   // blankBasePdf: false,
   dataTransformer: (data) => {
 
@@ -149,7 +149,6 @@ usePdfPrint({
       beneficiaries: beneficiaryInfo.value.beneficiaryname,
       relationship:  beneficiaryInfo.value.relationship,
       beneficiariesphone:  beneficiaryInfo.value.beneficiaryphone,
-      qrcode: '1234',
     };
   },
 });

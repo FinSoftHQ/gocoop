@@ -51,6 +51,10 @@ const steps = defineSteps({
     takephoto: 'บันทึกเอกสาร',
     result: 'ผลการบันทึก',
   },
+  stepprint: {
+    print: 'ปริ้นเอกสารหน้า',
+    printback: 'ปริ้นเอกสารหลัง',
+  },
   editconfirm: ['edit', 'confirm'],
 });
 
@@ -681,6 +685,13 @@ export const appModules = defineAppModules({
         entity: data.loanfast,
         post: true,
         role: 'print',
+        steps: steps.stepprint,
+      },
+      printback: {
+        entity: data.loanfast,
+        post: true,
+        role: 'print',
+        steps: steps.stepprint,
       },
       scan: {
         entity: data.loanfast,
@@ -786,10 +797,6 @@ export const appModules = defineAppModules({
       root: {
         entity: data.newmembership,
         actions: [
-          // {
-          //   label: 'ยืนยันตัวตน',
-          //   to: { page: 'takephoto' },
-          // },
           {
             label: 'ปริ้นเอกสาร',
             to: { page: 'print' },
@@ -837,6 +844,14 @@ export const appModules = defineAppModules({
         entity: data.newmembership,
         post: true,
         role: 'print',
+        steps: steps.stepprint,
+      },
+      printback: {
+        entity: data.newmembership,
+        post: true,
+        role: 'print',
+        steps: steps.stepprint,
+
       },
       fillin: {
         entity: data.newmembership,
