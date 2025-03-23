@@ -32,8 +32,8 @@ const prefixStates: Record<string, string> = {
 const { formatNumber, numberToThaiText, currencyToThaiText, formatDate, } = useValueFormatters();
 useAppExtraRolesAndComponents();
 usePdfPrint({
-  templatePath: '/Rcut.json',
-  basePdfPath: '/register4.pdf',
+  templatePath: '/registerandqrcode.json',
+  basePdfPath: '/pdfPrintRegister.pdf',
   // blankBasePdf: false,
   dataTransformer: (data) => {
 
@@ -149,6 +149,7 @@ usePdfPrint({
       beneficiaries: beneficiaryInfo.value.beneficiaryname,
       relationship:  beneficiaryInfo.value.relationship,
       beneficiariesphone:  beneficiaryInfo.value.beneficiaryphone,
+      qrcode: '1234',
     };
   },
 });
