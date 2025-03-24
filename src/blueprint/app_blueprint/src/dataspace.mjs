@@ -205,13 +205,7 @@ export const data = defineEntities({
   // loanfast
   loanfast: {
     root: [
-      {
-        model: 'idmember',
-        label: 'รหัสสมาชิก',
-        spec: {},
-        component: 'text',
-      },
-      {
+      [{
         model: 'prefix',
         label: 'คำนำหน้าชื่อ',
         spec: {},
@@ -229,6 +223,12 @@ export const data = defineEntities({
         label: 'สกุล',
         spec: {},
         component: 'text',
+      },],
+      [{
+        model: 'idmember',
+        label: 'รหัสสมาชิก',
+        spec: {},
+        component: 'text',
       },
       {
         model: 'position',
@@ -242,8 +242,8 @@ export const data = defineEntities({
         label: 'หน่วยงาน',
         spec: {},
         component: 'text',
-      },
-      {
+      },],
+      [{
         model: 'department',
         label: 'สังกัด',
         spec: {},
@@ -260,8 +260,8 @@ export const data = defineEntities({
         label: 'ยอดที่ต้องการกู้ (บาท)',
         spec: {},
         component: 'number',
-      },          
-      {
+      },],        
+      [{
         model: 'installments',
         label: 'เลือกจำนวนงวด',
         spec: {},
@@ -281,7 +281,7 @@ export const data = defineEntities({
         label: 'Date Created',
         spec: v.optional(v.pipe(v.string(), v.regex(/^\d{8}$/, "Invalid format, date should be 'YYYYMMDD'"))),
         component: 'date',
-      },
+      },],
     ],
     sub: [
       {
@@ -634,13 +634,7 @@ export const data = defineEntities({
 
   // counterloanfast
   counterloanfast: {
-    root: [
-      {
-        model: 'idmember',
-        label: 'รหัสสมาชิก',
-        spec: {},
-        component: 'text',
-      },
+    root: [[
       {
         model: 'prefix',
         label: 'คำนำหน้าชื่อ',
@@ -659,6 +653,12 @@ export const data = defineEntities({
         label: 'สกุล',
         spec: {},
         component: 'text',
+      },],[
+      {
+        model: 'idmember',
+        label: 'รหัสสมาชิก',
+        spec: {},
+        component: 'text',
       },
       {
         model: 'position',
@@ -672,7 +672,7 @@ export const data = defineEntities({
         label: 'สังกัด',
         spec: {},
         component: 'text',
-      },
+      },],
       {
         model: 'salary',
         label: 'เงินเดือน',
