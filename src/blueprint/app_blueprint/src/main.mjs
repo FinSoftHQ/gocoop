@@ -685,14 +685,14 @@ export const appModules = defineAppModules({
         entity: data.loanfast,
         post: true,
         role: 'print',
-        steps: steps.stepprint,
+        // steps: steps.stepprint,
       },
-      printback: {
-        entity: data.loanfast,
-        post: true,
-        role: 'print',
-        steps: steps.stepprint,
-      },
+      // printback: {
+      //   entity: data.loanfast,
+      //   post: true,
+      //   role: 'print',
+      //   steps: steps.stepprint,
+      // },
       scan: {
         entity: data.loanfast,
         post: true,
@@ -843,13 +843,13 @@ export const appModules = defineAppModules({
       print: {
         entity: data.newmembership,
         post: true,
-        role: 'print',
+        role: 'printstep',
         steps: steps.stepprint,
       },
       printback: {
         entity: data.newmembership,
         post: true,
-        role: 'print',
+        role: 'printstep',
         steps: steps.stepprint,
 
       },
