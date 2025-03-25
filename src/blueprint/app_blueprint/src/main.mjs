@@ -1343,6 +1343,30 @@ export const appModules = defineAppModules({
         entity: data.newmembership,
         component: 'modal',
         post: true,
+        tabs: [
+          {
+            label: 'รายการรอตรวจสอบ',
+            to: { page: 'salarycheck' },
+          },
+          {
+            label: 'ตรวจสอบแล้ว',
+            to: { page: 'confirmcheck' },
+          },
+        ]       
+      },
+      confirmcheck: {
+        entity: data.newmembership,
+        post: true,
+        tabs: [
+          {
+            label: 'รอตรวจสอบ',
+            to: { page: 'salarycheck' },
+          },
+          {
+            label: 'ตรวจสอบแล้ว',
+            to: { page: 'confirmcheck' },
+          }
+        ]  
       },
       login: {
         entity: data.newmembership,
@@ -1483,8 +1507,7 @@ export const appModules = defineAppModules({
             label: 'ตรวจสอบแล้ว',
             to: { page: 'confirmcheck' },
           }
-        ]
-              
+        ]              
       },
       login: {
         entity: data.newmembership,
