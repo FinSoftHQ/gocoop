@@ -1,6 +1,11 @@
 <template>
   <RealmPageList :pageId>
     <template #default="{ wrapped, entries, resolver }">
+      <div class="flex justify-end mb-4">
+        <UButton type="button">
+          ปริ้นรายงาน
+        </UButton>
+      </div>      
       <EntityTable
         :data="wrapped.data"
         :columns="columns"
