@@ -8,7 +8,7 @@ export default defineNuxtConfig({
   experimental: {
     inlineRouteRules: true,
   },
-  extends: ['fin-ready', 'mdul-counterloanfast', 'mdul-counterregister', 'mdul-counterverify', 'mdul-finance'],
+  extends: ['fin-ready', 'mdul-counterloanfast', 'mdul-counterregister', 'mdul-counterverify', 'mdul-finance', 'mdul-salarycheck', 'mdul-deduction'],
 
   runtimeConfig: {
     // apiServer: {
