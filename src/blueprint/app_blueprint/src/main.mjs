@@ -1127,10 +1127,12 @@ export const appModules = defineAppModules({
           },
           {
             title: 'สมาชิกใหม่รอตรวจสอบเงินเดือน',
+            to: { module: 'salarycheck', realm: 'list', page: 'root' },
             icon: 'i-mdi-account-clock',
           },             
           {
             title: 'หักหนี้เงินเดือน',
+            to: { module: 'deduction', realm: 'list', page: 'root' },
             icon: 'i-mdi-cash-minus',
           }                   
         ]
@@ -1313,7 +1315,7 @@ export const appModules = defineAppModules({
             to: { page: 'root' },
           },
           {
-            label: 'ตรวจสอบแล้ว',
+            label: 'ผลการตรวจเงินจากรพ',
             to: { page: 'closed' },
           },
         ],
@@ -1338,11 +1340,51 @@ export const appModules = defineAppModules({
         entity: data.newmembership,
         component: 'modal',
         post: true,
+        tabs: [
+          {
+            label: 'รายการรอตรวจสอบ',
+            to: { page: 'root' },
+          },
+          {
+            label: 'ผลการตรวจเงินจากรพ',
+            to: { page: 'closed' },
+          },
+        ],
+        actions: [
+          {
+            label: 'ปริ้นรายงาน',
+            // to: { page: 'sendlink' },
+          }
+        ]    
       },
       salarycheck: {
         entity: data.newmembership,
         component: 'modal',
         post: true,
+        tabs: [
+          {
+            label: 'รายการรอตรวจสอบ',
+            to: { page: 'salarycheck' },
+          },
+          {
+            label: 'ตรวจสอบแล้ว',
+            to: { page: 'confirmcheck' },
+          },
+        ]       
+      },
+      confirmcheck: {
+        entity: data.newmembership,
+        post: true,
+        tabs: [
+          {
+            label: 'รอตรวจสอบ',
+            to: { page: 'salarycheck' },
+          },
+          {
+            label: 'ตรวจสอบแล้ว',
+            to: { page: 'confirmcheck' },
+          }
+        ]  
       },
       login: {
         entity: data.newmembership,
@@ -1483,8 +1525,7 @@ export const appModules = defineAppModules({
             label: 'ตรวจสอบแล้ว',
             to: { page: 'confirmcheck' },
           }
-        ]
-              
+        ]              
       },
       login: {
         entity: data.newmembership,

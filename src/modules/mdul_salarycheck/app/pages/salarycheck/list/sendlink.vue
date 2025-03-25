@@ -216,7 +216,7 @@ onMounted(() => {
 });
 
 function copyToClipboard() {
-  const specificUrl = 'http://localhost:3001/salarycheck/list/login';
+  const specificUrl = 'http://localhost:3000/salarycheck/list/login';
   navigator.clipboard.writeText(specificUrl).then(() => {
     // Optionally, you can show a success message or change the button icon
   }).catch(err => {

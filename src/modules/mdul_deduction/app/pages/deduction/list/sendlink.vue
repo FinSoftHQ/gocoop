@@ -219,7 +219,7 @@ onMounted(() => {
 });
 
 function copyToClipboard() {
-  const specificUrl = 'http://localhost:3002/deduction/list/deductionlist';
+  const specificUrl = 'http://localhost:3000/deduction/list/deductionlist';
   navigator.clipboard.writeText(specificUrl).then(() => {
     // Optionally, you can show a success message or change the button icon
   }).catch(err => {

@@ -1,11 +1,17 @@
 <template>
   <RealmPageList :pageId>
     <template #default="{ wrapped, entries, resolver }">
+      <div class="flex justify-end mb-4 gap-4">
+        <UButton type="button">
+          ตรวจสอบแล้ว
+        </UButton>        
+      </div>
       <EntityTable
         :data="wrapped.data"
         :columns="columns"
         :entries="entries"
         :resolver="resolver"
+        v-model="selected"
         @selectionChanged="select"
       >
 
@@ -28,6 +34,7 @@ const pageId = {
   page: 'salarycheck',
 };
 
+const selected = ref([]);
 
 const pageDef = usePageDefinition(pageId);
 const pageFunctions = usePageFunctions(pageDef);

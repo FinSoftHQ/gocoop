@@ -1,6 +1,11 @@
 <template>
   <RealmPageList :pageId>
-    <template #default="{ wrapped, entries, resolver }">        
+    <template #default="{ wrapped, entries, resolver }">
+      <div class="flex justify-end mb-4">
+        <UButton type="button">
+          บันทึกและส่งเรื่องให้ สหกรณ์
+        </UButton>
+      </div>
       <EntityTable
         :data="wrapped.data"
         :columns="columns"
@@ -20,13 +25,16 @@
   </RealmPageList>
 </template>
 
+
 <script setup lang="ts">
 definePageMeta({
-  name: `salarycheck.list.closed`,
+  name: `salarycheck.list.confirmcheck`,
 });
 const pageId = {
-  page: 'closed',
+  page: 'confirmcheck',
 };
+
+
 const pageDef = usePageDefinition(pageId);
 const pageFunctions = usePageFunctions(pageDef);
 
@@ -53,13 +61,7 @@ const columns = [
   }, {
     key: 'department',
     label: 'แผนก',
-  }, {
-    key: 'phoneNumber',
-    label: 'เบอร์โทร',
-  }, {
-    key: 'stockValue',
-    label: 'ส่งเงินค่าหุ้นรายเดือนละ',
-  },
+  }
 ]
 
 const { formatDisplay: formatAge } = useDisplayField({
