@@ -1353,7 +1353,7 @@ export const appModules = defineAppModules({
         actions: [
           {
             label: 'ปริ้นรายงาน',
-            to: { page: 'sendlink' },
+            // to: { page: 'sendlink' },
           }
         ]    
       },
