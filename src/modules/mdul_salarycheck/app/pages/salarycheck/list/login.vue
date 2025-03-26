@@ -86,7 +86,7 @@ const validate = (state: any) => {
 function onSubmit(data: any) {
   if (data.email === 'admin@gmail.com' && data.password === '1234') {
     console.log('Login successful');
-    window.location.href = '/salarycheck/list/salarycheck';
+    window.location.href = '/salarycheck/list/sendlist';
   } else {
     console.log('Invalid email or password');
   }

@@ -1,6 +1,6 @@
 <template>
   <RealmPageList :pageId>
-    <template #default="{ wrapped, entries, resolver }">      
+    <template #default="{ wrapped, entries, resolver }">
       <EntityTable
         :data="wrapped.data"
         :columns="columns"
@@ -15,6 +15,12 @@
         <template #age-data="{ row, column }">
           {{ formatAge(row.birthDate) }}
         </template>
+        <template #alldebts-data="{ row, column }">
+          {{ formatNumber(calculateTotalDeduction(row)) }}
+        </template>
+        <template #deducted-data="{ row, column }">
+          {{ formatNumber(row.deducted) }}
+        </template>
       </EntityTable>
     </template>
   </RealmPageList>
@@ -22,16 +28,14 @@
 
 <script setup lang="ts">
 definePageMeta({
-  name: `salarycheck.list.salarycheck`,
+  name: `deduction.list.reportprint`,
 });
 const pageId = {
-  page: 'salarycheck',
+  page: 'reportprint',
 };
-
-const selected = ref([]);
-
 const pageDef = usePageDefinition(pageId);
 const pageFunctions = usePageFunctions(pageDef);
+const { formatNumber } = useValueFormatters();
 
 const columns = [
   {
@@ -46,16 +50,18 @@ const columns = [
   {
     key: 'fullname',
     label: 'ชื่อ-สกุล',
-  }, {
-    key: 'age',
-    label: 'อายุ',
-    sortable: true
-  }, {
+  },{
     key: 'jobPosition',
     label: 'ตำแหน่ง',
   }, {
     key: 'department',
     label: 'แผนก',
+  }, {
+    key: 'alldebts',
+    label: 'หนี้สินทั้งหมด',
+  },{
+    key: 'deducted',
+    label: 'หนี้ที่หักได้',
   }
 ]
 
@@ -79,6 +85,11 @@ function getPrefix(key: string): string {
 }
 
 function select(item: any) {
-  navigateTo({ name: pageFunctions.relativeName({ module: 'salarycheck', realm: 'each', page: 'root' }), params: { id: item.id } });
+  navigateTo({ name: pageFunctions.relativeName({ module: 'deduction', realm: 'each', page: 'root' }), params: { id: item.id } });
+}
+
+function calculateTotalDeduction(row: any): number {
+  const { loanfast = 0, loangeneral = 0, loanspecial = 0, loanstock = 0 } = row;
+  return loanfast + loangeneral + loanspecial + loanstock;
 }
 </script>
