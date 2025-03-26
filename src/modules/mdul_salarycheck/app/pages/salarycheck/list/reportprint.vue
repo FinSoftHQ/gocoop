@@ -1,6 +1,6 @@
 <template>
   <RealmPageList :pageId>
-    <template #default="{ wrapped, entries, resolver }">      
+    <template #default="{ wrapped, entries, resolver }">
       <EntityTable
         :data="wrapped.data"
         :columns="columns"
@@ -22,10 +22,10 @@
 
 <script setup lang="ts">
 definePageMeta({
-  name: `salarycheck.list.salarycheck`,
+  name: `salarycheck.list.reportprint`,
 });
 const pageId = {
-  page: 'salarycheck',
+  page: 'reportprint',
 };
 
 const selected = ref([]);

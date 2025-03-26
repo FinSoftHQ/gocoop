@@ -1,11 +1,22 @@
 <template>
   <RealmPageList :pageId>
-    <template #default="{ wrapped, entries, resolver }">      
+    <template #default="{ wrapped, entries, resolver }">
+      <div class="flex justify-end mb-4 gap-4">
+        <UButton type="button">
+          ตรวจสอบแล้ว
+        </UButton>        
+        <UButton type="button"
+        @click="navigateTo({ name: 'salarycheck.list.salarycheck' })"
+        >
+          แก้ไขการข้อมูล
+        </UButton>        
+      </div>
       <EntityTable
         :data="wrapped.data"
         :columns="columns"
         :entries="entries"
         :resolver="resolver"
+        v-model="selected"
         @selectionChanged="select"
       >
 
@@ -22,10 +33,10 @@
 
 <script setup lang="ts">
 definePageMeta({
-  name: `salarycheck.list.salarycheck`,
+  name: `salarycheck.list.sendlist`,
 });
 const pageId = {
-  page: 'salarycheck',
+  page: 'sendlist',
 };
 
 const selected = ref([]);

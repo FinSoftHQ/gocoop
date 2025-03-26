@@ -1336,6 +1336,24 @@ export const appModules = defineAppModules({
           }
         ]
       },
+      sendlist: {
+        entity: data.newmembership,
+        tabs: [
+          {
+            label: 'รอตรวจสอบ',
+            to: { page: 'salarycheck' },
+          },
+          {
+            label: 'ตรวจสอบแล้ว',
+            to: { page: 'confirmcheck' },
+          }
+        ]
+      },
+      reportprint: {
+        entity: data.newmembership,
+        post: true,
+        role: "webprint",
+      },
       closed: {
         entity: data.newmembership,
         component: 'modal',
@@ -1353,7 +1371,7 @@ export const appModules = defineAppModules({
         actions: [
           {
             label: 'ปริ้นรายงาน',
-            // to: { page: 'sendlink' },
+            to: { page: 'reportprint' },
           }
         ]    
       },
@@ -1363,14 +1381,14 @@ export const appModules = defineAppModules({
         post: true,
         tabs: [
           {
-            label: 'รายการรอตรวจสอบ',
+            label: 'รอตรวจสอบ',
             to: { page: 'salarycheck' },
           },
           {
             label: 'ตรวจสอบแล้ว',
             to: { page: 'confirmcheck' },
-          },
-        ]       
+          }
+        ]               
       },
       confirmcheck: {
         entity: data.newmembership,
@@ -1422,7 +1440,6 @@ export const appModules = defineAppModules({
       }
     },
   },
-
   deduction: {
     label: 'deduction',
     list: {
@@ -1475,9 +1492,14 @@ export const appModules = defineAppModules({
         actions: [
           {
             label: 'ปริ้นรายงาน',
-            to: { page: 'sendlink' },
+            to: { page: 'reportprint' },
           }
         ]
+      },
+      reportprint: {
+        entity: data.newmembership,
+        post: true,
+        role: "webprint",
       },
       deductionlist: {
         label: 'รายชื่อที่ต้องหักเงินเดือนทั้งหมด',
