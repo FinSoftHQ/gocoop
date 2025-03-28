@@ -39,13 +39,13 @@ usePdfPrint({
 
     const beneficiaryInfo = computed(() => {
       const label = data.beneficiary[0].label;
-      const regex = /^(.*?)\s+(.*?)\s+(.*?)\s+(\d+)$/;
+      const regex = /^(.*?)\s+(.*?)\s+(.*?)\s+(.*?)\s+(\d+)$/;
       const match = label.match(regex);
       if (match) {
       return {
-        beneficiaryname: match[1] + ' ' + match[2],
-        relationship: match[3],
-        beneficiaryphone: match[4],
+        beneficiaryname:  match[1] + match[2] + ' ' + match[3],
+        relationship: match[4],
+        beneficiaryphone: match[5],
       };
       }
       return {

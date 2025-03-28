@@ -530,7 +530,7 @@ export const data = defineEntities({
           name: 'member',
           component: 'appendable',
           link2: 'member', // { module: 'category', realm: 'list', page: 'root' },
-          dataLabel: (data) => `${data.fname} ${data.lname} ${data.relevant} ${data.phone}`,
+          dataLabel: (data) => `${data.prefixs} ${data.fname} ${data.lname} ${data.relevant} ${data.phone}`,
           query: (search) => ({ q: search }), // (search) => ({ name: search })
         },
       },
@@ -778,7 +778,7 @@ export const data = defineEntities({
         component: 'entry',
         fields: [
           {
-            model: 'prefix',
+            model: 'prefixs',
             label: 'คำนำหน้าชื่อ',
             spec: {},
             component: 'select',
@@ -856,6 +856,12 @@ export const data = defineEntities({
 
   member: {
     root: [
+      {
+        model: 'prefixs',
+        label: 'คำนำหน้าชื่อ',
+        spec: {},
+        component: 'text',
+      },
       {
         model: 'fname',
         label: 'ชื่อ',
