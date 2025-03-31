@@ -1577,11 +1577,18 @@ export const appModules = defineAppModules({
     each: {
       root: {
         entity: data.deduction,
-        actions: ['Edit'],
+        actions: ['Edit','Editdue'],
       },
       edit: {
         entity: data.deduction,
         post: true,
+        role: 'edit',
+        
+      },
+      editdue: {
+        entity: data.deduction,
+        post: true,
+        subName: 'editdue',
         role: 'edit',
         
       },
