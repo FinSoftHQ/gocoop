@@ -1,7 +1,34 @@
 <template>
   <RealmPageList :pageId>
     <template #default="{ wrapped, entries, resolver }">
-      <div class="flex mb-4 u gap-4 justify-end">
+      <div class="flex flex-col items-center space-y-2 mb-4">
+        <p class="font-normal text-gray-900 dark:text-white text-right w-full px-4">
+          หน้าที่ :
+        </p>
+        <h2 class="text-xl font-bold text-center py-2">สหกรณ์ออมทรัพย์โรงพยาบาลศรีเกษ จำกัด</h2>
+        <div class="flex justify-between w-full px-4">
+          <p class="font-normal text-gray-900 dark:text-white">
+            วันที่พิมพ์ :{{ new Date().toLocaleDateString('th-TH', { year: 'numeric', month: 'long', day: 'numeric' })
+            }}
+          </p>
+          <p class="font-normal text-gray-900 dark:text-white">
+            สังกัด สอโรงพยาบาลศรีเกษ
+          </p>
+          <p class="font-normal text-gray-900 dark:text-white">
+            เวลาพิมพ์ : {{ new Date().toLocaleTimeString('th-TH') }} น.
+          </p>
+        </div>
+        <div class="flex justify-between w-full px-4">
+          <p class="font-normal text-gray-900 dark:text-white">
+            ประเภท : หักเงินเดือน
+          </p>
+
+          <p class="font-normal text-gray-900 dark:text-white">
+            ผู้พิมพ์ :
+          </p>
+        </div>
+      </div>
+      <div class="flex mb-4 u gap-4 justify-end px-4">
         <span class=" text-sm font-medium text-gray-700 dark:text-gray-300">
           รายชื่อทั้งหมด: {{ wrapped.data.length }}
         </span>
@@ -19,26 +46,27 @@
         :data="wrapped.data"
         :columns="columns"
         :ui="{
-        tr: {
-        base: '',
-        selected: 'bg-gray-50 dark:bg-gray-800/50',
-        expanded: 'bg-gray-50 dark:bg-gray-800/50',
-        active: 'hover:bg-gray-50 dark:hover:bg-gray-800/50 cursor-pointer'
-        },
-        th: {
-        base: 'whitespace-nowrap text-center rtl:text-center',
-        padding: 'p-1',
-        color: 'text-gray-900 dark:text-white',
-        font: 'font-semibold',
-        size: 'text-xs'
-        },
-        td: {
-        base: 'whitespace-nowrap text-center rtl:text-center',
-        padding: 'p-1',
-        color: 'text-gray-500 dark:text-gray-400',
-        font: '',
-        size: 'text-xs'
-        }}"
+          tr: {
+            base: '',
+            selected: 'bg-gray-50 dark:bg-gray-800/50',
+            expanded: 'bg-gray-50 dark:bg-gray-800/50',
+            active: 'hover:bg-gray-50 dark:hover:bg-gray-800/50 cursor-pointer'
+          },
+          th: {
+            base: 'whitespace-nowrap text-center rtl:text-center',
+            padding: 'p-1',
+            color: 'text-gray-900 dark:text-white',
+            font: 'font-semibold',
+            size: 'text-xs'
+          },
+          td: {
+            base: 'whitespace-nowrap text-center rtl:text-center',
+            padding: 'p-1',
+            color: 'text-gray-500 dark:text-gray-400',
+            font: '',
+            size: 'text-xs'
+          }
+        }"
         :entries="entries"
         :resolver="resolver"
         @selectionChanged="select"
@@ -90,65 +118,65 @@ const columns = [
     label: 'ค่าทำเนียม',
   },
   {
-    key: 'period',
+    key: 'periodNO',
     label: 'หุ้นงวดที่',
   },
   {
-    key: 'amount',
+    key: 'stock',
     label: 'จำนวนเงิน',
   },
   {
-    key: 'idmember',
-    label: 'ฉ งวดที่',
+    key: 'periodFast',
+    label: 'งวดที่',
   },
   {
-    key: 'idmember',
+    key: 'loanFast',
     label: 'เงินต้น',
   },
   {
-    key: 'idmember',
+    key: 'emergencyFast',
     label: 'ดอกเบี้ย',
   },
   {
-    key: 'idmember',
+    key: 'periodNOFast',
     label: 'สามัญงวดที่',
   },
   {
-    key: 'idmember',
+    key: 'ordinaryPrincipal',
     label: 'เงินติ้น',
   },
   {
-    key: 'idmember',
+    key: 'ordinaryInterest',
     label: 'ดอกเบี้ย',
   },
   {
-    key: 'idmember',
+    key: 'loan',
     label: 'เงินกู้',
   },
   {
-    key: 'idmember',
+    key: 'surrenderWealth',
     label: 'ยอมทรัพย์',
   },
   {
-    key: 'idmember',
+    key: 'other',
     label: 'อื่นๆ',
   },
   {
-    key: 'idmember',
+    key: 'accumulatedMoney',
     label: 'เงินสะสม',
   },
   {
-    key: 'idmember',
+    key: 'salary',
     label: 'เงินเดือน',
   },
   {
-    key: 'idmember',
+    key: 'totalCreditors',
     label: 'รวมเงินชำระ',
   },
   {
-    key: 'idmember',
+    key: 'receiptNumber',
     label: 'เลขที่ใบเสร็จ',
-  } 
+  }
 ]
 
 const { formatDisplay: formatAge } = useDisplayField({
