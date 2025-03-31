@@ -592,29 +592,71 @@ export const data = defineEntities({
         component: 'entry',
         fields: [
           {
-            model: 'loanfast',
-            label: 'สินเชื่อฉุกเฉิน',
+            model: 'periodNO',
+            label: 'หุ้นงวดที่',
             spec: {},
             component: 'number',
           },
           {
-            model: 'loangeneral',
-            label: 'สินเชื่อสามัญทั่วไป',
+            model: 'stock',
+            label: 'หุ้น',
             spec: {},
             component: 'number',
           },
           {
-            model: 'loanspecial',
-            label: 'สินเชื่อพิเศษ',
+            model: 'periodFast',
+            label: 'งวดที่',
             spec: {},
             component: 'number',
           },
           {
-            model: ' loanstock',
-            label: 'สินเชื่อกู้หุ้น',
+            model: 'loanFast',
+            label: 'เงินต้น ฉ',
             spec: {},
             component: 'number',
           },
+          {
+            model: 'emergencyFast',
+            label: 'ดอกเบี้ย ฉ',
+            spec: {},
+            component: 'number',
+          },
+          {
+            model: 'periodNOFast',
+            label: 'งวดที่สามัญ',
+            spec: {},
+            component: 'number',
+          },          
+          {
+            model: ' ordinaryPrincipal',
+            label: 'เงินต้นสามัญ',
+            spec: {},
+            component: 'number',
+          },
+          {
+            model: 'ordinaryInterest',
+            label: 'ดอกเบี้ยสามัญ',
+            spec: {},
+            component: 'number',
+          },
+          {
+            model: ' loan',
+            label: 'เงินกู้',
+            spec: {},
+            component: 'number',
+          },
+          {
+            model: 'totalCreditors',
+            label: 'รวมที่ต้องชำระ',
+            spec: {},
+            component: 'number',
+          },
+          {
+            model: 'receiptNumber',
+            label: 'เลขใบเสร็จ',
+            spec: {},
+            component: 'number',
+          },         
         ]
       },     
       {
@@ -622,16 +664,229 @@ export const data = defineEntities({
         component: 'entry',
         fields: [
           {
-            model: 'deducted',
-            label: 'ที่หักได้',
+            model: 'idmember',
+            label: 'เลขสมาชิก',
             spec: {},
             component: 'number',
-          }         
+          },
+          {
+            model: 'fullname',
+            label: 'ชื่อ-สกุล',
+            spec: {},
+            component: 'text',
+          },
+          {
+            model: 'businessfees',
+            label: 'ค่าทำเนียม',
+            spec: {},
+            component: 'number',
+          },
+          {
+            model: 'periodNO',
+            label: 'หุ้นงวดที่',
+            spec: {},
+            component: 'number',
+          },
+          {
+            model: 'stock',
+            label: 'หุ้น',
+            spec: {},
+            component: 'number',
+          },
+          {
+            model: 'periodFast',
+            label: 'งวดที่',
+            spec: {},
+            component: 'number',
+          },
+          {
+            model: 'loanFast',
+            label: 'เงินต้น ฉ',
+            spec: {},
+            component: 'number',
+          },
+          {
+            model: 'emergencyFast',
+            label: 'ดอกเบี้ย ฉ',
+            spec: {},
+            component: 'number',
+          },
+          {
+            model: 'periodNOFast',
+            label: 'งวดที่สามัญ',
+            spec: {},
+            component: 'number',
+          },          
+          {
+            model: ' ordinaryPrincipal',
+            label: 'เงินต้นสามัญ',
+            spec: {},
+            component: 'number',
+          },
+          {
+            model: 'ordinaryInterest',
+            label: 'ดอกเบี้ยสามัญ',
+            spec: {},
+            component: 'number',
+          },
+          {
+            model: ' loan',
+            label: 'เงินกู้',
+            spec: {},
+            component: 'number',
+          },
+          {
+            model: 'surrenderWealth',
+            label: 'ยอมทรัพย์',
+            spec: {},
+            component: 'number',
+          },
+          {
+            model: 'other',
+            label: 'อื่นๆ',
+            spec: {},
+            component: 'number',
+          },
+          {
+            model: 'accumulatedMoney',
+            label: 'เงินสะสม',
+            spec: {},
+            component: 'number',
+          },
+          {
+            model: 'salary',
+            label: 'เงินเดือน',
+            spec: {},
+            component: 'number',
+          },
+          {
+            model: 'totalCreditors',
+            label: 'รวมที่ต้องชำระ',
+            spec: {},
+            component: 'number',
+          },
+          {
+            model: 'receiptNumber',
+            label: 'เลขใบเสร็จ',
+            spec: {},
+            component: 'number',
+          },           
         ]
       }      
     ]
   },
-
+  deduction: {
+    root: [
+      {
+        model: 'idmember',
+        label: 'เลขสมาชิก',
+        spec: {},
+        component: 'number',
+      },
+      {
+        model: 'fullname',
+        label: 'ชื่อ-สกุล',
+        spec: {},
+        component: 'text',
+      },
+      {
+        model: 'businessfees',
+        label: 'ค่าทำเนียม',
+        spec: {},
+        component: 'number',
+      },
+      {
+        model: 'periodNO',
+        label: 'หุ้นงวดที่',
+        spec: {},
+        component: 'number',
+      },
+      {
+        model: 'stock',
+        label: 'หุ้น',
+        spec: {},
+        component: 'number',
+      },
+      {
+        model: 'periodFast',
+        label: 'งวดที่',
+        spec: {},
+        component: 'number',
+      },
+      {
+        model: 'loanFast',
+        label: 'เงินต้น ฉ',
+        spec: {},
+        component: 'number',
+      },
+      {
+        model: 'emergencyFast',
+        label: 'ดอกเบี้ย ฉ',
+        spec: {},
+        component: 'number',
+      },
+      {
+        model: 'periodNOFast',
+        label: 'งวดที่สามัญ',
+        spec: {},
+        component: 'number',
+      },          
+      {
+        model: ' ordinaryPrincipal',
+        label: 'เงินต้นสามัญ',
+        spec: {},
+        component: 'number',
+      },
+      {
+        model: 'ordinaryInterest',
+        label: 'ดอกเบี้ยสามัญ',
+        spec: {},
+        component: 'number',
+      },
+      {
+        model: ' loan',
+        label: 'เงินกู้',
+        spec: {},
+        component: 'number',
+      },
+      {
+        model: 'surrenderWealth',
+        label: 'ยอมทรัพย์',
+        spec: {},
+        component: 'number',
+      },
+      {
+        model: 'other',
+        label: 'อื่นๆ',
+        spec: {},
+        component: 'number',
+      },
+      {
+        model: 'accumulatedMoney',
+        label: 'เงินสะสม',
+        spec: {},
+        component: 'number',
+      },
+      {
+        model: 'salary',
+        label: 'เงินเดือน',
+        spec: {},
+        component: 'number',
+      },
+      {
+        model: 'totalCreditors',
+        label: 'รวมที่ต้องชำระ',
+        spec: {},
+        component: 'number',
+      },
+      {
+        model: 'receiptNumber',
+        label: 'เลขใบเสร็จ',
+        spec: {},
+        component: 'number',
+      },  
+    ]   
+  },
   // counterloanfast
   counterloanfast: {
     root: [[

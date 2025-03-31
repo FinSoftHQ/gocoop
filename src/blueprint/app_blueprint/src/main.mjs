@@ -1445,7 +1445,7 @@ export const appModules = defineAppModules({
     list: {
       root: {
         label: 'รายชื่อที่หักเงิน',
-        entity: data.newmembership,
+        entity: data.deduction,
         tabs: [
           {
             label: 'รายการรอส่งหักเงิน',
@@ -1466,7 +1466,7 @@ export const appModules = defineAppModules({
       },
       sendlink: {
         label: 'รายชื่อที่ต้องหักเงินเดือนทั้งหมด',
-        entity: data.newmembership,
+        entity: data.deduction,
         tabs: [
           {
             label: 'รายการรอตรวจสอบ',
@@ -1476,7 +1476,7 @@ export const appModules = defineAppModules({
       },
       closed: {
         label: 'รายชื่อที่หักเงิน',
-        entity: data.newmembership,
+        entity: data.deduction,
         component: 'modal',
         post: true,
         tabs: [
@@ -1497,13 +1497,13 @@ export const appModules = defineAppModules({
         ]
       },
       reportprint: {
-        entity: data.newmembership,
+        entity: data.deduction,
         post: true,
         role: "webprint",
       },
       deductionlist: {
         label: 'รายชื่อที่ต้องหักเงินเดือนทั้งหมด',
-        entity: data.newmembership,
+        entity: data.deduction,
         component: 'modal',
         post: true,
         tabs: [
@@ -1519,7 +1519,7 @@ export const appModules = defineAppModules({
       },
       confirmcheck: {
         label: 'รายชื่อที่ต้องหักเงินเดือนทั้งหมด',
-        entity: data.newmembership,
+        entity: data.deduction,
         component: 'modal',
         post: true,
         tabs: [
@@ -1535,7 +1535,7 @@ export const appModules = defineAppModules({
       },
       deductioncheck: {
         label: 'รายชื่อที่ต้องหักเงินเดือนทั้งหมด',
-        entity: data.newmembership,
+        entity: data.deduction,
         component: 'modal',
         post: true,
         tabs: [
@@ -1550,19 +1550,19 @@ export const appModules = defineAppModules({
         ]              
       },
       login: {
-        entity: data.newmembership,
+        entity: data.deduction,
         post: true,
       }
     },
     create: {
       root: {
-        entity: data.newmembership,
+        entity: data.deduction,
         post: true,
         role: 'stepedit',
         steps: steps.rootconfirm,
       },
       confirm: {
-        entity: data.newmembership,
+        entity: data.deduction,
         post: true,
         role: 'stepconfirm',
         steps: steps.rootconfirm,
@@ -1570,17 +1570,17 @@ export const appModules = defineAppModules({
     },
     each: {
       root: {
-        entity: data.newmembership,
+        entity: data.deduction,
         actions: ['Edit'],
       },
       edit: {
-        entity: data.newmembership,
+        entity: data.deduction,
         post: true,
         role: 'edit',
-        subName: 'deducted',
+        subName: 'deduction',
       },
       close: {
-        entity: data.newmembership,
+        entity: data.deduction,
         role: 'confirm',
       }
     },
