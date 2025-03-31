@@ -2,7 +2,7 @@
   <RealmPageList :pageId>
     <template #default="{ wrapped, entries, resolver }">
       <div class="flex flex-col items-center space-y-2 mb-4">
-        <h2 class="text-xl font-bold text-center py-2">สหกรณ์ออมทรัพย์โรงพยาบาลศรีเกษ จำกัด</h2>
+        <h2 class="text-xl font-bold text-center py-2">สหกรณ์ออมทรัพย์โรงพยาบาลศรีสะเกษ จำกัด</h2>
         <div class="flex justify-between w-full px-4">
           <p class="font-normal text-gray-900 dark:text-white">
             วันที่พิมพ์ :{{ new Date().toLocaleDateString('th-TH', { year: 'numeric', month: 'long', day: 'numeric' }) }}

@@ -66,8 +66,6 @@ const pageDef = usePageDefinition(pageId);
 const pageFunctions = usePageFunctions(pageDef);
 const { formatNumber } = useValueFormatters();
 
-const selected = ref([]);
-
 const columns = [
   // {
   //   key: 'no',
@@ -111,7 +109,7 @@ const columns = [
   },
   {
     key: 'ordinaryPrincipal',
-    label: 'เงินติ้น',
+    label: 'เงินต้น',
   },
   {
     key: 'ordinaryInterest',
@@ -123,7 +121,7 @@ const columns = [
   },
   {
     key: 'surrenderWealth',
-    label: 'ยอมทรัพย์',
+    label: 'ออมทรัพย์',
   },
   {
     key: 'other',
