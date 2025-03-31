@@ -58,19 +58,13 @@
           }]"
         >
           <template #empty-state>
+          
             <div
-              v-if="!searchText"
               class="flex flex-col items-center justify-center py-6 gap-3"
             >
-              <span class="italic text-sm">Nothing here!</span> Start typing to search.
-            </div>
-            <div
-              v-else
-              class="flex flex-col items-center justify-center py-6 gap-3"
-            >
-              <span class="italic text-sm">Searching for</span>'{{ searchText }}'
+              <span class="italic text-sm">Searching for </span>'{{ searchText }}'
               <UButton
-                v-if="status === 'success'"
+               
                 label="Add item"
                 @click="onAddItem"
               />
