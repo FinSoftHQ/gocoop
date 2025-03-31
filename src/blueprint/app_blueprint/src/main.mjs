@@ -1577,7 +1577,7 @@ export const appModules = defineAppModules({
         entity: data.deduction,
         post: true,
         role: 'edit',
-        subName: 'deduction',
+        
       },
       close: {
         entity: data.deduction,
