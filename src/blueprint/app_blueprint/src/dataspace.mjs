@@ -781,7 +781,7 @@ export const data = defineEntities({
         model: 'idmember',
         label: 'เลขสมาชิก',
         spec: {},
-        component: 'number',
+        component: 'text',
       },
       {
         model: 'fullname',
@@ -799,7 +799,7 @@ export const data = defineEntities({
         model: 'periodNO',
         label: 'หุ้นงวดที่',
         spec: {},
-        component: 'number',
+        component: 'text',
       },
       {
         model: 'stock',
@@ -811,13 +811,13 @@ export const data = defineEntities({
         model: 'periodFast',
         label: 'งวดที่',
         spec: {},
-        component: 'number',
+        component:'text',
       },
       {
         model: 'loanFast',
         label: 'เงินต้น ฉ',
         spec: {},
-        component: 'number',
+        component:'number',
       },
       {
         model: 'emergencyFast',
@@ -829,7 +829,7 @@ export const data = defineEntities({
         model: 'periodNOFast',
         label: 'งวดที่สามัญ',
         spec: {},
-        component: 'number',
+        component: 'text',
       },          
       {
         model: ' ordinaryPrincipal',
@@ -883,7 +883,7 @@ export const data = defineEntities({
         model: 'receiptNumber',
         label: 'เลขใบเสร็จ',
         spec: {},
-        component: 'number',
+        component: 'text',
       },  
     ]   
   },

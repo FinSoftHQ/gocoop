@@ -107,7 +107,7 @@ const columns = [
   },
   {
     key: 'ordinaryPrincipal',
-    label: 'เงินติ้น',
+    label: 'เงินต้น',
   },
   {
     key: 'ordinaryInterest',
@@ -119,7 +119,7 @@ const columns = [
   },
   {
     key: 'surrenderWealth',
-    label: 'ยอมทรัพย์',
+    label: 'ออมทรัพย์',
   },
   {
     key: 'other',
