@@ -2,17 +2,17 @@
   <RealmPageList :pageId>
     <template #default="{ wrapped, entries, resolver }">
       <div class="flex flex-col items-center space-y-2 mb-4">
-        <p class="font-normal text-gray-900 dark:text-white text-right w-full px-4">
+        <p class="font-normal text-gray-900 dark:text-white text-right w-full mt-2 px-4">
           หน้าที่ :
         </p>
-        <h2 class="text-xl font-bold text-center py-2">สหกรณ์ออมทรัพย์โรงพยาบาลศรีเกษ จำกัด</h2>
+        <h2 class="text-xl font-bold text-center">สหกรณ์ออมทรัพย์โรงพยาบาลศรีสะเกษ จำกัด</h2>
         <div class="flex justify-between w-full px-4">
           <p class="font-normal text-gray-900 dark:text-white">
             วันที่พิมพ์ :{{ new Date().toLocaleDateString('th-TH', { year: 'numeric', month: 'long', day: 'numeric' })
             }}
           </p>
           <p class="font-normal text-gray-900 dark:text-white">
-            สังกัด สอโรงพยาบาลศรีเกษ
+            สังกัด สอโรงพยาบาลศรีสะเกษ
           </p>
           <p class="font-normal text-gray-900 dark:text-white">
             เวลาพิมพ์ : {{ new Date().toLocaleTimeString('th-TH') }} น.
@@ -143,7 +143,7 @@ const columns = [
   },
   {
     key: 'ordinaryPrincipal',
-    label: 'เงินติ้น',
+    label: 'เงินต้น',
   },
   {
     key: 'ordinaryInterest',
@@ -155,7 +155,7 @@ const columns = [
   },
   {
     key: 'surrenderWealth',
-    label: 'ยอมทรัพย์',
+    label: 'ออมทรัพย์',
   },
   {
     key: 'other',
@@ -176,7 +176,7 @@ const columns = [
   {
     key: 'receiptNumber',
     label: 'เลขที่ใบเสร็จ',
-  }
+  } 
 ]
 
 const { formatDisplay: formatAge } = useDisplayField({

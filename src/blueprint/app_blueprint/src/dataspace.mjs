@@ -784,8 +784,21 @@ export const data = defineEntities({
         component: 'text',
       },
       {
-        model: 'fullname',
-        label: 'ชื่อ-สกุล',
+        model: 'prefix',
+        label: 'คำนำหน้าชื่อ',
+        spec: {},
+        component: 'select',
+        choices: choices.prefixStates,
+      },
+      {
+        model: 'fname',
+        label: 'ชื่อ',
+        spec: {},
+        component: 'text',
+      },
+      {
+        model: 'lname',
+        label: 'สกุล',
         spec: {},
         component: 'text',
       },
@@ -832,7 +845,7 @@ export const data = defineEntities({
         component: 'text',
       },          
       {
-        model: ' ordinaryPrincipal',
+        model: 'ordinaryPrincipal',
         label: 'เงินต้นสามัญ',
         spec: {},
         component: 'number',
@@ -844,7 +857,7 @@ export const data = defineEntities({
         component: 'number',
       },
       {
-        model: ' loan',
+        model: 'loan',
         label: 'เงินกู้',
         spec: {},
         component: 'number',
