@@ -90,63 +90,63 @@ const columns = [
     label: 'ค่าทำเนียม',
   },
   {
-    key: 'period',
+    key: 'periodNO',
     label: 'หุ้นงวดที่',
   },
   {
-    key: 'amount',
+    key: 'stock',
     label: 'จำนวนเงิน',
   },
   {
-    key: 'idmember',
-    label: 'ฉ งวดที่',
+    key: 'periodFast',
+    label: 'งวดที่',
   },
   {
-    key: 'idmember',
+    key: 'loanFast',
     label: 'เงินต้น',
   },
   {
-    key: 'idmember',
+    key: 'emergencyFast',
     label: 'ดอกเบี้ย',
   },
   {
-    key: 'idmember',
+    key: 'periodNOFast',
     label: 'สามัญงวดที่',
   },
   {
-    key: 'idmember',
+    key: 'ordinaryPrincipal',
     label: 'เงินติ้น',
   },
   {
-    key: 'idmember',
+    key: 'ordinaryInterest',
     label: 'ดอกเบี้ย',
   },
   {
-    key: 'idmember',
+    key: 'loan',
     label: 'เงินกู้',
   },
   {
-    key: 'idmember',
+    key: 'surrenderWealth',
     label: 'ยอมทรัพย์',
   },
   {
-    key: 'idmember',
+    key: 'other',
     label: 'อื่นๆ',
   },
   {
-    key: 'idmember',
+    key: 'accumulatedMoney',
     label: 'เงินสะสม',
   },
   {
-    key: 'idmember',
+    key: 'salary',
     label: 'เงินเดือน',
   },
   {
-    key: 'idmember',
+    key: 'totalCreditors',
     label: 'รวมเงินชำระ',
   },
   {
-    key: 'idmember',
+    key: 'receiptNumber',
     label: 'เลขที่ใบเสร็จ',
   } 
 ]
