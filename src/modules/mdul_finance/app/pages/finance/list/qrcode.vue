@@ -5,7 +5,7 @@
               กรุณาเตรียมโทรศัพท์มือถือ และ สแกน QR Code เพื่อโอนเงิน
             </h3>
       <div class="flex justify-center">
-        <NuxtLink to="/finance/list/completed">
+        <NuxtLink to="/finance/list/success">
           <UCard>
             <p class="text-center font-bold">QR Code สำหรับโอนเงิน</p>
             <FieldViewQrCode

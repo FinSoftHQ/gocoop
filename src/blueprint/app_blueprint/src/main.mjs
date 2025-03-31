@@ -1242,6 +1242,12 @@ export const appModules = defineAppModules({
         post: true,
         role: 'webprint',
       },
+      success: {
+        entity: data.loanfast,
+        post: true,
+        role: 'result',
+        label: 'การโอนเงินเสร็จเรียบร้อยแล้ว',
+      },
     },
     create: {
       root: {
