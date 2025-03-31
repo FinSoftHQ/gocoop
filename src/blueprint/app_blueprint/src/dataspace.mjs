@@ -898,7 +898,27 @@ export const data = defineEntities({
         spec: {},
         component: 'text',
       },  
-    ]   
+    ],
+    sub: [
+      {
+        name: 'editdue',
+        component: 'entry',
+        fields: [
+          {
+            model: 'totalCreditors',
+            label: 'รวมที่ต้องชำระ',
+            spec: {},
+            component: 'number',
+          },
+          {
+            model: 'deductible',
+            label: 'หักได้',
+            spec: {},
+            component: 'number',
+          }                                
+        ]
+      },
+    ],    
   },
   // counterloanfast
   counterloanfast: {
