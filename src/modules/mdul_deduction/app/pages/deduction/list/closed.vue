@@ -9,10 +9,10 @@
           รวมเงินทั้งหมด: {{ formatNumber(wrapped.data.reduce((sum :any , item:any ) => sum + (item.totalCreditors || 0), 0)) }}
         </span>
         <span class="text-sm font-medium text-gray-700 dark:text-gray-300">
-          หักได้ทั้งหมด: {{ formatNumber(wrapped.data.reduce((sum :any , item:any ) => sum + (item.totalCreditors || 0), 0)) }}
+          หักได้ทั้งหมด: {{ formatNumber(wrapped.data.reduce((sum :any , item:any ) => sum + (item.deductible || 0), 0)) }}
         </span>
         <span class="text-sm font-medium text-gray-700 dark:text-gray-300">
-          เงินที่ขาด: {{ formatNumber(wrapped.data.reduce((sum :any , item:any ) => sum + (item.totalCreditors || 0), 0)) }}
+          เงินที่ขาด: {{ formatNumber(wrapped.data.reduce((sum :any , item:any ) => sum + (item.totalCreditors || 0) - (item.deductible || 0), 0)) }}
         </span>
       </div>
       <EntityTable
