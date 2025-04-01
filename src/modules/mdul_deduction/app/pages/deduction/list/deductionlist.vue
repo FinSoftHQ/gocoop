@@ -5,42 +5,38 @@
         <UButton type="button">
           หักเงินได้แล้ว
         </UButton>
-        <UButton
-          type="button"
-          @click="navigateTo({ name: 'deduction.list.deductioncheck' })"
-        >
+        <UButton type="button"
+          @click="navigateTo({ name: 'deduction.list.deductioncheck' })">
           แก้ไขการหักเงิน
         </UButton>
       </div>
-      <EntityTable
-        :data="wrapped.data"
+      <EntityTable :data="wrapped.data"
         :columns="columns"
         :ui="{
-        tr: {
-        base: '',
-        selected: 'bg-gray-50 dark:bg-gray-800/50',
-        expanded: 'bg-gray-50 dark:bg-gray-800/50',
-        active: 'hover:bg-gray-50 dark:hover:bg-gray-800/50 cursor-pointer'
-        },
-        th: {
-        base: 'whitespace-nowrap text-center rtl:text-center',
-        padding: 'p-1',
-        color: 'text-gray-900 dark:text-white',
-        font: 'font-semibold',
-        size: 'text-sm'
-        },
-        td: {
-        base: 'whitespace-nowrap text-center rtl:text-center',
-        padding: 'p-1',
-        color: 'text-gray-500 dark:text-gray-400',
-        font: '',
-        size: 'text-sm'
-        }}"
+          tr: {
+            base: '',
+            selected: 'bg-gray-50 dark:bg-gray-800/50',
+            expanded: 'bg-gray-50 dark:bg-gray-800/50',
+            active: 'hover:bg-gray-50 dark:hover:bg-gray-800/50 cursor-pointer'
+          },
+          th: {
+            base: 'whitespace-nowrap text-center rtl:text-center',
+            padding: 'p-1',
+            color: 'text-gray-900 dark:text-white',
+            font: 'font-semibold',
+            size: 'text-sm'
+          },
+          td: {
+            base: 'whitespace-nowrap text-center rtl:text-center',
+            padding: 'p-1',
+            color: 'text-gray-500 dark:text-gray-400',
+            font: '',
+            size: 'text-sm'
+          }
+        }"
         :entries="entries"
         :resolver="resolver"
-        v-model="selected"
-        @selectionChanged="select"
-      >
+        v-model="selected">
 
         <template #fullname-data="{ row, column }">
           {{ getPrefix(row.prefix) }}{{ row.fname }} {{ row.lname }}
@@ -51,8 +47,13 @@
         <template #deducted-data="{ row, column }">
           {{ formatNumber(row.deducted) }}
         </template>
+        <template #actions-data="{row}">
+          <UButton icon="i-heroicons-pencil-square" @click="select(row)" >
+          </UButton>
+        </template>
       </EntityTable>
     </template>
+    
   </RealmPageList>
 </template>
 
@@ -147,7 +148,11 @@ const columns = [
   {
     key: 'receiptNumber',
     label: 'เลขที่ใบเสร็จ',
-  } 
+  },
+  {
+    key: 'actions',
+    label: 'จัดการ',
+  },
 ]
 
 const { formatDisplay: formatAge } = useDisplayField({
@@ -170,6 +175,7 @@ function getPrefix(key: string): string {
 }
 
 function select(item: any) {
+  console.log('Selected item:', item);
   navigateTo({ name: pageFunctions.relativeName({ module: 'deduction', realm: 'each', page: 'root' }), params: { id: item.id } });
 }
 
