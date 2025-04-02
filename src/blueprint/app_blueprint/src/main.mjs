@@ -1487,11 +1487,11 @@ export const appModules = defineAppModules({
         post: true,
         tabs: [
           {
-            label: 'รายการรอส่งหัดเงิน',
+            label: 'รายการรอส่งหักเงิน',
             to: { page: 'root' },
           },
           {
-            label: 'ผลการหักเงินจากรพ',
+            label: 'ผลการหักเงินจากรพ.',
             to: { page: 'closed' },
           },
         ],
