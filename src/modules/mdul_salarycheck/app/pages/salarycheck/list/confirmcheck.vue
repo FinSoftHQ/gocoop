@@ -43,25 +43,19 @@ const columns = [
     key: 'no',
     label: 'ลำดับ',
   },
-  // {
-  //   key: 'idmember',
-  //   label: 'รหัสสมาชิก',
-  //   sortable: true
-  // },
   {
     key: 'fullname',
     label: 'ชื่อ-สกุล',
-  }, {
-    key: 'age',
-    label: 'อายุ',
-    sortable: true
-  }, {
+  },{
     key: 'jobPosition',
     label: 'ตำแหน่ง',
   }, {
     key: 'department',
-    label: 'แผนก',
-  }
+    label: 'หมวด',
+  },{
+    key: 'stockValue',
+    label: 'ส่งเงินค่าหุ้นรายเดือนละ',
+  },
 ]
 
 const { formatDisplay: formatAge } = useDisplayField({

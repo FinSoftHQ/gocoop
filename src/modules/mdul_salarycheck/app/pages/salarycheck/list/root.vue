@@ -35,28 +35,16 @@ const columns = [
     key: 'no',
     label: 'ลำดับ',
   },
-  // {
-  //   key: 'idmember',
-  //   label: 'รหัสสมาชิก',
-  //   sortable: true
-  // },
   {
     key: 'fullname',
     label: 'ชื่อ-สกุล',
-  }, {
-    key: 'age',
-    label: 'อายุ',
-    sortable: true
-  }, {
+  },{
     key: 'jobPosition',
     label: 'ตำแหน่ง',
   }, {
     key: 'department',
-    label: 'แผนก',
-  }, {
-    key: 'phoneNumber',
-    label: 'เบอร์โทร',
-  }, {
+    label: 'หมวด',
+  },{
     key: 'stockValue',
     label: 'ส่งเงินค่าหุ้นรายเดือนละ',
   },
