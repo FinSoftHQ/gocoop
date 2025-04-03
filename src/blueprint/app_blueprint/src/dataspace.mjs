@@ -529,9 +529,9 @@ export const data = defineEntities({
         link: {
           name: 'member',
           component: 'appendable',
-          link2: 'member', // { module: 'category', realm: 'list', page: 'root' },
-          dataLabel: (data) => `${data.prefixs} ${data.fname} ${data.lname} ${data.relevant} ${data.phone}`,
-          query: (search) => ({ q: search }), // (search) => ({ name: search })
+          // { module: 'category', realm: 'list', page: 'root' },
+                dataLabel: (data) => `${prefixStates[data.prefixs]} ${data.fname} ${data.lname} ${data.relevant} ${data.phone}`,
+                query: (search) => ({ q: search }), // (search) => ({ name: search })
         },
       },
      
