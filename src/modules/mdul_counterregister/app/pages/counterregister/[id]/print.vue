@@ -43,7 +43,7 @@ usePdfPrint({
       const match = label.match(regex);
       if (match) {
       return {
-        beneficiaryname:  match[1] + match[2] + ' ' + match[3],
+        beneficiaryname: prefixStates[match[1]] + match[2] + ' ' + match[3],
         relationship: match[4],
         beneficiaryphone: match[5],
       };
@@ -146,6 +146,7 @@ usePdfPrint({
       phoneNumber2: data.phoneNumber,
       phoneNumber3: data.phoneNumber,
       phoneNumber4: data.phoneNumber,
+      // beneficiaries: prefixStates[data.prefix] + data.fnamebf + '   ' + data.lnamebf,
       beneficiaries: beneficiaryInfo.value.beneficiaryname,
       relationship:  beneficiaryInfo.value.relationship,
       beneficiariesphone:  beneficiaryInfo.value.beneficiaryphone,
