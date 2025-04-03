@@ -15,13 +15,12 @@
     </template>
   </RealmPageList>
 </template>
-
 <script setup lang="ts">
 definePageMeta({
-  name: `finance.list.active`,
+  name: `finance.list.transferred`,
 });
 const pageId = {
-  page: 'active',
+  page: 'transferred',
 };
 
 const pageDef = usePageDefinition(pageId);
