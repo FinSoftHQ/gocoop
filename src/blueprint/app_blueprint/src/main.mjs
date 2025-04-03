@@ -207,7 +207,7 @@ export const appModules = defineAppModules({
     each: {
       root: {
         entity: data.loanfast,
-        role:'result',
+        role: 'result',
         label: 'เตรียมข้อมูลขอกู้ฉุกเฉินเรียบร้อยแล้ว',
       },
       edit: {
@@ -253,8 +253,8 @@ export const appModules = defineAppModules({
       root: {
         label: 'เตรียมข้อมูลสมัครสมาชิกเรียบร้อยแล้ว',
         entity: data.newmembership,
-        role:'result',
-        
+        role: 'result',
+
         // {
         //   label: 'บันทึกเอกสาร',
         //   to: { page: 'takephoto' },
@@ -1129,15 +1129,15 @@ export const appModules = defineAppModules({
             title: 'สมาชิกใหม่รอตรวจสอบเงินเดือน',
             to: { module: 'salarycheck', realm: 'list', page: 'root' },
             icon: 'i-mdi-account-clock',
-          },             
+          },
           {
             title: 'หักหนี้เงินเดือน',
             to: { module: 'deduction', realm: 'list', page: 'root' },
             icon: 'i-mdi-cash-minus',
-          }                   
+          }
         ]
-            },
-            waitinglist: {
+      },
+      waitinglist: {
         // คำอนุมัติ
         entity: data.loanfast,
         tabs: [
@@ -1160,6 +1160,10 @@ export const appModules = defineAppModules({
           {
             label: 'รายการเตรียมจ่ายเงิน',
             to: { page: 'active' },
+          },
+          {
+            label: 'รายการโอนเสร็จสิ้น',
+            to: { page: 'transferred' },
           }
         ],
         actions: [
@@ -1167,6 +1171,19 @@ export const appModules = defineAppModules({
             label: 'โอนเงิน',
             to: { page: 'transfermoney' },
           },
+        ],
+      },
+      transferred:{
+        entity: data.loanfast,
+        tabs: [
+          {
+            label: 'รายการเตรียมจ่ายเงิน',
+            to: { page: 'active' },
+          },
+          {
+            label: 'รายการโอนเสร็จสิ้น',
+            to: { page: 'transferred' },
+          }
         ],
       },
       completed: {
@@ -1379,7 +1396,7 @@ export const appModules = defineAppModules({
             label: 'ปริ้นรายงาน',
             to: { page: 'reportprint' },
           }
-        ]    
+        ]
       },
       salarycheck: {
         entity: data.newmembership,
@@ -1394,7 +1411,7 @@ export const appModules = defineAppModules({
             label: 'ตรวจสอบแล้ว',
             to: { page: 'confirmcheck' },
           }
-        ]               
+        ]
       },
       confirmcheck: {
         entity: data.newmembership,
@@ -1408,7 +1425,7 @@ export const appModules = defineAppModules({
             label: 'ตรวจสอบแล้ว',
             to: { page: 'confirmcheck' },
           }
-        ]  
+        ]
       },
       login: {
         entity: data.newmembership,
@@ -1521,7 +1538,7 @@ export const appModules = defineAppModules({
             label: 'ตรวจสอบแล้ว',
             to: { page: 'confirmcheck' },
           }
-        ]       
+        ]
       },
       confirmcheck: {
         label: 'รายชื่อที่ต้องหักเงินเดือนทั้งหมด',
@@ -1537,7 +1554,7 @@ export const appModules = defineAppModules({
             label: 'ตรวจสอบแล้ว',
             to: { page: 'confirmcheck' },
           }
-        ]       
+        ]
       },
       deductioncheck: {
         label: 'รายชื่อที่ต้องหักเงินเดือนทั้งหมด',
@@ -1553,7 +1570,7 @@ export const appModules = defineAppModules({
             label: 'ตรวจสอบแล้ว',
             to: { page: 'confirmcheck' },
           }
-        ]              
+        ]
       },
       login: {
         entity: data.deduction,
@@ -1577,20 +1594,20 @@ export const appModules = defineAppModules({
     each: {
       root: {
         entity: data.deduction,
-        actions: ['Edit','Editdue'],
+        actions: ['Edit', 'Editdue'],
       },
       edit: {
         entity: data.deduction,
         post: true,
         role: 'edit',
-        
+
       },
       editdue: {
         entity: data.deduction,
         post: true,
         subName: 'editdue',
         role: 'edit',
-        
+
       },
       close: {
         entity: data.deduction,
