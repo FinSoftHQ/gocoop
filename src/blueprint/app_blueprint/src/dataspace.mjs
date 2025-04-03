@@ -1148,7 +1148,8 @@ export const data = defineEntities({
         model: 'prefixs',
         label: 'คำนำหน้าชื่อ',
         spec: {},
-        component: 'text',
+        component: 'select',
+        choices: choices.prefixStates,
       },
       {
         model: 'fname',
