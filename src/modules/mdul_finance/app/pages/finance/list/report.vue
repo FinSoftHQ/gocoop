@@ -29,7 +29,8 @@
           </p>
         </div>
       </div>
-      <EntityTable :data="wrapped.data"
+      <EntityTable id="TableToExport"
+        :data="wrapped.data"
         :columns="columns"
         :entries="entries"
         :resolver="resolver"
@@ -69,9 +70,13 @@
       </div>
     </template>
   </RealmPageList>
+  <UButton id="sheetjsexport" class="btn-primary"><b>Export as XLSX</b></UButton>
 </template>
 
 <script setup lang="ts">
+import { onMounted } from 'vue';
+import * as XLSX from 'xlsx'; // Ensure this import matches the installed library
+
 definePageMeta({
   name: `finance.list.report`,
 });
@@ -79,11 +84,9 @@ const pageId = {
   page: 'report',
 };
 
-
 const pageDef = usePageDefinition(pageId);
 const pageFunctions = usePageFunctions(pageDef);
 const { formatNumber } = useValueFormatters();
-
 
 const columns = [
   // {
@@ -132,4 +135,16 @@ function getPrefix(key: string): string {
 function select(item: any) {
   navigateTo({ name: pageFunctions.relativeName({ module: 'counterloanfast', realm: 'each', page: 'root' }), params: { id: item.id } });
 }
+
+onMounted(() => {
+  const exportButton = document.getElementById('sheetjsexport');
+  const table = document.getElementById('TableToExport') as HTMLTableElement;
+
+  exportButton?.addEventListener('click', () => {
+    if (table) {
+      const wb = XLSX.utils.table_to_book(table); // Create workbook from table
+      XLSX.writeFile(wb, 'SheetJSTable.xlsx'); // Export to file
+    }
+  });
+});
 </script>

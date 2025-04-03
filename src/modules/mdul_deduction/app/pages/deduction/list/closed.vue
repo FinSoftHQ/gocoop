@@ -2,20 +2,22 @@
   <RealmPageList :pageId>
     <template #default="{ wrapped, entries, resolver }">
       <div class="flex mb-4 u gap-4 justify-end">
-        <span class=" text-sm font-medium text-gray-700 dark:text-gray-300">
+        <span class=" text-sm font-medium text-gray-700 dark:text-gray-300 mt-2">
           รายชื่อทั้งหมด: {{ wrapped.data.length }}
         </span>
-        <span class="text-sm font-medium text-gray-700 dark:text-gray-300">
+        <span class="text-sm font-medium text-gray-700 dark:text-gray-300 mt-2">
           รวมเงินทั้งหมด: {{ formatNumber(wrapped.data.reduce((sum :any , item:any ) => sum + (item.totalCreditors || 0), 0)) }}
         </span>
-        <span class="text-sm font-medium text-gray-700 dark:text-gray-300">
+        <span class="text-sm font-medium text-gray-700 dark:text-gray-300 mt-2">
           หักได้ทั้งหมด: {{ formatNumber(wrapped.data.reduce((sum :any , item:any ) => sum + (item.deductible || 0), 0)) }}
         </span>
-        <span class="text-sm font-medium text-gray-700 dark:text-gray-300">
+        <span class="text-sm font-medium text-gray-700 dark:text-gray-300 mt-2">
           เงินที่ขาด: {{ formatNumber(wrapped.data.reduce((sum :any , item:any ) => sum + (item.totalCreditors || 0) - (item.deductible || 0), 0)) }}
         </span>
+        <UButton id="sheetjsexport" class="btn-primary"><b>Export as XLSX</b></UButton>
       </div>
       <EntityTable
+        id="TableToExport"
         :data="wrapped.data"
         :columns="columns"
         :ui="{
@@ -63,6 +65,9 @@
 </template>
 
 <script setup lang="ts">
+import { onMounted } from 'vue';
+import * as XLSX from 'xlsx'; // Import the SheetJS library
+
 definePageMeta({
   name: `deduction.list.closed`,
 });
@@ -180,4 +185,16 @@ function calculateTotalDeduction(row: any): number {
   const { loanfast = 0, loangeneral = 0, loanspecial = 0, loanstock = 0 } = row;
   return loanfast + loangeneral + loanspecial + loanstock;
 }
+
+onMounted(() => {
+  const exportButton = document.getElementById('sheetjsexport');
+  const table = document.getElementById('TableToExport') as HTMLTableElement;
+
+  exportButton?.addEventListener('click', () => {
+    if (table) {
+      const wb = XLSX.utils.table_to_book(table); // Create workbook from table
+      XLSX.writeFile(wb, 'SheetJSTable.xlsx'); // Export to file
+    }
+  });
+});
 </script>
