@@ -1,5 +1,9 @@
 {
 	"dependencies": {
-		"ably": "^2.6.3"
+		"ably": "^2.6.3",
+		"xlsx": "^0.18.5"
+	},
+	"devDependencies": {
+		"@types/xlsx": "^0.0.36"
 	}
 }

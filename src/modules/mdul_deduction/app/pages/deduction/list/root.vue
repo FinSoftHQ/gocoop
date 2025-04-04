@@ -1,6 +1,7 @@
 <template>
   <RealmPageList :pageId>
     <template #default="{ wrapped, entries, resolver }">
+      <FExportExcel tableId="TableToExport" /> 
       <div class="flex mb-4 u gap-4 justify-end">
         <span class="text-sm font-medium text-gray-700 dark:text-gray-300">
           รายชื่อทั้งหมด: {{ wrapped.data.length }}
@@ -12,6 +13,7 @@
       <EntityTable
         :data="wrapped.data"
         :columns="columns"
+        id="TableToExport"
         :ui="{
         tr: {
         base: '',

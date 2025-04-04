@@ -1,31 +1,29 @@
 <template>
   <RealmPageList :pageId>
     <template #default="{ wrapped, entries, resolver }">
-      <div class="flex mb-4 u gap-4 justify-end">
-        <UButton id="sheetjsexport" class="btn-primary"><b>Export as XLSX</b></UButton>
-      </div>
+      <FExportExcel tableId="TableToExport" /> 
       <table id="TableToExport" class="table-auto border-collapse border border-gray-300 w-full text-sm text-center">
         <thead>
           <tr>
-            <th colspan="4" class="border border-gray-300 p-2 bg-gray-100 text-left">
+            <th colspan="18" class="text-xl text-center font-bold border border-gray-300 p-2 bg-gray-100">
               รายงานสรุป
             </th>
           </tr>
           <tr>
-            <th class="border border-gray-300 p-2 bg-gray-100">รายชื่อทั้งหมด</th>
-            <th class="border border-gray-300 p-2 bg-gray-100">รวมเงินทั้งหมด</th>
-            <th class="border border-gray-300 p-2 bg-gray-100">หักได้ทั้งหมด</th>
-            <th class="border border-gray-300 p-2 bg-gray-100">เงินที่ขาด</th>
+            <th colspan="3" class="border border-gray-300 p-2 bg-gray-100">รายชื่อทั้งหมด</th>
+            <th colspan="5" class="border border-gray-300 p-2 bg-gray-100">รวมเงินทั้งหมด</th>
+            <th colspan="5" class="border border-gray-300 p-2 bg-gray-100">หักได้ทั้งหมด</th>
+            <th colspan="5" class="border border-gray-300 p-2 bg-gray-100">เงินที่ขาด</th>
           </tr>
           <tr>
-            <td class="border border-gray-300 p-2">{{ wrapped.data.length }}</td>
-            <td class="border border-gray-300 p-2">
+            <td colspan="3" class="border border-gray-300 p-2">{{ wrapped.data.length }}</td>
+            <td colspan="5" class="border border-gray-300 p-2">
               {{ formatNumber(wrapped.data.reduce((sum :any , item:any ) => sum + (item.totalCreditors || 0), 0)) }}
             </td>
-            <td class="border border-gray-300 p-2">
+            <td colspan="5" class="border border-gray-300 p-2">
               {{ formatNumber(wrapped.data.reduce((sum :any , item:any ) => sum + (item.deductible || 0), 0)) }}
             </td>
-            <td class="border border-gray-300 p-2">
+            <td colspan="5" class="border border-gray-300 p-2">
               {{ formatNumber(wrapped.data.reduce((sum :any , item:any ) => sum + (item.totalCreditors || 0) - (item.deductible || 0), 0)) }}
             </td>
           </tr>
@@ -62,9 +60,6 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted } from 'vue';
-import * as XLSX from 'xlsx'; // Import the SheetJS library
-
 definePageMeta({
   name: `deduction.list.closed`,
 });
@@ -178,16 +173,4 @@ function calculateTotalDeduction(row: any): number {
   const { loanfast = 0, loangeneral = 0, loanspecial = 0, loanstock = 0 } = row;
   return loanfast + loangeneral + loanspecial + loanstock;
 }
-
-onMounted(() => {
-  const exportButton = document.getElementById('sheetjsexport');
-  const table = document.getElementById('TableToExport') as HTMLTableElement;
-
-  exportButton?.addEventListener('click', () => {
-    if (table) {
-      const wb = XLSX.utils.table_to_book(table); // Create workbook from table
-      XLSX.writeFile(wb, 'SheetJSTable.xlsx'); // Export to file
-    }
-  });
-});
 </script>
