@@ -59,6 +59,7 @@ const steps = defineSteps({
 });
 
 export const appModules = defineAppModules({
+  // order
   category: {
     label: 'Category',
     list: {
@@ -95,7 +96,7 @@ export const appModules = defineAppModules({
       },
     },
   },
-
+  // products
   products: {
     label: 'Products',
     list: {
@@ -134,7 +135,7 @@ export const appModules = defineAppModules({
       },
     },
   },
-
+  // posts
   posts: {
     label: 'Category',
     dataPath: 'category',
@@ -348,7 +349,7 @@ export const appModules = defineAppModules({
         ],
       },
       qrcode: {
-        entity: data.newmembership,
+        entity: data.counterverify,
         post: true,
         role: 'showqr',
       },
@@ -1289,7 +1290,7 @@ export const appModules = defineAppModules({
     },
   },
 
-
+  // member
   member: {
     label: 'Member',
     list: {
@@ -1327,6 +1328,7 @@ export const appModules = defineAppModules({
     },
   },
 
+  // salarycheck
   salarycheck: {
     label: 'salarycheck',
     list: {
@@ -1463,6 +1465,8 @@ export const appModules = defineAppModules({
       }
     },
   },
+
+  // deduction
   deduction: {
     label: 'deduction',
     list: {
