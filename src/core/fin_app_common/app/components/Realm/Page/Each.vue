@@ -29,6 +29,8 @@ import RealmRolesCustonStepMobilePhoto from '../Roles/Custon/StepMobilePhoto.vue
 import RealmRolesCustonStepMobileQr from '../Roles/Custon/StepMobileQr.vue';
 import RealmRolesCustomTakePhoto from '../Roles/Custon/TakePhoto.vue';
 import RealmRolesScanner from '../Roles/Custon/Scanner.vue';
+import RealmRoleListShowQrCode from '../Roles/Custom/ShowQrCode.vue';
+
 
 const baseRoles = useBaseRoles();
 const roles: Record<string, any> = {
@@ -46,6 +48,7 @@ const roles: Record<string, any> = {
   stepmobileqr: RealmRolesCustonStepMobileQr,
   takephoto: RealmRolesCustomTakePhoto,
   scanner: RealmRolesScanner,
+  showqrcode: RealmRoleListShowQrCode,
 };
 
 const props = defineProps<{
