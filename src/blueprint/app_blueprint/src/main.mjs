@@ -59,7 +59,7 @@ const steps = defineSteps({
 });
 
 export const appModules = defineAppModules({
-  // order
+  // category
   category: {
     label: 'Category',
     list: {
@@ -307,11 +307,51 @@ export const appModules = defineAppModules({
 
   // lineoa
   lineoa: {
+    dataPath: 'counterverify',
     label: 'LineOA',
     list: {
       root: {
-        entity: data.newmembership,
+        entity: data.counterverify,
+        
+      },
+      service: {
+        entity: data.counterverify,
         post: true,
+        role: 'menu',
+        actions: [
+          {
+            title: 'ยืนยันสักอย่าง',
+            to: { page: 'qrverify' },
+            icon: 'i-mdi-qrcode',
+          },
+        ],
+      },
+      
+      success: data.counterverify,
+      closed: data.counterverify,
+    },
+    create: {
+      root: {
+        entity: data.counterverify,
+        post: true,
+        role: 'stepedit',
+        subName: 'verify',
+        steps: steps.rootconfirm,
+      },
+      confirm: {
+        entity: data.counterverify,
+        post: true,
+        role: 'stepconfirm',
+        steps: steps.rootconfirm,
+      },
+      qrcode: {
+        entity: data.counterverify,
+        post: true,
+      },
+    },
+    each: {
+      root: {
+        entity: data.counterverify,
         role: 'menu',
         actions: [
           {
@@ -336,73 +376,33 @@ export const appModules = defineAppModules({
           },
         ],
       },
-      service: {
-        entity: data.newmembership,
-        post: true,
-        role: 'menu',
-        actions: [
-          {
-            title: 'ยืนยันสักอย่าง',
-            to: { page: 'qrverify' },
-            icon: 'i-mdi-qrcode',
-          },
-        ],
-      },
       qrcode: {
         entity: data.counterverify,
-        post: true,
-        role: 'showqr',
+        role: 'showqrcode',
       },
       qrverify: {
-        entity: data.newmembership,
-        post: true,
-        role: 'showqr',
-      },
-      success: data.newmembership,
-      closed: data.newmembership,
-    },
-    create: {
-      root: {
-        entity: data.newmembership,
-        post: true,
-        role: 'stepedit',
-        subName: 'verify',
-        steps: steps.rootconfirm,
-      },
-      confirm: {
-        entity: data.newmembership,
-        post: true,
-        role: 'stepconfirm',
-        steps: steps.rootconfirm,
-      },
-      qrcode: {
-        entity: data.newmembership,
-        post: true,
-      },
-    },
-    each: {
-      root: {
-        entity: data.newmembership,
+        entity: data.counterverify,
+        role: 'showqrcode',
       },
       completed: {
-        entity: data.newmembership,
+        entity: data.counterverify,
         post: true,
       },
       qrqueue: {
-        entity: data.newmembership,
+        entity: data.counterverify,
         post: true,
       },
       success: {
-        entity: data.newmembership,
+        entity: data.counterverify,
         post: true,
       },
       edit: {
-        entity: data.newmembership,
+        entity: data.counterverify,
         post: true,
         role: 'edit',
       },
       close: {
-        entity: data.newmembership,
+        entity: data.counterverify,
         role: 'confirm',
       },
     },
