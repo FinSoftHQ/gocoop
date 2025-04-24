@@ -1312,6 +1312,18 @@ export const data = defineEntities({
       },],
       [{
         model: 'stockValue',
+        label: 'ชื่อ-สกุล คู่สมรสผู้กู้',
+        spec: {},
+        component: 'text',
+      },
+      {
+        model: 'age1',
+        label: 'อายุ',
+        spec: {},
+        component: 'text',
+      },],
+      [{
+        model: 'stockValue',
         label: 'จำนวนเงินที่ขอกู้',
         spec: {},
         component: 'number',
@@ -1322,6 +1334,7 @@ export const data = defineEntities({
         spec: {},
         component: 'date',
       },],
+      
       {
         model: 'beneficiary',
         label: 'เพิ่มผู้รับผลประโยชน์',
