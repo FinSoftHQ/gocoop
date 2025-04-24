@@ -17,7 +17,7 @@
     </p>
   </UCard>
   <div class="flex justify-center gap-4 mt-6">
-    <UButton @click="accept">ยินยอม</UButton>
+    <UButton @click="navigateToSuccess">ยินยอม</UButton>
     <UButton
       @click="decline"
       style="background-color: red;"
@@ -38,6 +38,10 @@ function accept() {
 }
 
 function decline() {
-  alert('คุณไม่ได้ยินยอมเป็นผู้ค้ำประกัน');
+  alert('ไม่ยินยอม');
+}
+
+function navigateToSuccess() {
+  window.location.href = '/lineoa/list/success';
 }
 </script>
