@@ -30,6 +30,10 @@ const headlinks = [{
 {
   label: 'การเงิน',
   to: '/finance/list/root'
+},
+{
+  label: 'บันชี',
+  to: '/accounting/list/root'
 }
 ]
 
