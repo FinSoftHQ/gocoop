@@ -562,38 +562,137 @@ export const appModules = defineAppModules({
 
   // accounting
   accounting: {
+    dataPath: 'loanfast',
     list: {
-      root: data.accTransactions,
-      monthly: data.accTransactions, // รายเดือน
-      yearly: data.accTransactions, // รายปี
+      root: {
+        entity: data.loanfast,
+        tabs: [
+          {
+            label: 'รายวัน',
+            to: { page: 'root' },
+          },
+          {
+            label: 'รายเดือน',
+            to: { page: 'monthly' },
+          },
+          {
+            label: 'รายปี',
+            to: { page: 'yearly' },
+          }
+
+        ],
+        actions: [
+          {
+            label: 'ปริ้นรายงาน',
+            to: { page: 'printday' },
+          },
+          {
+            label: 'ปิดบัญชี',
+            to: { page: 'closed' },
+          }
+        ],
+      },
+      monthly:{
+        entity: data.loanfast,
+        tabs: [
+          {
+            label: 'รายวัน',
+            to: { page: 'root' },
+          },
+          {
+            label: 'รายเดือน',
+            to: { page: 'monthly' },
+          },
+          {
+            label: 'รายปี',
+            to: { page: 'yearly' },
+          }
+
+        ],
+        actions: [
+          {
+            label: 'ปริ้นรายงาน',
+            to: { page: 'printday' },
+          },
+          {
+            label: 'ปิดบัญชี',
+            to: { page: 'closed' },
+          }
+        ],
+      }, // รายเดือน
+      yearly:{
+        entity: data.loanfast,
+        tabs: [
+          {
+            label: 'รายวัน',
+            to: { page: 'root' },
+          },
+          {
+            label: 'รายเดือน',
+            to: { page: 'monthly' },
+          },
+          {
+            label: 'รายปี',
+            to: { page: 'yearly' },
+          }
+
+        ],
+        actions: [
+          {
+            label: 'ปริ้นรายงาน',
+            to: { page: 'printday' },
+          },
+          {
+            label: 'ปิดบัญชี',
+            to: { page: 'closed' },
+          }
+        ],
+      }, // รายปี
       printday: {
-        entity: data.accTransactions,
-        role: 'print',
+        entity: data.loanfast,
+        role: 'webprint',
       },
       printmonth: {
-        entity: data.accTransactions,
-        role: 'print',
+        entity: data.loanfast,
+        role: 'webprint',
       },
       printyear: {
-        entity: data.accTransactions,
-        role: 'print',
+        entity: data.loanfast,
+        role: 'webprint',
+      },
+      closed: {
+        // ปิดยอด
+        entity: data.loanfast,
+        post: true,
+        tabs: [
+          {
+            label: 'ปิดยอด',
+            to: { page: 'closed' },
+          },
+        ],
+        actions: [
+          {
+            label: 'ยืนยันการปิดบัญชี',
+            to: { page: 'root' },
+          }
+        ],
       },
     },
     create: {
       root: {
-        entity: data.accTransactions,
+        entity: data.loanfast,
         post: true,
       },
       close: {
         // ส่งรายงานบัญชี (ปิดยอด)
-        entity: data.accTransactions,
+        entity: data.loanfast,
         post: true,
       },
     },
     each: {
-      root: data.accTransactions,
+      root: data.loanfast,
       cancel: {
-        entity: data.accTransactions,
+        entity: data.loanfast,
         role: 'confirm',
       },
     },
