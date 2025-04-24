@@ -357,6 +357,7 @@ export const appModules = defineAppModules({
         post: true,
         role: 'showqr',
       },
+      generalloan: data.newmembership,
       success: data.newmembership,
       closed: data.newmembership,
     },
