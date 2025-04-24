@@ -1189,4 +1189,391 @@ export const data = defineEntities({
       },
     ],
   },
+
+  generalloan: {
+    root: [
+      
+      [{
+        model: 'prefix',
+        label: 'คำนำหน้าชื่อ',
+        spec: {},
+        component: 'select',
+        choices: choices.prefixStates,
+      },
+      {
+        model: 'fname',
+        label: 'ชื่อ',
+        spec: {},
+        component: 'text',
+      },
+      {
+        model: 'lname',
+        label: 'สกุล',
+        spec: {},
+        component: 'text',
+      },],
+      [    
+      {
+        model: 'idCard',
+        label: 'เลขสมาชิก',
+        spec: {},
+        component: 'text',
+      },
+      {
+        model: 'bankAccount',
+        label: 'เลขบัญชีธนาคารกรุงไทย',
+        spec: {},
+        component: 'text',
+      },],
+      [{
+        model: 'phoneNumber',
+        label: 'เบอร์โทร',
+        spec: {},
+        component: 'text',
+      },
+      {
+        model: 'zipCode',
+        label: 'รหัสไปรษณีย์',
+        spec: {},
+        component: 'text',
+      },
+      {
+        model: 'province',
+        label: 'จังหวัด',
+        spec: {},
+        component: 'text',
+      },],
+      [{
+        model: 'district',
+        label: 'อำเภอ',
+        spec: {},
+        component: 'text',
+      },
+      {
+        model: 'parish',
+        label: 'ตำบล',
+        spec: {},
+        component: 'text',
+      },
+      {
+        model: 'road',
+        label: 'ถนน',
+        spec: {},
+        component: 'text',
+      },],
+      [{
+        model: 'alley',
+        label: 'ตรอก/ซอย',
+        spec: {},
+        component: 'text',
+      },
+      {
+        model: 'homeNumber',
+        label: 'บ้านเลขที่',
+        spec: {},
+        component: 'text',
+      },
+      {
+        model: 'village',
+        label: 'หมู่ที่',
+        spec: {},
+        component: 'text',
+      },],
+      [{
+        model: 'jobPosition',
+        label: 'ตําแหน่งงาน',
+        spec: {},
+        component: 'select',
+        choices: choices.positionStates,
+        },  
+        {
+          model: 'bureau',
+          label: 'หน่วยงาน',
+          spec: {},
+          component: 'text',
+        },
+        {
+          model: 'idline',
+          label: 'ID Line',
+          spec: {},
+          component: 'text',
+        },
+      {
+        model: 'department',
+        label: 'แผนก',
+        spec: {},
+        component: 'text',
+      },
+      {
+        model: 'salary',
+        label: 'เงินเดือน',
+        spec: {},
+        component: 'number',
+      },],
+      [{
+        model: 'stockValue',
+        label: 'จำนวนเงินที่ขอกู้',
+        spec: {},
+        component: 'number',
+      },
+      {
+        model: 'createdAt',
+        label: 'เขียนเมื่อวันที่',
+        spec: {},
+        component: 'date',
+      },],
+      {
+        model: 'beneficiary',
+        label: 'เพิ่มผู้รับผลประโยชน์',
+        spec: {},
+        component: 'link2multisearch',
+        link: {
+          name: 'member',
+          component: 'appendable',
+          link2: 'member', // { module: 'category', realm: 'list', page: 'root' },
+          dataLabel: (data) => `${data.prefixs} ${data.fname} ${data.lname} ${data.relevant} ${data.phone}`,
+          query: (search) => ({ q: search }), // (search) => ({ name: search })
+        },
+      },
+     
+    ],
+    sub: [
+      {
+        name: 'beneficiary',
+        component: 'entry',
+        fields: [
+          {
+            model: 'categoryId',
+            label: 'เพิ่มผู้รับผลประโยชน์',
+            spec: {},
+            component: 'link2multisearch',
+            link: {
+              name: 'category',
+              component: 'appendable',
+              link2: 'category', // { module: 'category', realm: 'list', page: 'root' },
+              dataLabel: (data) => `${data.name}`, 
+              query: (search) => ({ q: search }), // (search) => ({ name: search })
+            },
+          },
+        ],
+      },
+      {
+        name: 'verify',
+        component: 'entry',
+        fields: [
+          {
+            model: 'qrverify',
+            label: 'QR Code ยืนยันตัวตน',
+            spec: {},
+            component: 'text',
+          }
+        ],
+      },
+      {
+        name: 'salarycheck',
+        component: 'entry',
+        fields: [
+          {
+            model: 'position',
+            label: 'ตำแหน่ง',
+            spec: {},
+            component: 'select',
+            choices: choices.employmentStates,
+          },
+          {
+            model: 'salary',
+            label: 'เงินเดือน',
+            spec: {},
+            component: 'number',
+          }         
+        ],
+      },
+      {
+        name: 'deduction',
+        component: 'entry',
+        fields: [
+          {
+            model: 'periodNO',
+            label: 'หุ้นงวดที่',
+            spec: {},
+            component: 'number',
+          },
+          {
+            model: 'stock',
+            label: 'หุ้น',
+            spec: {},
+            component: 'number',
+          },
+          {
+            model: 'periodFast',
+            label: 'งวดที่',
+            spec: {},
+            component: 'number',
+          },
+          {
+            model: 'loanFast',
+            label: 'เงินต้น ฉ',
+            spec: {},
+            component: 'number',
+          },
+          {
+            model: 'emergencyFast',
+            label: 'ดอกเบี้ย ฉ',
+            spec: {},
+            component: 'number',
+          },
+          {
+            model: 'periodNOFast',
+            label: 'งวดที่สามัญ',
+            spec: {},
+            component: 'number',
+          },          
+          {
+            model: ' ordinaryPrincipal',
+            label: 'เงินต้นสามัญ',
+            spec: {},
+            component: 'number',
+          },
+          {
+            model: 'ordinaryInterest',
+            label: 'ดอกเบี้ยสามัญ',
+            spec: {},
+            component: 'number',
+          },
+          {
+            model: ' loan',
+            label: 'เงินกู้',
+            spec: {},
+            component: 'number',
+          },
+          {
+            model: 'totalCreditors',
+            label: 'รวมที่ต้องชำระ',
+            spec: {},
+            component: 'number',
+          },
+          {
+            model: 'receiptNumber',
+            label: 'เลขใบเสร็จ',
+            spec: {},
+            component: 'number',
+          },         
+        ]
+      },     
+      {
+        name: 'deducted',
+        component: 'entry',
+        fields: [
+          {
+            model: 'idmember',
+            label: 'เลขสมาชิก',
+            spec: {},
+            component: 'number',
+          },
+          {
+            model: 'fullname',
+            label: 'ชื่อ-สกุล',
+            spec: {},
+            component: 'text',
+          },
+          {
+            model: 'businessfees',
+            label: 'ค่าทำเนียม',
+            spec: {},
+            component: 'number',
+          },
+          {
+            model: 'periodNO',
+            label: 'หุ้นงวดที่',
+            spec: {},
+            component: 'number',
+          },
+          {
+            model: 'stock',
+            label: 'หุ้น',
+            spec: {},
+            component: 'number',
+          },
+          {
+            model: 'periodFast',
+            label: 'งวดที่',
+            spec: {},
+            component: 'number',
+          },
+          {
+            model: 'loanFast',
+            label: 'เงินต้น ฉ',
+            spec: {},
+            component: 'number',
+          },
+          {
+            model: 'emergencyFast',
+            label: 'ดอกเบี้ย ฉ',
+            spec: {},
+            component: 'number',
+          },
+          {
+            model: 'periodNOFast',
+            label: 'งวดที่สามัญ',
+            spec: {},
+            component: 'number',
+          },          
+          {
+            model: ' ordinaryPrincipal',
+            label: 'เงินต้นสามัญ',
+            spec: {},
+            component: 'number',
+          },
+          {
+            model: 'ordinaryInterest',
+            label: 'ดอกเบี้ยสามัญ',
+            spec: {},
+            component: 'number',
+          },
+          {
+            model: ' loan',
+            label: 'เงินกู้',
+            spec: {},
+            component: 'number',
+          },
+          {
+            model: 'surrenderWealth',
+            label: 'ยอมทรัพย์',
+            spec: {},
+            component: 'number',
+          },
+          {
+            model: 'other',
+            label: 'อื่นๆ',
+            spec: {},
+            component: 'number',
+          },
+          {
+            model: 'accumulatedMoney',
+            label: 'เงินสะสม',
+            spec: {},
+            component: 'number',
+          },
+          {
+            model: 'salary',
+            label: 'เงินเดือน',
+            spec: {},
+            component: 'number',
+          },
+          {
+            model: 'totalCreditors',
+            label: 'รวมที่ต้องชำระ',
+            spec: {},
+            component: 'number',
+          },
+          {
+            model: 'receiptNumber',
+            label: 'เลขใบเสร็จ',
+            spec: {},
+            component: 'number',
+          },           
+        ]
+      }      
+    ]
+  },
 });

@@ -1,0 +1,12 @@
+<template>
+  <RealmPageEach :pageId></RealmPageEach>
+</template>
+
+<script setup lang="ts">
+definePageMeta({
+  name: `generalloan.each.edit`,
+});
+const pageId = {
+  page: 'edit',
+};
+</script>
