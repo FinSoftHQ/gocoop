@@ -326,9 +326,21 @@ export const appModules = defineAppModules({
           },
         ],
       },
-      
-      success: data.counterverify,
-      closed: data.counterverify,
+
+      qrcode: {
+        entity: data.newmembership,
+        post: true,
+        role: 'showqr',
+      },
+      qrverify: {
+        entity: data.newmembership,
+        post: true,
+        role: 'showqr',
+      },
+      generalloan: data.newmembership,
+      success: data.newmembership,
+      closed: data.newmembership,
+
     },
     create: {
       root: {
