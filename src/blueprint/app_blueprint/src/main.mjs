@@ -568,17 +568,17 @@ export const appModules = defineAppModules({
         entity: data.loanfast,
         tabs: [
           {
-            label: 'รายวัน',
+            label: 'รายงาน',
             to: { page: 'root' },
           },
-          {
-            label: 'รายเดือน',
-            to: { page: 'monthly' },
-          },
-          {
-            label: 'รายปี',
-            to: { page: 'yearly' },
-          }
+          // {
+          //   label: 'รายเดือน',
+          //   to: { page: 'monthly' },
+          // },
+          // {
+          //   label: 'รายปี',
+          //   to: { page: 'yearly' },
+          // }
 
         ],
         actions: [
