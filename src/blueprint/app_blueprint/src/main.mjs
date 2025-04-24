@@ -338,7 +338,10 @@ export const appModules = defineAppModules({
         role: 'showqr',
       },
       generalloan: data.newmembership,
-      success: data.newmembership,
+      success: {
+        entity: data.newmembership,
+        // role: 'result',
+   },
       closed: data.newmembership,
 
     },
