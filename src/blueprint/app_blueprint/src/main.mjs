@@ -59,6 +59,7 @@ const steps = defineSteps({
 });
 
 export const appModules = defineAppModules({
+  // category
   category: {
     label: 'Category',
     list: {
@@ -95,7 +96,7 @@ export const appModules = defineAppModules({
       },
     },
   },
-
+  // products
   products: {
     label: 'Products',
     list: {
@@ -134,7 +135,7 @@ export const appModules = defineAppModules({
       },
     },
   },
-
+  // posts
   posts: {
     label: 'Category',
     dataPath: 'category',
@@ -306,11 +307,63 @@ export const appModules = defineAppModules({
 
   // lineoa
   lineoa: {
+    dataPath: 'counterverify',
     label: 'LineOA',
     list: {
       root: {
+        entity: data.counterverify,
+        
+      },
+      service: {
+        entity: data.counterverify,
+        post: true,
+        role: 'menu',
+        actions: [
+          {
+            title: 'ยืนยันสักอย่าง',
+            to: { page: 'qrverify' },
+            icon: 'i-mdi-qrcode',
+          },
+        ],
+      },
+
+      qrcode: {
         entity: data.newmembership,
         post: true,
+        role: 'showqr',
+      },
+      qrverify: {
+        entity: data.newmembership,
+        post: true,
+        role: 'showqr',
+      },
+      generalloan: data.newmembership,
+      success: data.newmembership,
+      closed: data.newmembership,
+
+    },
+    create: {
+      root: {
+        entity: data.counterverify,
+        post: true,
+        role: 'stepedit',
+        subName: 'verify',
+        steps: steps.rootconfirm,
+      },
+      confirm: {
+        entity: data.counterverify,
+        post: true,
+        role: 'stepconfirm',
+        steps: steps.rootconfirm,
+      },
+      qrcode: {
+        entity: data.counterverify,
+        post: true,
+      },
+    },
+    each: {
+      root: {
+        entity: data.counterverify,
         role: 'menu',
         actions: [
           {
@@ -335,74 +388,33 @@ export const appModules = defineAppModules({
           },
         ],
       },
-      service: {
-        entity: data.newmembership,
-        post: true,
-        role: 'menu',
-        actions: [
-          {
-            title: 'ยืนยันสักอย่าง',
-            to: { page: 'qrverify' },
-            icon: 'i-mdi-qrcode',
-          },
-        ],
-      },
       qrcode: {
-        entity: data.newmembership,
-        post: true,
-        role: 'showqr',
+        entity: data.counterverify,
+        role: 'showqrcode',
       },
       qrverify: {
-        entity: data.newmembership,
-        post: true,
-        role: 'showqr',
-      },
-      generalloan: data.newmembership,
-      success: data.newmembership,
-      closed: data.newmembership,
-    },
-    create: {
-      root: {
-        entity: data.newmembership,
-        post: true,
-        role: 'stepedit',
-        subName: 'verify',
-        steps: steps.rootconfirm,
-      },
-      confirm: {
-        entity: data.newmembership,
-        post: true,
-        role: 'stepconfirm',
-        steps: steps.rootconfirm,
-      },
-      qrcode: {
-        entity: data.newmembership,
-        post: true,
-      },
-    },
-    each: {
-      root: {
-        entity: data.newmembership,
+        entity: data.counterverify,
+        role: 'showqrcode',
       },
       completed: {
-        entity: data.newmembership,
+        entity: data.counterverify,
         post: true,
       },
       qrqueue: {
-        entity: data.newmembership,
+        entity: data.counterverify,
         post: true,
       },
       success: {
-        entity: data.newmembership,
+        entity: data.counterverify,
         post: true,
       },
       edit: {
-        entity: data.newmembership,
+        entity: data.counterverify,
         post: true,
         role: 'edit',
       },
       close: {
-        entity: data.newmembership,
+        entity: data.counterverify,
         role: 'confirm',
       },
     },
@@ -1290,7 +1302,7 @@ export const appModules = defineAppModules({
     },
   },
 
-
+  // member
   member: {
     label: 'Member',
     list: {
@@ -1328,6 +1340,7 @@ export const appModules = defineAppModules({
     },
   },
 
+  // salarycheck
   salarycheck: {
     label: 'salarycheck',
     list: {
@@ -1464,6 +1477,8 @@ export const appModules = defineAppModules({
       }
     },
   },
+
+  // deduction
   deduction: {
     label: 'deduction',
     list: {
