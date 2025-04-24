@@ -20,6 +20,7 @@ export const data = {
   deduction: _data.deduction,
   countercheque: _data.countercheque,
   member: _data.member,
+  generalloan: _data.generalloan,
 };
 
 const steps = defineSteps({
@@ -1732,5 +1733,87 @@ export const appModules = defineAppModules({
         role: 'confirm',
       }
     },
-  }
+  },
+
+  generalloan: {
+    label: 'กู้สามัญทั่วไป',
+    list: {
+      root: data.generalloan,
+      closed: data.generalloan,
+    },
+    create: {
+      root: {
+        entity: data.generalloan,
+        post: true,
+        role: 'stepedit',
+        steps: steps.newmembershipconfirm,
+      },
+      // beneficiary: {
+      //   entity: data.newmembership,
+      //   post: true,
+      //   role: 'stepadduser',
+      //   subName: 'beneficiary',
+      //   steps: steps.newmembershipconfirm,
+      // },
+      confirm: {
+        entity: data.generalloan,
+        post: true,
+        role: 'stepconfirm',
+        steps: steps.newmembershipconfirm,
+      },
+    },
+    each: {
+      root: {
+        label: 'เตรียมข้อมูลกู้สามัญทั่วเรียบร้อยแล้ว',
+        entity: data.generalloan,
+        role: 'result',
+
+        // {
+        //   label: 'บันทึกเอกสาร',
+        //   to: { page: 'takephoto' },
+        // },
+        // {
+        //   label: 'กรอกข้อมูล',
+        //   to: { page: 'fillin' },
+        // },
+        // {
+        //   label: 'แก้ไขข้อมูล',
+        //   to: { page: 'edit' },
+        // },
+        // ],
+      },
+      edit: {
+        entity: data.generalloan,
+        post: true,
+        role: 'edit',
+      },
+      print: {
+        entity: data.counterloanfast,
+        post: true,
+        role: 'print',
+      },
+      takephoto: {
+        entity: data.counterloanfast,
+        post: true,
+        role: 'stepmobilephoto',
+        steps: steps.stepstakephoto,
+      },
+      qrcode: {
+        entity: data.counterloanfast,
+        post: true,
+        role: 'qrcode',
+      },
+      fillin: {
+        entity: data.counterloanfast,
+        post: true,
+        role: 'edit',
+        subName: 'loanfast',
+      },
+      result: {
+        entity: data.counterloanfast,
+        role: 'result',
+        steps: steps.stepstakephoto,
+      },
+    },
+  },
 });
