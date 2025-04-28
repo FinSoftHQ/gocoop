@@ -51,7 +51,8 @@ const props = defineProps<{
 const { pageDef, pageFunctions, title, actions, data, status, error, saveThenGoNextPage } = useRoleForEdit(props.pageId, {
   loadDataHandler: (pageFunctions, pgId) => pageFunctions.localState.get(),
 });
-
+  
+// สูตรคำนวณวงเงินกู้สูงสุด
 const resultMessage = ref<string>('');
 
 const maxLoanLimits: Record<string, number> = {
