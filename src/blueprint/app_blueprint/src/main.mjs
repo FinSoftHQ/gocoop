@@ -202,7 +202,6 @@ export const appModules = defineAppModules({
         entity: data.loanfast,
         post: true,
         role: 'stepconfirm',
-        subName: 'filldata',
         steps: steps.loanfastconfirm,
       },
     },
@@ -351,7 +350,6 @@ export const appModules = defineAppModules({
         entity: data.counterverify,
         post: true,
         role: 'stepedit',
-        subName: 'verify',
         steps: steps.rootconfirm,
       },
       confirm: {
