@@ -54,13 +54,16 @@ usePdfPrint({
       }
       interestPayments.push(0); // Add a zero for the 12th month interest
 
-      return interestPayments.map((interest, index) => interest + data.amount / 12);
+      return interestPayments.map((interest, index) =>
+        Math.round((interest + data.amount / 12) / 100) * 100
+      );
     });
 
     const paymentDetails = computed(() => {
       return totalPayments.value.map((totalPayment, index) => ({
         month: index + 1,
-        totalPayment
+        // totalPayment
+        totalPayment: Math.round(totalPayment / 100) * 100
       }));
     });
 
@@ -80,13 +83,13 @@ usePdfPrint({
     const createdAtYear = (createdAtDate.getFullYear() + 543).toString();
 
     const months = Array.from({ length: 12 }, (_, i) => {
-      const monthIndex = (createdAtDate.getMonth() + i + 1) % 12 ;
+      const monthIndex = (createdAtDate.getMonth() + i + 1) % 12;
       return monthNames[monthIndex];
     });
 
     const years = Array.from({ length: 12 }, (_, i) => {
       const year = createdAtDate.getFullYear() + Math.floor((createdAtDate.getMonth() + i + 1) / 12);
-      return (year + 543).toString(); 
+      return (year + 543).toString();
     });
 
     console.log(createdAtDay, createdAtMonth, createdAtYear);
@@ -100,11 +103,11 @@ usePdfPrint({
       createyear: createdAtYear,
       createyear2: createdAtYear,
       idmember: data.idmember,
-      fullname: prefixMapping[data.prefix]  + data.fname + ' ' + data.lname,
-      fullname2: prefixMapping[data.prefix]  + data.fname + ' ' + data.lname,
-      fullname5: prefixMapping[data.prefix]  + data.fname + ' ' + data.lname,
+      fullname: prefixMapping[data.prefix] + data.fname + ' ' + data.lname,
+      fullname2: prefixMapping[data.prefix] + data.fname + ' ' + data.lname,
+      fullname5: prefixMapping[data.prefix] + data.fname + ' ' + data.lname,
       position: positionMapping[data.position] || data.position,
-      department:  data.department,
+      department: data.department,
       purpose: departmentMapping[data.purpose] || data.purpose,
       month1: months[0],
       month2: months[1],
