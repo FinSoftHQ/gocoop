@@ -99,7 +99,7 @@ usePdfPrint({
       createmounth2: createdAtMonth,
       createyear: createdAtYear,
       createyear2: createdAtYear,
-      idmember: '',
+      idmember: data.idmember,
       fullname: prefixMapping[data.prefix]  + data.fname + ' ' + data.lname,
       fullname2: prefixMapping[data.prefix]  + data.fname + ' ' + data.lname,
       fullname5: prefixMapping[data.prefix]  + data.fname + ' ' + data.lname,

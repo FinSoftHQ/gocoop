@@ -66,6 +66,7 @@ const linkChoices = defineLinkChoices({
 });
 
 export const data = defineEntities({
+  // category
   category: {
     root: [
       {
@@ -108,6 +109,7 @@ export const data = defineEntities({
     ],
   },
 
+  // product
   product: {
     root: [
       {
@@ -158,6 +160,7 @@ export const data = defineEntities({
     ],
   },
 
+  // order
   order: {
     root: [
       {
@@ -205,7 +208,7 @@ export const data = defineEntities({
   // loanfast
   loanfast: {
     root: [
-      [{
+      {
         model: 'prefix',
         label: 'คำนำหน้าชื่อ',
         spec: {},
@@ -223,8 +226,8 @@ export const data = defineEntities({
         label: 'สกุล',
         spec: {},
         component: 'text',
-      },],
-      [{
+      },
+      {
         model: 'idmember',
         label: 'รหัสสมาชิก',
         spec: {},
@@ -242,26 +245,20 @@ export const data = defineEntities({
         label: 'หน่วยงาน',
         spec: {},
         component: 'text',
-      },],
-      [{
+      },
+      {
         model: 'department',
         label: 'สังกัด',
         spec: {},
         component: 'text',
       },
       {
-        model: 'salary',
-        label: 'เงินเดือน',
-        spec: {},
-        component: 'number',
-      },
-      {
         model: 'amount',
         label: 'ยอดที่ต้องการกู้ (บาท)',
         spec: {},
         component: 'number',
-      },],        
-      [{
+      },
+      {
         model: 'installments',
         label: 'เลือกจำนวนงวด',
         spec: {},
@@ -281,20 +278,134 @@ export const data = defineEntities({
         label: 'Date Created',
         spec: v.optional(v.pipe(v.string(), v.regex(/^\d{8}$/, "Invalid format, date should be 'YYYYMMDD'"))),
         component: 'date',
-      },],
+      },
+      {
+        model: 'salary',
+        label: 'เงินเดือน',
+        spec: {},
+        component: 'number',
+      },
+      {
+        model: 'positionAllowance',
+        label: 'เงินประจำตำแหน่ง',
+        spec: {},
+        component: 'number',
+      },
+      {
+        model: 'gpf',
+        label: 'กบข.',
+        spec: {},
+        component: 'number',
+      },
+      {
+        model: 'tax',
+        label: 'ภาษี',
+        spec: {},
+        component: 'number',
+      },
+      {
+        model: 'socialSecurity',
+        label: 'ประกันสังคม',
+        spec: {},
+        component: 'number',
+      },
+      {
+        model: 'waterBill',
+        label: 'ค่าน้ำ',
+        spec: {},
+        component: 'number',
+      },
+      {
+        model: 'electricityBill',
+        label: 'ค่าไฟฟ้า',
+        spec: {},
+        component: 'number',
+      },
+      {
+        model: 'parkingFee',
+        label: 'ค่าที่จอดรถ',
+        spec: {},
+        component: 'number',
+      },
+      {
+        model: 'funeralFundSSJ',
+        label: 'ฌกส.สสจ.',
+        spec: {},
+        component: 'number',
+      },
+      {
+        model: 'funeralFundSP',
+        label: 'ฌกส.สป.',
+        spec: {},
+        component: 'number',
+      },
+      {
+        model: 'studentLoan',
+        label: 'กยศ.',
+        spec: {},
+        component: 'number',
+      },
+      {
+        model: 'educationLoan',
+        label: 'กรอ.',
+        spec: {},
+        component: 'number',
+      },
+      {
+        model: 'PKS',
+        label: 'พกส.',
+        spec: {},
+        component: 'number',
+      },
+      {
+        model: 'socialInsurance',
+        label: 'ประกันสังคม',
+        spec: {},
+        component: 'number',
+      },
+      {
+        model: 'bank',
+        label: 'ธนาคาร',
+        spec: {},
+        component: 'number',
+      },
+      {
+        model: 'other1',
+        label: 'อื่นๆ 1 (ระบุ)',
+        spec: {},
+        component: 'number',
+      },
+      {
+        model: 'other2',
+        label: 'อื่นๆ 2( ระบุ)',
+        spec: {},
+        component: 'number',
+      },
+      {
+        model: 'other3',
+        label: 'อื่นๆ 3 (ระบุ)',
+        spec: {},
+        component: 'number',
+      },
+      {
+        model: 'expense',
+        label: 'รายจ่ายสหกรณ์ (ใช้ทดสอบ)',
+        spec: {},
+        component: 'number',
+      },
     ],
     sub: [
       {
         name: 'checkLoan',
         component: 'entry',
         fields: [
-          {
-            model: 'position',
-            label: 'ตำแหน่ง',
-            spec: {},
-            component: 'select',
-            choices: choices.employmentStates,
-          },
+          // {
+          //   model: 'position',
+          //   label: 'ตำแหน่ง',
+          //   spec: {},
+          //   component: 'select',
+          //   choices: choices.employmentStates,
+          // },
           {
             model: 'salary',
             label: 'เงินเดือน',
@@ -302,8 +413,110 @@ export const data = defineEntities({
             component: 'number',
           },
           {
+            model: 'positionAllowance',
+            label: 'เงินประจำตำแหน่ง',
+            spec: {},
+            component: 'number',
+          },
+          {
+            model: 'gpf',
+            label: 'กบข.',
+            spec: {},
+            component: 'number',
+          },
+          {
+            model: 'tax',
+            label: 'ภาษี',
+            spec: {},
+            component: 'number',
+          },
+          {
+            model: 'socialSecurity',
+            label: 'ประกันสังคม',
+            spec: {},
+            component: 'number',
+          },
+          {
+            model: 'waterBill',
+            label: 'ค่าน้ำ',
+            spec: {},
+            component: 'number',
+          },
+          {
+            model: 'electricityBill',
+            label: 'ค่าไฟฟ้า',
+            spec: {},
+            component: 'number',
+          },
+          {
+            model: 'parkingFee',
+            label: 'ค่าที่จอดรถ',
+            spec: {},
+            component: 'number',
+          },
+          {
+            model: 'funeralFundSSJ',
+            label: 'ฌกส.สสจ.',
+            spec: {},
+            component: 'number',
+          },
+          {
+            model: 'funeralFundSP',
+            label: 'ฌกส.สป.',
+            spec: {},
+            component: 'number',
+          },
+          {
+            model: 'studentLoan',
+            label: 'กยศ.',
+            spec: {},
+            component: 'number',
+          },
+          {
+            model: 'educationLoan',
+            label: 'กรอ.',
+            spec: {},
+            component: 'number',
+          },
+          {
+            model: 'PKS',
+            label: 'พกส.',
+            spec: {},
+            component: 'number',
+          },
+          {
+            model: 'socialInsurance',
+            label: 'ประกันสังคม',
+            spec: {},
+            component: 'number',
+          },
+          {
+            model: 'bank',
+            label: 'ธนาคาร',
+            spec: {},
+            component: 'number',
+          },
+          {
+            model: 'other1',
+            label: 'อื่นๆ 1 (ระบุ)',
+            spec: {},
+            component: 'number',
+          },
+          {
+            model: 'other2',
+            label: 'อื่นๆ 2( ระบุ)',
+            spec: {},
+            component: 'number',
+          },
+          {
+            model: 'other3',
+            label: 'อื่นๆ 3 (ระบุ)',
+            spec: {},
+            component: 'number',
+          },
+          {
             model: 'expense',
-            label: 'ค่าใช้จ่าย',
+            label: 'รายจ่ายสหกรณ์ (ใช้ทดสอบ)',
             spec: {},
             component: 'number',
           },
@@ -358,17 +571,11 @@ export const data = defineEntities({
             component: 'text',
           },
           {
-            model: 'salary',
-            label: 'เงินเดือน',
-            spec: {},
-            component: 'number',
-          },
-          {
             model: 'amount',
             label: 'ยอดที่ต้องการกู้ (บาท)',
             spec: {},
             component: 'number',
-          },          
+          },
           {
             model: 'installments',
             label: 'เลือกจำนวนงวด',
@@ -398,7 +605,7 @@ export const data = defineEntities({
   // newmembership
   newmembership: {
     root: [
-      
+
       [{
         model: 'prefix',
         label: 'คำนำหน้าชื่อ',
@@ -423,7 +630,7 @@ export const data = defineEntities({
         label: 'วัน/เดือน/ปี เกิด',
         spec: {},
         component: 'date',
-      },      
+      },
       {
         model: 'idCard',
         label: 'เลขบัตรประชาชน',
@@ -496,7 +703,7 @@ export const data = defineEntities({
         spec: {},
         component: 'select',
         choices: choices.positionStates,
-        },  
+      },
       {
         model: 'department',
         label: 'แผนก',
@@ -534,7 +741,7 @@ export const data = defineEntities({
           query: (search) => ({ q: search }), // (search) => ({ name: search })
         },
       },
-     
+
     ],
     sub: [
       {
@@ -550,7 +757,7 @@ export const data = defineEntities({
               name: 'category',
               component: 'appendable',
               link2: 'category', // { module: 'category', realm: 'list', page: 'root' },
-              dataLabel: (data) => `${data.name}`, 
+              dataLabel: (data) => `${data.name}`,
               query: (search) => ({ q: search }), // (search) => ({ name: search })
             },
           },
@@ -584,7 +791,7 @@ export const data = defineEntities({
             label: 'เงินเดือน',
             spec: {},
             component: 'number',
-          }         
+          }
         ],
       },
       {
@@ -626,7 +833,7 @@ export const data = defineEntities({
             label: 'งวดที่สามัญ',
             spec: {},
             component: 'number',
-          },          
+          },
           {
             model: ' ordinaryPrincipal',
             label: 'เงินต้นสามัญ',
@@ -656,9 +863,9 @@ export const data = defineEntities({
             label: 'เลขใบเสร็จ',
             spec: {},
             component: 'number',
-          },         
+          },
         ]
-      },     
+      },
       {
         name: 'deducted',
         component: 'entry',
@@ -716,7 +923,7 @@ export const data = defineEntities({
             label: 'งวดที่สามัญ',
             spec: {},
             component: 'number',
-          },          
+          },
           {
             model: ' ordinaryPrincipal',
             label: 'เงินต้นสามัญ',
@@ -770,11 +977,13 @@ export const data = defineEntities({
             label: 'เลขใบเสร็จ',
             spec: {},
             component: 'number',
-          },           
+          },
         ]
-      }      
+      }
     ]
   },
+
+  // deduction
   deduction: {
     root: [
       {
@@ -824,13 +1033,13 @@ export const data = defineEntities({
         model: 'periodFast',
         label: 'งวดที่',
         spec: {},
-        component:'text',
+        component: 'text',
       },
       {
         model: 'loanFast',
         label: 'เงินต้น ฉ',
         spec: {},
-        component:'number',
+        component: 'number',
       },
       {
         model: 'emergencyFast',
@@ -843,7 +1052,7 @@ export const data = defineEntities({
         label: 'งวดที่สามัญ',
         spec: {},
         component: 'text',
-      },          
+      },
       {
         model: 'ordinaryPrincipal',
         label: 'เงินต้นสามัญ',
@@ -897,7 +1106,7 @@ export const data = defineEntities({
         label: 'เลขใบเสร็จ',
         spec: {},
         component: 'text',
-      },  
+      },
     ],
     sub: [
       {
@@ -915,12 +1124,13 @@ export const data = defineEntities({
             label: 'หักได้',
             spec: {},
             component: 'number',
-          }                                
+          }
         ]
       },
-    ],    
+    ],
   },
-  // counterloanfast
+  // co
+  // unterloanfast
   counterloanfast: {
     root: [[
       {
@@ -941,7 +1151,7 @@ export const data = defineEntities({
         label: 'สกุล',
         spec: {},
         component: 'text',
-      },],[
+      },], [
       {
         model: 'idmember',
         label: 'รหัสสมาชิก',
@@ -961,39 +1171,39 @@ export const data = defineEntities({
         spec: {},
         component: 'text',
       },],
-      {
-        model: 'salary',
-        label: 'เงินเดือน',
-        spec: {},
-        component: 'number',
-      },
-      {
-        model: 'amount',
-        label: 'ยอดที่ต้องการกู้ (บาท)',
-        spec: {},
-        component: 'number',
-      },          
-      {
-        model: 'installments',
-        label: 'เลือกจำนวนงวด',
-        spec: {},
-        component: 'number',
-        component: 'select',
-        choices: choices.installmentsStates,
-      },
-      {
-        model: 'purpose',
-        label: 'เพื่อวัตถุประสงค์',
-        spec: {},
-        component: 'select',
-        choices: choices.purposeStates,
-      },        
-      {
-        model: 'createdAt',
-        label: 'Date Created',
-        spec: v.optional(v.pipe(v.string(), v.regex(/^\d{8}$/, "Invalid format, date should be 'YYYYMMDD'"))),
-        component: 'date',
-      },
+    {
+      model: 'salary',
+      label: 'เงินเดือน',
+      spec: {},
+      component: 'number',
+    },
+    {
+      model: 'amount',
+      label: 'ยอดที่ต้องการกู้ (บาท)',
+      spec: {},
+      component: 'number',
+    },
+    {
+      model: 'installments',
+      label: 'เลือกจำนวนงวด',
+      spec: {},
+      component: 'number',
+      component: 'select',
+      choices: choices.installmentsStates,
+    },
+    {
+      model: 'purpose',
+      label: 'เพื่อวัตถุประสงค์',
+      spec: {},
+      component: 'select',
+      choices: choices.purposeStates,
+    },
+    {
+      model: 'createdAt',
+      label: 'Date Created',
+      spec: v.optional(v.pipe(v.string(), v.regex(/^\d{8}$/, "Invalid format, date should be 'YYYYMMDD'"))),
+      component: 'date',
+    },
     ],
     sub: [
       {
@@ -1005,7 +1215,7 @@ export const data = defineEntities({
             label: 'ยอดที่ต้องการกู้ (บาท)',
             spec: {},
             component: 'number',
-          },          
+          },
           {
             model: 'installments',
             label: 'เลือกจำนวนงวด',
@@ -1021,7 +1231,7 @@ export const data = defineEntities({
             component: 'select',
             choices: choices.purposeStates,
           },
-                      
+
         ],
       },
     ],
@@ -1141,7 +1351,7 @@ export const data = defineEntities({
         component: 'text',
       },]
   },
-
+  // member 
   member: {
     root: [
       {
@@ -1190,9 +1400,10 @@ export const data = defineEntities({
     ],
   },
 
+  // general loan
   generalloan: {
     root: [
-      
+
       [{
         model: 'prefix',
         label: 'คำนำหน้าชื่อ',
@@ -1212,19 +1423,19 @@ export const data = defineEntities({
         spec: {},
         component: 'text',
       },],
-      [    
-      {
-        model: 'idCard',
-        label: 'เลขสมาชิก',
-        spec: {},
-        component: 'text',
-      },
-      {
-        model: 'bankAccount',
-        label: 'เลขบัญชีธนาคารกรุงไทย',
-        spec: {},
-        component: 'text',
-      },],
+      [
+        {
+          model: 'idCard',
+          label: 'เลขสมาชิก',
+          spec: {},
+          component: 'text',
+        },
+        {
+          model: 'bankAccount',
+          label: 'เลขบัญชีธนาคารกรุงไทย',
+          spec: {},
+          component: 'text',
+        },],
       [{
         model: 'phoneNumber',
         label: 'เบอร์โทร',
@@ -1285,19 +1496,19 @@ export const data = defineEntities({
         spec: {},
         component: 'select',
         choices: choices.positionStates,
-        },  
-        {
-          model: 'bureau',
-          label: 'หน่วยงาน',
-          spec: {},
-          component: 'text',
-        },
-        {
-          model: 'idline',
-          label: 'ID Line',
-          spec: {},
-          component: 'text',
-        },
+      },
+      {
+        model: 'bureau',
+        label: 'หน่วยงาน',
+        spec: {},
+        component: 'text',
+      },
+      {
+        model: 'idline',
+        label: 'ID Line',
+        spec: {},
+        component: 'text',
+      },
       {
         model: 'department',
         label: 'แผนก',
@@ -1334,7 +1545,7 @@ export const data = defineEntities({
         spec: {},
         component: 'date',
       },],
-      
+
       {
         model: 'beneficiary',
         label: 'เพิ่มผู้รับผลประโยชน์',
@@ -1348,7 +1559,7 @@ export const data = defineEntities({
           query: (search) => ({ q: search }), // (search) => ({ name: search })
         },
       },
-     
+
     ],
     sub: [
       {
@@ -1364,7 +1575,7 @@ export const data = defineEntities({
               name: 'category',
               component: 'appendable',
               link2: 'category', // { module: 'category', realm: 'list', page: 'root' },
-              dataLabel: (data) => `${data.name}`, 
+              dataLabel: (data) => `${data.name}`,
               query: (search) => ({ q: search }), // (search) => ({ name: search })
             },
           },
@@ -1398,7 +1609,7 @@ export const data = defineEntities({
             label: 'เงินเดือน',
             spec: {},
             component: 'number',
-          }         
+          }
         ],
       },
       {
@@ -1440,7 +1651,7 @@ export const data = defineEntities({
             label: 'งวดที่สามัญ',
             spec: {},
             component: 'number',
-          },          
+          },
           {
             model: ' ordinaryPrincipal',
             label: 'เงินต้นสามัญ',
@@ -1470,9 +1681,9 @@ export const data = defineEntities({
             label: 'เลขใบเสร็จ',
             spec: {},
             component: 'number',
-          },         
+          },
         ]
-      },     
+      },
       {
         name: 'deducted',
         component: 'entry',
@@ -1530,7 +1741,7 @@ export const data = defineEntities({
             label: 'งวดที่สามัญ',
             spec: {},
             component: 'number',
-          },          
+          },
           {
             model: ' ordinaryPrincipal',
             label: 'เงินต้นสามัญ',
@@ -1584,9 +1795,9 @@ export const data = defineEntities({
             label: 'เลขใบเสร็จ',
             spec: {},
             component: 'number',
-          },           
+          },
         ]
-      }      
+      }
     ]
   },
 });
