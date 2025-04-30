@@ -399,13 +399,13 @@ export const data = defineEntities({
         name: 'checkLoan',
         component: 'entry',
         fields: [
-          // {
-          //   model: 'position',
-          //   label: 'ตำแหน่ง',
-          //   spec: {},
-          //   component: 'select',
-          //   choices: choices.employmentStates,
-          // },
+          {
+            model: 'position',
+            label: 'ตำแหน่ง',
+            spec: {},
+            component: 'select',
+            choices: choices.employmentStates,
+          },
           {
             model: 'salary',
             label: 'เงินเดือน',
@@ -551,13 +551,13 @@ export const data = defineEntities({
             spec: {},
             component: 'text',
           },
-          {
-            model: 'position',
-            label: 'ตำแหน่ง',
-            spec: {},
-            component: 'select',
-            choices: choices.employmentStates,
-          },
+          // {
+          //   model: 'position',
+          //   label: 'ตำแหน่ง',
+          //   spec: {},
+          //   component: 'select',
+          //   choices: choices.employmentStates,
+          // },
           {
             model: 'bureau',
             label: 'หน่วยงาน',
