@@ -8,7 +8,7 @@ export default defineNuxtConfig({
   extends: ['fin-theme', 'fin-app-extra'],
   runtimeConfig: {
     apiServer: {
-      baseURL: 'http://demobackend.aqgzhsg8gpg8c9b8.southeastasia.azurecontainer.io:3086/',
+      baseURL: 'https://devdata-gxd7b0aub3eufaf8.southeastasia-01.azurewebsites.net/',
     },
     liveSync: {
       ablyKey: 'NUXT_LIVE_SYNC_ABLY_KEY',
